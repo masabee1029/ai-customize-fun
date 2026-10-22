@@ -1,0 +1,157 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に｜AIを楽しくカスタマイズしよう</title><meta name="description" content="Claudeのプロジェクトは、指示と資料をひとつの場所にまとめて、その中の会話すべてに効かせられる機能です。無料でも5つまで作れます。作り方、プロジェクト指示とナレッジの入れ方、仕事と遊びの使い分けの例を、公式ヘルプで確かめた手順で紹介します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-customize-fun/articles/claude-projects-howto.html"><meta property="og:title" content="Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に｜AIを楽しくカスタマイズしよう"><meta property="og:description" content="Claudeのプロジェクトは、指示と資料をひとつの場所にまとめて、その中の会話すべてに効かせられる機能です。無料でも5つまで作れます。作り方、プロジェクト指示とナレッジの入れ方、仕事と遊びの使い分けの例を、公式ヘルプで確かめた手順で紹介します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-customize-fun/articles/claude-projects-howto.html"><meta property="og:image" content="https://masabee1029.github.io/ai-customize-fun/img/articles/claude-projects-howto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--soft:#f3f1ec;--accent:#c2410c;--accent2:#7c3aed}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--soft:#23252c;--accent:#fb923c;--accent2:#c4b5fd}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+img{max-width:100%}a{color:var(--accent)}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 8px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+.tagline{font-size:12px;color:var(--muted)}
+.gnav{display:flex;gap:4px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}.gnav::-webkit-scrollbar{display:none}
+.gnav a{flex:0 0 auto;font-size:14px;font-weight:700;color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--soft)}
+.gnav a:hover,.gnav a.on{background:var(--accent);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:24px 0 48px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:8px}}
+.hero{padding:20px 0 8px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 10px}.hero p{color:var(--muted);margin:0;font-size:15px}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px}
+.sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
+.sec-h a{font-size:13px;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
+.prtag{display:inline-block;font-size:11px;padding:0 8px;border:1px solid var(--muted);border-radius:4px;color:var(--muted);margin-left:8px;vertical-align:1px}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:10px}.crumb a{color:var(--muted)}
+article h1{font-size:26px;line-height:1.45;margin:10px 0}
+article h2{font-size:21px;background:var(--soft);border-left:6px solid var(--accent);padding:10px 14px;border-radius:4px;margin-top:44px}
+article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);padding-bottom:4px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 16px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+.lead strong{display:block;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{--bc:#888;display:inline-block;padding:7px 18px;border-radius:999px;background:#000;color:var(--bc);border:1px solid var(--bc);text-decoration:none;font-size:14px;font-weight:700;transition:background .15s}
+.btn:hover{background:#1a1a1a}.btn.amz{--bc:#ff9900}.btn.rkt{--bc:#ff4d4d}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 200px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.pick .ref,.shop .ref{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;font-weight:400}.ref a{color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}.share a{flex:1 1 90px;text-align:center;padding:8px;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.sx{background:#111}.sl{background:#06c755}.sh{background:#00a4de}
+.author{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0;font-size:14px}
+.avatar{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.author p{margin:4px 0 0;color:var(--muted)}
+.related{margin-top:24px}
+.next{background:var(--soft);border:2px dashed var(--accent2);border-radius:12px;padding:14px 18px;margin:32px 0 8px}
+.next-h{font-weight:800;color:var(--accent)}.next p{margin:6px 0 0}
+aside .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px;font-size:14px}
+aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+aside .sticky{position:sticky;top:16px}
+aside .picks{margin:0 0 20px}
+.mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
+.catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
+.catlist small{color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--card);padding:24px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin-right:14px}.fcats{margin-bottom:10px}
+.prnote{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+
+.kx-hero{text-align:center;padding:28px 0 8px}
+.kx-eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.kx-h1{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.3;margin:0 0 16px;letter-spacing:.02em}
+.kx-h1 em{font-style:normal;color:var(--accent)}
+.kx-lead{color:var(--muted);max-width:620px;margin:0 auto 22px;font-size:15px}
+.kx-box{max-width:640px;margin:0 auto 14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.kx-type{min-height:84px;font-size:15px;line-height:1.8}
+.kx-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kx-go{background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:13px;padding:7px 14px;border-radius:99px}
+.kx-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 28px}
+.kx-chips a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--card)}
+.kx-chips a:hover{border-color:var(--accent);color:var(--accent)}
+.kx-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--soft);border-radius:18px;padding:22px 16px;margin:0 0 22px}
+.kx-side{padding:6px}.kx-k{font-size:12px;color:var(--muted)}.kx-v{font-size:clamp(20px,3.4vw,28px);font-weight:800;margin:4px 0}
+.kx-side p{margin:0;font-size:13px;color:var(--muted)}.kx-side.on .kx-v{color:var(--accent)}
+.kx-mid{font-family:serif;font-style:italic;color:var(--muted);font-size:18px}
+@media (max-width:560px){.kx-vs{grid-template-columns:1fr}.kx-mid{margin:-4px 0}}
+.kx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+.kx-stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px}
+.kx-stats b{display:block;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--accent2);font-variant-numeric:tabular-nums}
+.kx-stats span{font-size:12px;color:var(--muted)}
+.kx-steps{list-style:none;padding:0;margin:0 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}
+.kx-steps li{border-top:2px solid var(--accent);padding:10px 4px 0}.kx-steps b{color:var(--accent);font-size:12px;display:block}
+.kx-steps strong{display:block;font-size:15px}.kx-steps span{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.kx-steps{grid-template-columns:1fr}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に", "description": "Claudeのプロジェクトは、指示と資料をひとつの場所にまとめて、その中の会話すべてに効かせられる機能です。無料でも5つまで作れます。作り方、プロジェクト指示とナレッジの入れ方、仕事と遊びの使い分けの例を、公式ヘルプで確かめた手順で紹介します。", "datePublished": "2026-10-23", "image": "https://masabee1029.github.io/ai-customize-fun/img/articles/claude-projects-howto.jpg", "author": {"@type": "Person", "name": "運営者", "url": "https://masabee1029.github.io/ai-customize-fun/about.html"}, "publisher": {"@type": "Organization", "name": "AIを楽しくカスタマイズしよう"}, "mainEntityOfPage": "https://masabee1029.github.io/ai-customize-fun/articles/claude-projects-howto.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://masabee1029.github.io/ai-customize-fun/index.html"}, {"@type": "ListItem", "position": 2, "name": "Claude", "item": "https://masabee1029.github.io/ai-customize-fun/category/claude.html"}, {"@type": "ListItem", "position": 3, "name": "Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に", "item": "https://masabee1029.github.io/ai-customize-fun/articles/claude-projects-howto.html"}]}</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">AIを<span>楽しく</span>カスタマイズしよう</a><span class="tagline">4つのAIを自分好みに</span></div>
+<nav class="gnav"><a href="../index.html">ホーム</a><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html" class="on">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></nav></div></header>
+<div class="wrap"><div class="layout"><main><div class="crumb"><a href="../index.html">ホーム</a> ＞ <a href="../category/claude.html">Claude</a> ＞ Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</div><article><a class="tag" href="../category/claude.html">Claude</a><span class="prtag">PR</span><span class="date">2026-10-23</span><h1>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</h1><img class="eyecatch" src="../img/articles/claude-projects-howto.jpg" alt=""><div class="lead"><strong>この記事でわかること</strong>Claudeのプロジェクトは、指示と資料をひとつの場所にまとめて、その中の会話すべてに効かせられる機能です。無料でも5つまで作れます。作り方、プロジェクト指示とナレッジの入れ方、仕事と遊びの使い分けの例を、公式ヘルプで確かめた手順で紹介します。</div><p>Claudeと話すたびに、「うちの工場では」「この取引先は」と前置きを書きなおしていませんか。<br>あなたのその前置きは、Claudeのプロジェクトにまとめておくと、プロジェクトの中で始めた会話すべてに自動で効くようになります。公式ヘルプによると、プロジェクトは無料のアカウントでも使え、無料プランでは5つまで作れます。<br>この記事では、プロジェクトの作り方と、指示・資料の入れ方を、公式ヘルプで確かめた手順で紹介します。仕事用と遊び用の使い分けの例もお見せします。</p>
+<p><strong>確認日：2026年10月23日</strong>（公式のヘルプで確認。画面や名前は変わることがあります）</p>
+<div class="toc"><strong>目次</strong><ol><li><a href="#s1">プロジェクトは「専用の机」</a></li><li><a href="#s2">無料と有料でちがうところ</a></li><li><a href="#s3">プロジェクトの作り方</a></li><li><a href="#s4">プロジェクト指示の入れ方</a></li><li><a href="#s5">ナレッジ（資料）の入れ方</a></li><li><a href="#s6">仕事用プロジェクトの例（コピーして使えます）</a></li><li><a href="#s7">遊び用プロジェクトの例</a></li><li><a href="#s8">プロジェクトを整理する</a></li><li><a href="#s9">チームで使うとき（Team・Enterprise）</a></li><li><a href="#s10">確かめた公式の情報</a></li><li><a href="#s11">まとめ</a></li></ol></div><div class="picks"><div class="picks-h">この記事で役立つ本・道具</div><div class="pick"><div><strong>Claudeの解説書</strong><span>プロジェクトとスタイルの活かし方</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Claude+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FClaude%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>文章術の本</strong><span>スタイル設定の手本になる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E6%96%87%E7%AB%A0%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E6%2596%2587%25E7%25AB%25A0%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">プロジェクトは「専用の机」</h2>
+<p>公式ヘルプでは、プロジェクトを「それぞれのチャット履歴とナレッジベースを持つ、独立した作業スペース」と説明しています。たとえるなら、仕事ごとに用意する専用の机です。</p>
+<div class="tbl"><table><tr><th>机の上にあるもの</th><th>Claudeでの名前</th><th>役割</th></tr><tr><td>机に貼ったメモ</td><td>プロジェクト指示</td><td>その机で話すときに、毎回守ってほしい決まり</td></tr><tr><td>引き出しの資料</td><td>プロジェクトナレッジ</td><td>その机の会話で、Claudeが参考にする資料</td></tr><tr><td>机で交わした会話</td><td>プロジェクト内のチャット</td><td>机ごとに分かれて並ぶ会話の履歴</td></tr></table></div>
+<p>ひとつ覚えておくと便利なのが、<strong>プロジェクト内のチャットどうしは、ナレッジに入れた情報しか共有しない</strong>という点です。昨日の会話で決めたことを今日の会話でも使いたいときは、その内容をナレッジに入れておくと伝わります。</p>
+<h2 id="s2">無料と有料でちがうところ</h2>
+<p>公式ヘルプで確かめられた、プランによるちがいを表にしました。</p>
+<div class="tbl"><table><tr><th>項目</th><th>無料</th><th>有料（Pro・Max・Team・Enterprise）</th></tr><tr><td>プロジェクトを使う</td><td>使える（5つまで）</td><td>使える</td></tr><tr><td>プロジェクト指示・ナレッジ</td><td>使える</td><td>使える</td></tr><tr><td>RAGモード（資料が多いときに容量を広げるしくみ）</td><td>なし</td><td>ナレッジがコンテキストの上限に近づくと自動で有効になり、容量が最大10倍まで広がる</td></tr><tr><td>メンバーとの共有</td><td>なし</td><td>Team・Enterpriseで使える</td></tr></table></div>
+<p>RAGモードは、資料の中から必要なところを探して読む方法のことです。資料の量が多い使い方をするなら、このちがいが効いてきます。</p>
+<p>ひとつ注意があります。公式ヘルプの「パーソナライゼーション機能」のページには、プロジェクト指示について「有料プランのみ」と書かれた一文もあり、ほかのページの「無料でも使える」という説明と食いちがっています。あなたの画面で「プロジェクト指示を設定」が選べるかどうかを確かめてみてください。</p>
+<h2 id="s3">プロジェクトの作り方</h2>
+<p>公式ヘルプの手順は次のとおりです。</p>
+<ol><li>画面の左側にマウスを置いて「プロジェクト」を選ぶ（claude.ai/projects を直接開いても大丈夫です）</li><li>右上の「+ 新規プロジェクト」を選ぶ</li><li>名前と説明を入れる</li><li>プロジェクトの中でチャットを始める</li></ol>
+<p>名前と説明は、Claudeには見えないと公式ヘルプに書かれています。あなたがあとで見つけやすい名前にしておけば十分です。たとえば「見積もりメール」「品質会議」「週末の料理」のように、何に使う机なのかがひと目でわかる名前がおすすめです。</p>
+<h2 id="s4">プロジェクト指示の入れ方</h2>
+<ol><li>プロジェクトのページで「プロジェクト指示を設定」を選ぶ</li><li>Claudeにどう答えてほしいかを書く</li><li>「指示を保存」を選ぶ</li></ol>
+<p>保存した指示は、そのプロジェクトのすべてのチャットで使われます。公式ヘルプでは、指示の例として「よりフォーマルな口調」や、特定の役割や業界の視点をとってもらうことが挙げられています。</p>
+<p>書くときは、次の3つを意識すると短くまとまります。</p>
+<ul><li>だれとして答えるか（役割）</li><li>だれが読むか（相手）</li><li>どんな形で返すか（形）</li></ul>
+<h2 id="s5">ナレッジ（資料）の入れ方</h2>
+<ol><li>プロジェクトのページで「+」ボタンを選ぶ</li><li>文書、テキストファイル、コードの断片などをアップロードする</li></ol>
+<p>公式ヘルプには、対応するファイルの種類をすべて並べた一覧や、ファイルの大きさの上限は書かれていません。入れられるかどうかは、アップロードの画面で確かめてください。</p>
+<p>資料を入れるときのコツです。</p>
+<ul><li>最新の版だけを入れる（古い版と新しい版が混ざると、答えがぶれやすい）</li><li>用語集や定型文など、何度も使うものから入れる</li><li>社外秘や個人情報は、会社のルールにしたがって入れるかどうかを決める</li></ul>
+<h2 id="s6">仕事用プロジェクトの例（コピーして使えます）</h2>
+<p>印刷・製造の現場で、Microsoft 365と一緒にClaudeを使うあなたを思いうかべて、3つの机を用意してみました。指示の欄にそのまま貼りつけて使えます。</p>
+<p><strong>机1：見積もりメール</strong></p>
+<ul><li>あなたは印刷会社の営業事務の補佐です</li><li>わたしが書いたメモから、取引先への見積もりメールの下書きを作ってください</li><li>金額・部数・納期は、わたしが書いた値だけを使ってください。書かれていないときは「（要確認）」と入れてください</li><li>件名、あいさつ、要件、お願い、締めの順に、ていねいに書いてください</li></ul>
+<p>ナレッジには、会社でふだん使っているメールの定型文を入れておくと、言い回しがそろいます。</p>
+<p><strong>机2：品質会議のまとめ</strong></p>
+<ul><li>あなたは品質会議の記録係です</li><li>わたしが貼りつけたメモを「決まったこと」「宿題（担当・期限）」「次回に持ちこすこと」に分けてください</li><li>不良率などの数字は、メモに書かれた値をそのまま使い、計算しなおさないでください</li><li>全体で300字以内にしてください</li></ul>
+<p><strong>机3：作業手順書の清書</strong></p>
+<ul><li>あなたは作業手順書を読みやすくする係です</li><li>1つの手順に1つの動作だけを書き、番号をつけてください</li><li>安全に関わる手順には、先頭に「注意」と入れてください</li></ul>
+<p>3つの机に分けておくと、メールの会話の中に品質会議の話がまざることもなく、それぞれの机でClaudeが同じ調子で答えてくれます。毎回の前置きが減るぶん、1日に何度も使う作業ほど、残業30分を減らす手助けになります。</p>
+<h2 id="s7">遊び用プロジェクトの例</h2>
+<p>プロジェクトは、趣味や家族のことにも使えます。</p>
+<div class="tbl"><table><tr><th>プロジェクトの名前</th><th>指示の例</th><th>ナレッジに入れるもの</th></tr><tr><td>週末の料理</td><td>家族4人分、30分以内で作れる献立を2案出してください</td><td>家族の好き嫌いのメモ</td></tr><tr><td>家計の見直し</td><td>わたしが渡した数字だけを使って、先月とのちがいを3行でまとめてください</td><td>毎月の支出を書いた表</td></tr><tr><td>推し活ノート</td><td>聞き上手な友だちのように、感想に質問を1つ返してください</td><td>好きな作品や曲のメモ</td></tr><tr><td>子どもの自由研究</td><td>小学生にもわかる言葉で、調べ方の手順を5つ出してください</td><td>学校のプリントの要点</td></tr></table></div>
+<p>家計のように数字を扱うときも、「わたしが渡した数字だけを使って」と書いておくと、安心して使えます。</p>
+<h2 id="s8">プロジェクトを整理する</h2>
+<p>プロジェクトが増えてきたら、公式ヘルプにある次の機能が役立ちます。</p>
+<ul><li><strong>スター</strong>：よく使うプロジェクトに印をつけて、すぐ開けるようにする</li><li><strong>チャットの移動</strong>：チャット名の横のメニューから「プロジェクトに追加」を選ぶと、ふつうの会話をあとからプロジェクトに入れられる</li><li><strong>アーカイブ</strong>：使わなくなったプロジェクトを一覧からしまう。ナレッジや会話は残り、あとで戻せる</li><li><strong>プロジェクトごとのメモリ</strong>：プロジェクトにはそれぞれのメモリがあり、プロジェクトのページの「メモリ」で「アカウントメモリを使用」をオフにすると、ほかの会話の記憶と分けられる</li></ul>
+<p>無料プランは5つまでなので、季節の行事のように一時的な机はアーカイブしておくと、枠をやりくりしやすくなります。アーカイブしたプロジェクトは、アーカイブを解除してから削除する流れになると公式ヘルプに書かれています。</p>
+<h2 id="s9">チームで使うとき（Team・Enterprise）</h2>
+<p>Team・Enterpriseのプランでは、プロジェクトをメンバーと共有できます。公式ヘルプによると、メールアドレスで特定の人を招いたり、組織全体に公開したりでき、権限は「見るだけ（Can view）」と「編集できる（Can edit）」の2つです。管理者が組織のプロジェクト共有をオフにしている場合は、共有できません。</p>
+<p>同じ班で同じ指示とナレッジを使えると、だれが書いても文書の形がそろいやすくなります。会社で使えるかどうかは、管理者に確かめてみてください。</p>
+<p>なお公式ヘルプには、新しい形のプロジェクトがClaude Codeから段階的に始まっていることも書かれています。画面の見た目がこの記事とちがうときは、ヘルプの最新の説明もあわせて見てください。</p>
+<h2 id="s10">確かめた公式の情報</h2>
+<ul><li><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">What are projects?（Claude Help Center）</a></li><li><a href="https://support.claude.com/ja/articles/9519177" target="_blank" rel="noopener">プロジェクトを作成・管理するにはどうすればよいですか？（Claude ヘルプセンター）</a></li><li><a href="https://support.claude.com/ja/articles/10185728" target="_blank" rel="noopener">Claudeのパーソナライゼーション機能を理解する（Claude ヘルプセンター）</a></li></ul>
+<div class="picks"><div class="picks-h">次の一歩に役立つ本・道具</div><div class="pick"><div><strong>Claudeの解説書</strong><span>プロジェクトとスタイルの活かし方</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Claude+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FClaude%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>文章術の本</strong><span>スタイル設定の手本になる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E6%96%87%E7%AB%A0%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E6%2596%2587%25E7%25AB%25A0%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s11">まとめ</h2>
+<ul><li>プロジェクトは、指示と資料をまとめた「専用の机」。中の会話すべてに指示が効く</li><li>無料プランでも5つまで作れる。資料が多いときのRAGモードは有料プラン</li><li>作り方は「プロジェクト」→「+ 新規プロジェクト」→名前と説明を入れる</li><li>指示は「プロジェクト指示を設定」、資料は「+」ボタンから入れる</li><li>チャットどうしはナレッジに入れた情報だけを共有する</li></ul>
+<div class="shop"><div class="shop-name">Claudeの解説書</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Claude+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FClaude%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<p>まずは今日、いちばん前置きが長くなる仕事をひとつ選んで、プロジェクトを1つ作ってみませんか。最後まで読んでくださって、ありがとうございます。あなたなら、最初の机にどんな名前をつけますか？</p><div class="next"><div class="next-h">今日できる次の一歩</div><p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p><p>最後まで読んでくださり、ありがとうございました。</p></div></article><div class="share"><a class="sx" rel="noopener" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fclaude-projects-howto.html&text=Claude%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9%EF%BD%9C%E6%8C%87%E7%A4%BA%E3%81%A8%E8%B3%87%E6%96%99%E3%82%92%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E8%87%AA%E5%88%86%E4%BB%95%E6%A7%98%E3%81%AB">Xでシェア</a><a class="sl" rel="noopener" target="_blank" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fclaude-projects-howto.html">LINEで送る</a><a class="sh" rel="noopener" target="_blank" href="https://b.hatena.ne.jp/entry/panel/?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fclaude-projects-howto.html">はてブ</a></div><div class="author"><div class="avatar">運</div><div><strong>この記事を書いた人：運営者</strong><p>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。</p><p><a href="../about.html">運営者について詳しく</a></p></div></div><div class="related"><h2 class="sec-h">あわせて読みたい</h2><div class="cards"><a class="card" href="../articles/claude-styles.html"><img class="thumb" loading="lazy" src="../img/articles/claude-styles.jpg" alt=""><span class="tag">Claude</span><span class="date">2026-10-23</span><h3>Claudeのスタイル設定はどこ？指示とスキルで文章を自分好みに</h3><p>Claudeの文章の書き方を自分好みに変える方法を、2026年10月の公式ヘルプで確かめた形でまとめました。いまの公式ヘルプでは、口調や形の調整は「Claudeの指示」「プロジェクト指示」「スキル」の3つで行う案内です。それぞれの場所と書き方、仕事と遊びの例を紹介します。</p></a><a class="card" href="../articles/ai-animated-chart.html"><img class="thumb" loading="lazy" src="../img/articles/ai-animated-chart.jpg" alt=""><span class="tag">楽しみ方</span><span class="date">2026-10-23</span><h3>AIでアニメーションするグラフを作る｜数字が動くと伝わる</h3><p>棒がのびる、数字がカウントアップする。そんな動くグラフを、ChatGPT・Claude・Geminiに頼んで作る方法をまとめました。自分の数字を渡して値を正確に保つ頼み方、コピーして使える依頼文、月次報告と家計・ゲームの記録での使い方、専用ツールという選び方も紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-not-working.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-not-working.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示が反映されない・効かないときの見直し方</h3><p>ChatGPTのカスタム指示が反映されない、効かないと感じたときに、上から順に確かめられる7つの見直しどころをまとめました。オンオフの場所、文字数の上限、プロジェクトやGPTsとの関係、メモリや性格との食い違い、指示の書き方まで、公式ヘルプで確かめた内容で紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-template.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</h3><p>ChatGPTのカスタム指示に、そのままコピペして使えるテンプレートを場面別にまとめました。仕事用（メール・報告書・Excel）と遊び用（雑談・料理・旅行）の例、1,500文字の上限に収める書き方のコツ、プロジェクトで指示を分ける方法まで紹介します。</p></a></div></div></main><aside><div class="box"><div class="box-h">運営者</div>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<p style="margin:8px 0 0"><a href="../about.html">プロフィールを見る</a></p></div><div class="box"><div class="box-h">はじめての方におすすめ</div><a class="mini" href="../articles/chatgpt-customize-howto.html"><img loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</span></a><a class="mini" href="../articles/chatgpt-custom-instructions-template.html"><img loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</span></a><a class="mini" href="../articles/gemini-gem-howto.html"><img loading="lazy" src="../img/articles/gemini-gem-howto.jpg" alt=""><span>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</span></a><a class="mini" href="../articles/claude-projects-howto.html"><img loading="lazy" src="../img/articles/claude-projects-howto.jpg" alt=""><span>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</span></a><a class="mini" href="../articles/ai-animated-chart.html"><img loading="lazy" src="../img/articles/ai-animated-chart.jpg" alt=""><span>AIでアニメーションするグラフを作る｜数字が動くと伝わる</span></a></div><div class="box catlist"><div class="box-h">カテゴリ</div><a href="../category/chatgpt.html">ChatGPT<small>5記事</small></a><a href="../category/gemini.html">Gemini<small>1記事</small></a><a href="../category/claude.html">Claude<small>2記事</small></a><a href="../category/copilot.html">Copilot<small>1記事</small></a><a href="../category/play.html">楽しみ方<small>1記事</small></a></div><div class="sticky"><div class="picks"><div class="picks-h">AIをもっと楽しむ次の一歩に</div><div class="pick"><div><strong>生成AIの入門書</strong><span>カスタマイズの前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>自分仕様のAIを仕事に活かす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div></div></aside></div></div>
+<footer><div class="wrap"><div class="fcats"><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></div><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div class="prnote">※本サイトはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div><div>© 2026 AIを楽しくカスタマイズしよう</div></div></footer></body></html>

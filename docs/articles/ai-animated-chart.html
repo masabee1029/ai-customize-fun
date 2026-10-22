@@ -1,0 +1,151 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIでアニメーションするグラフを作る｜数字が動くと伝わる｜AIを楽しくカスタマイズしよう</title><meta name="description" content="棒がのびる、数字がカウントアップする。そんな動くグラフを、ChatGPT・Claude・Geminiに頼んで作る方法をまとめました。自分の数字を渡して値を正確に保つ頼み方、コピーして使える依頼文、月次報告と家計・ゲームの記録での使い方、専用ツールという選び方も紹介します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-customize-fun/articles/ai-animated-chart.html"><meta property="og:title" content="AIでアニメーションするグラフを作る｜数字が動くと伝わる｜AIを楽しくカスタマイズしよう"><meta property="og:description" content="棒がのびる、数字がカウントアップする。そんな動くグラフを、ChatGPT・Claude・Geminiに頼んで作る方法をまとめました。自分の数字を渡して値を正確に保つ頼み方、コピーして使える依頼文、月次報告と家計・ゲームの記録での使い方、専用ツールという選び方も紹介します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-customize-fun/articles/ai-animated-chart.html"><meta property="og:image" content="https://masabee1029.github.io/ai-customize-fun/img/articles/ai-animated-chart.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--soft:#f3f1ec;--accent:#c2410c;--accent2:#7c3aed}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--soft:#23252c;--accent:#fb923c;--accent2:#c4b5fd}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+img{max-width:100%}a{color:var(--accent)}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 8px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+.tagline{font-size:12px;color:var(--muted)}
+.gnav{display:flex;gap:4px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}.gnav::-webkit-scrollbar{display:none}
+.gnav a{flex:0 0 auto;font-size:14px;font-weight:700;color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--soft)}
+.gnav a:hover,.gnav a.on{background:var(--accent);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:24px 0 48px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:8px}}
+.hero{padding:20px 0 8px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 10px}.hero p{color:var(--muted);margin:0;font-size:15px}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px}
+.sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
+.sec-h a{font-size:13px;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
+.prtag{display:inline-block;font-size:11px;padding:0 8px;border:1px solid var(--muted);border-radius:4px;color:var(--muted);margin-left:8px;vertical-align:1px}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:10px}.crumb a{color:var(--muted)}
+article h1{font-size:26px;line-height:1.45;margin:10px 0}
+article h2{font-size:21px;background:var(--soft);border-left:6px solid var(--accent);padding:10px 14px;border-radius:4px;margin-top:44px}
+article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);padding-bottom:4px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 16px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+.lead strong{display:block;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{--bc:#888;display:inline-block;padding:7px 18px;border-radius:999px;background:#000;color:var(--bc);border:1px solid var(--bc);text-decoration:none;font-size:14px;font-weight:700;transition:background .15s}
+.btn:hover{background:#1a1a1a}.btn.amz{--bc:#ff9900}.btn.rkt{--bc:#ff4d4d}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 200px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.pick .ref,.shop .ref{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;font-weight:400}.ref a{color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}.share a{flex:1 1 90px;text-align:center;padding:8px;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.sx{background:#111}.sl{background:#06c755}.sh{background:#00a4de}
+.author{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0;font-size:14px}
+.avatar{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.author p{margin:4px 0 0;color:var(--muted)}
+.related{margin-top:24px}
+.next{background:var(--soft);border:2px dashed var(--accent2);border-radius:12px;padding:14px 18px;margin:32px 0 8px}
+.next-h{font-weight:800;color:var(--accent)}.next p{margin:6px 0 0}
+aside .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px;font-size:14px}
+aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+aside .sticky{position:sticky;top:16px}
+aside .picks{margin:0 0 20px}
+.mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
+.catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
+.catlist small{color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--card);padding:24px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin-right:14px}.fcats{margin-bottom:10px}
+.prnote{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+
+.kx-hero{text-align:center;padding:28px 0 8px}
+.kx-eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.kx-h1{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.3;margin:0 0 16px;letter-spacing:.02em}
+.kx-h1 em{font-style:normal;color:var(--accent)}
+.kx-lead{color:var(--muted);max-width:620px;margin:0 auto 22px;font-size:15px}
+.kx-box{max-width:640px;margin:0 auto 14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.kx-type{min-height:84px;font-size:15px;line-height:1.8}
+.kx-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kx-go{background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:13px;padding:7px 14px;border-radius:99px}
+.kx-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 28px}
+.kx-chips a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--card)}
+.kx-chips a:hover{border-color:var(--accent);color:var(--accent)}
+.kx-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--soft);border-radius:18px;padding:22px 16px;margin:0 0 22px}
+.kx-side{padding:6px}.kx-k{font-size:12px;color:var(--muted)}.kx-v{font-size:clamp(20px,3.4vw,28px);font-weight:800;margin:4px 0}
+.kx-side p{margin:0;font-size:13px;color:var(--muted)}.kx-side.on .kx-v{color:var(--accent)}
+.kx-mid{font-family:serif;font-style:italic;color:var(--muted);font-size:18px}
+@media (max-width:560px){.kx-vs{grid-template-columns:1fr}.kx-mid{margin:-4px 0}}
+.kx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+.kx-stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px}
+.kx-stats b{display:block;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--accent2);font-variant-numeric:tabular-nums}
+.kx-stats span{font-size:12px;color:var(--muted)}
+.kx-steps{list-style:none;padding:0;margin:0 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}
+.kx-steps li{border-top:2px solid var(--accent);padding:10px 4px 0}.kx-steps b{color:var(--accent);font-size:12px;display:block}
+.kx-steps strong{display:block;font-size:15px}.kx-steps span{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.kx-steps{grid-template-columns:1fr}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AIでアニメーションするグラフを作る｜数字が動くと伝わる", "description": "棒がのびる、数字がカウントアップする。そんな動くグラフを、ChatGPT・Claude・Geminiに頼んで作る方法をまとめました。自分の数字を渡して値を正確に保つ頼み方、コピーして使える依頼文、月次報告と家計・ゲームの記録での使い方、専用ツールという選び方も紹介します。", "datePublished": "2026-10-23", "image": "https://masabee1029.github.io/ai-customize-fun/img/articles/ai-animated-chart.jpg", "author": {"@type": "Person", "name": "運営者", "url": "https://masabee1029.github.io/ai-customize-fun/about.html"}, "publisher": {"@type": "Organization", "name": "AIを楽しくカスタマイズしよう"}, "mainEntityOfPage": "https://masabee1029.github.io/ai-customize-fun/articles/ai-animated-chart.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://masabee1029.github.io/ai-customize-fun/index.html"}, {"@type": "ListItem", "position": 2, "name": "楽しみ方", "item": "https://masabee1029.github.io/ai-customize-fun/category/play.html"}, {"@type": "ListItem", "position": 3, "name": "AIでアニメーションするグラフを作る｜数字が動くと伝わる", "item": "https://masabee1029.github.io/ai-customize-fun/articles/ai-animated-chart.html"}]}</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">AIを<span>楽しく</span>カスタマイズしよう</a><span class="tagline">4つのAIを自分好みに</span></div>
+<nav class="gnav"><a href="../index.html">ホーム</a><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html" class="on">楽しみ方</a></nav></div></header>
+<div class="wrap"><div class="layout"><main><div class="crumb"><a href="../index.html">ホーム</a> ＞ <a href="../category/play.html">楽しみ方</a> ＞ AIでアニメーションするグラフを作る｜数字が動くと伝わる</div><article><a class="tag" href="../category/play.html">楽しみ方</a><span class="prtag">PR</span><span class="date">2026-10-23</span><h1>AIでアニメーションするグラフを作る｜数字が動くと伝わる</h1><img class="eyecatch" src="../img/articles/ai-animated-chart.jpg" alt=""><div class="lead"><strong>この記事でわかること</strong>棒がのびる、数字がカウントアップする。そんな動くグラフを、ChatGPT・Claude・Geminiに頼んで作る方法をまとめました。自分の数字を渡して値を正確に保つ頼み方、コピーして使える依頼文、月次報告と家計・ゲームの記録での使い方、専用ツールという選び方も紹介します。</div><p>月次報告の数字、表のままだと見てもらえている気がしない。そんなふうに感じたことはありませんか。<br>あなたの数字は、グラフが動きだすだけで、ぐっと目にとまりやすくなります。棒が下からのびて、最後に「1,240」と止まる。数字が0から増えていく。それだけで、どこが大きく伸びたのかが一瞬で伝わります。<br>この記事では、ChatGPT・Claude・Geminiに頼んで動くグラフを作る方法を紹介します。いちばん大事な「あなたの数字を、1つもずらさずに使ってもらう頼み方」も、コピーして使える形でお見せします。</p>
+<p><strong>確認日：2026年10月23日</strong>（公式のヘルプで確認。画面や名前は変わることがあります）</p>
+<div class="toc"><strong>目次</strong><ol><li><a href="#s1">動くグラフが伝わりやすい理由</a></li><li><a href="#s2">作り方は大きく2つ</a></li><li><a href="#s3">AIのチャットで作れる場所</a></li><li><a href="#s4">コピーして使える依頼文</a></li><li><a href="#s5">数字を正確に保つ4つのコツ</a></li><li><a href="#s6">仕事で使う：月次報告をひと目で伝える</a></li><li><a href="#s7">遊びで使う：家計やゲームの記録を楽しく</a></li><li><a href="#s8">専用のツールという選び方</a></li><li><a href="#s9">確かめた公式の情報</a></li><li><a href="#s10">まとめ</a></li></ol></div><div class="picks"><div class="picks-h">この記事で役立つ本・道具</div><div class="pick"><div><strong>生成AIの入門書</strong><span>遊び方の幅が広がる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>ワイヤレスキーボード</strong><span>ソファでAIと遊ぶ時間に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9+%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%25AF%25E3%2582%25A4%25E3%2583%25A4%25E3%2583%25AC%25E3%2582%25B9%2520%25E3%2582%25AD%25E3%2583%25BC%25E3%2583%259C%25E3%2583%25BC%25E3%2583%2589%2F">楽天</a></div></div><h2 id="s1">動くグラフが伝わりやすい理由</h2>
+<p>止まっているグラフは、全部の棒が同時に目に入ります。動くグラフは、見る人の目を「どこから見ればいいか」へ順番に案内してくれます。</p>
+<div class="tbl"><table><tr><th>動き</th><th>伝わること</th><th>向いている場面</th></tr><tr><td>棒が順番にのびる</td><td>月ごとの増え方、どこで伸びたか</td><td>月次報告、売上や生産数の推移</td></tr><tr><td>数字がカウントアップする</td><td>合計や達成の大きさ</td><td>年間の合計、目標の達成</td></tr><tr><td>並び順が入れかわる</td><td>順位の変化</td><td>製品別の売れ筋、ゲームのランキング</td></tr><tr><td>色が変わる</td><td>目標を超えたかどうか</td><td>不良率が基準内か、予算内か</td></tr></table></div>
+<p>ポイントは、<strong>動きは「見る順番」を決めるためのもの</strong>ということです。動きが多すぎると目が疲れるので、1つのグラフに動きは1〜2種類までにしておくと、すっきり伝わります。</p>
+<h2 id="s2">作り方は大きく2つ</h2>
+<p>AIに動くグラフを作ってもらう方法は、大きく分けて2つあります。</p>
+<div class="tbl"><table><tr><th>方法</th><th>中身</th><th>向いている人</th></tr><tr><td>AIのチャットで作る</td><td>ChatGPT・Claude・Geminiに、HTML（ブラウザで開くページのファイル）として作ってもらう</td><td>ふだん使っているAIで、気軽に試したい人</td></tr><tr><td>専用のツールを使う</td><td>動くグラフ作りに特化したサービスに、数字と希望を伝える</td><td>動画として書き出したい人</td></tr></table></div>
+<p>この記事では、まずAIのチャットで作る方法を中心に紹介し、最後に専用ツールという選び方にもふれます。</p>
+<h2 id="s3">AIのチャットで作れる場所</h2>
+<p>3つのAIには、それぞれ作ったものを会話の横に表示して、その場で動かせる場所があります。</p>
+<p><strong>Claude：アーティファクト</strong></p>
+<p>公式ヘルプでは、アーティファクトは会話の横に開き、編集したり、あとで戻ったり、共有したりできるものと説明されています。作れるものの例として、1ページのウェブサイトや小さな対話型ツールが挙げられています。無料・Pro・Max・Team・Enterpriseの各プランで使え、「設定」の「機能」で、コード実行とファイル作成の設定をオンにしておく必要があります。作ったものはサイドバーの「アーティファクト」のタブにまとまります。</p>
+<p><strong>ChatGPT：キャンバス</strong></p>
+<p>OpenAIのヘルプでは、キャンバスの中のReactやHTMLのコードは、安全に区切られた環境で動かして結果を見られると説明されています。キャンバスは無料と有料の両方のユーザーが使える機能として案内されています。使える操作は、プランや端末、会社のワークスペースの設定によって変わることがあると書かれています。</p>
+<p><strong>Gemini：Canvas</strong></p>
+<p>Geminiのヘルプでは、gemini.google.com の入力欄の下にある「ファイルを追加」のアイコンから「Canvas」を選び、頼みたいことを送ると使えると説明されています。ドキュメントやアプリ、コードを作れて、右上のアイコンからプレビューのエラーを確かめることもできます。Googleの料金ページでは、Canvasは無料プランの機能として載っています。</p>
+<p>どのAIでも、うまく表示されないときは「1つのHTMLファイルにまとめて」と頼むと、そのまま保存して使いやすくなります。</p>
+<h2 id="s4">コピーして使える依頼文</h2>
+<p>数字を正確に保つためのお願いを、あらかじめ入れてあります。【 】の中だけ、あなたの内容に書きかえて使ってください。</p>
+<p><strong>依頼文（動く棒グラフ）</strong></p>
+<ul><li>動く棒グラフを、1つのHTMLファイルで作ってください</li><li>データは次のとおりです。この数字だけを使い、丸めたり、足したり、作ったりしないでください</li><li>【4月 1,180 ／ 5月 1,050 ／ 6月 1,240 ／ 7月 1,310】</li><li>単位は【個】です。グラフのタイトルは【月別の生産数】にしてください</li><li>棒は左から順番に、1本あたり約0.5秒で下からのびるようにしてください</li><li>のびきったら、各棒の上にデータどおりの数字を表示してください</li><li>【6月】の棒だけ色を変えて目立たせてください</li><li>最後に、グラフに使った数字の一覧を表でも出してください（わたしが元の数字と見比べるためです）</li></ul>
+<p><strong>依頼文（カウントアップする数字）</strong></p>
+<ul><li>0から数字が増えて止まる表示を、1つのHTMLファイルで作ってください</li><li>止まる数字は【12,480】、見出しは【今年の出荷数】、単位は【個】です</li><li>この数字は変えないでください。約2秒で止まるようにしてください</li><li>下に小さく【2026年4月〜9月の合計】と表示してください</li></ul>
+<p>最後の「数字の一覧を表でも出して」の一行が、この記事でいちばんのおすすめです。AIは文章や見た目を整えるのが得意な一方で、数字を写すときにまちがえることがあります。表で出してもらえば、元の数字と1つずつ見比べられます。</p>
+<h2 id="s5">数字を正確に保つ4つのコツ</h2>
+<ol><li><strong>数字はあなたが渡す</strong>：「去年の売上でグラフを作って」ではなく、あなたの手元の数字を貼りつけて渡す</li><li><strong>「この数字だけを使って」と書く</strong>：丸めたり、合計を計算しなおしたりしないよう、はっきり伝える</li><li><strong>完成したら見比べる</strong>：グラフに表示された数字と、元の数字を1つずつ確かめる。4か月ぶんなら1分ほどで終わります</li><li><strong>合計や割合は自分で計算した値を渡す</strong>：Excelで出した合計や不良率を、そのまま渡すほうが安心</li></ol>
+<p>Excelの表から渡すときは、必要な列だけをコピーして貼りつけると、AIが読みまちがえにくくなります。会社の数字を社外のAIに入れてよいかは、先に会社のルールを確かめておくと安心です。</p>
+<h2 id="s6">仕事で使う：月次報告をひと目で伝える</h2>
+<p>印刷・製造の現場で、毎月の報告資料を作っているあなたなら、こんな使い方が役立ちます。</p>
+<div class="tbl"><table><tr><th>報告の内容</th><th>動きの案</th></tr><tr><td>月別の生産数</td><td>棒が月ごとに順番にのびる。いちばん多い月だけ色を変える</td></tr><tr><td>不良率の推移</td><td>折れ線が左から右へ描かれる。基準の線を点線で引き、超えた月は赤にする</td></tr><tr><td>年間の合計出荷数</td><td>数字がカウントアップして止まる</td></tr><tr><td>製品別の売上の順位</td><td>3か月ぶんの順位が入れかわる</td></tr></table></div>
+<p>会議でHTMLファイルをブラウザで開いて画面に映せば、報告の最初の10秒で全員の目がそろいます。資料に貼るときは、動きが止まったあとの画面をスクリーンショットにすると、印刷する資料にも使えます。</p>
+<p>毎月同じ形で作るなら、依頼文をメモ帳に残しておき、数字の行だけを書きかえて使うと、翌月からは数分で作れます。残業を30分減らす小さな一歩になります。</p>
+<h2 id="s7">遊びで使う：家計やゲームの記録を楽しく</h2>
+<p>動くグラフは、家の中でも楽しく使えます。</p>
+<div class="tbl"><table><tr><th>記録</th><th>動きの案</th><th>ひとこと</th></tr><tr><td>毎月の食費</td><td>棒が月ごとにのび、予算の線を超えた月だけ色が変わる</td><td>家族で見ると、節約の作戦会議が楽しくなります</td></tr><tr><td>貯金の合計</td><td>数字がカウントアップして止まる</td><td>目標の金額に近づくのが目で見えます</td></tr><tr><td>ゲームのスコアやレベル</td><td>週ごとの記録が順番にのびる</td><td>自己ベストの週を光らせると盛り上がります</td></tr><tr><td>子どもの読書の冊数</td><td>本のアイコンが1冊ずつ増える</td><td>「あと何冊で目標」が伝わりやすい</td></tr><tr><td>歩いた歩数</td><td>1週間の折れ線が描かれる</td><td>運動のやる気づくりに</td></tr></table></div>
+<p>家計の数字も、仕事と同じように「この数字だけを使って」と書いておくと安心です。子どもと一緒に、色や動きの速さを決めながら作るのも楽しい時間になります。</p>
+<h2 id="s8">専用のツールという選び方</h2>
+<p>AIのチャットで作る方法のほかに、動くグラフ作りに特化したサービスもあります。たとえば、iArt.aiのアニメーショングラフ作成ページは、みずからを「AIモーショングラフィックスプラットフォーム」と紹介しており、CSV（表のデータを文字で表した形式）や数字を貼りつけて、グラフの種類や雰囲気を文章で伝えると、動くグラフを作るしくみだと説明しています。同じページでは、MP4の動画として書き出せることや、登録時のクレジットで試せることが案内されています。</p>
+<p>動画として保存してSNSに載せたい、という目的なら、こうした専用ツールも選び方のひとつです。料金や書き出しの条件、商用で使えるかどうかは、それぞれのサービスの公式ページで確かめてください。どの方法でも、あなたの数字をそのまま使っているかを最後に見比べる習慣は役立ちます。</p>
+<div class="shop"><div class="shop-name">グラフで伝える本</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%87%E3%83%BC%E3%82%BF%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%A9%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2587%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%2593%25E3%2582%25B8%25E3%2583%25A5%25E3%2582%25A2%25E3%2583%25A9%25E3%2582%25A4%25E3%2582%25BC%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<h2 id="s9">確かめた公式の情報</h2>
+<ul><li><a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener">What are artifacts and how do I use them?（Claude Help Center）</a></li><li><a href="https://help.openai.com/ja-jp/articles/9930697-what-is-the-canvas-feature-in-chatgpt-and-how-do-i-use-it" target="_blank" rel="noopener">ChatGPT のキャンバス機能（OpenAI ヘルプセンター）</a></li><li><a href="https://support.google.com/gemini/answer/16047321?hl=ja&amp;co=GENIE.Platform%3DDesktop" target="_blank" rel="noopener">Canvas でドキュメントやアプリなどを作成する（Gemini アプリ ヘルプ）</a></li><li><a href="https://gemini.google/jp/subscriptions/" target="_blank" rel="noopener">Gemini のプランと料金（Google 公式）</a></li><li><a href="https://www.iart.ai/jp/animated-chart" target="_blank" rel="noopener">アニメーショングラフ作成（iArt.ai）</a></li></ul>
+<div class="picks"><div class="picks-h">次の一歩に役立つ本・道具</div><div class="pick"><div><strong>生成AIの入門書</strong><span>遊び方の幅が広がる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>ワイヤレスキーボード</strong><span>ソファでAIと遊ぶ時間に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9+%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%25AF%25E3%2582%25A4%25E3%2583%25A4%25E3%2583%25AC%25E3%2582%25B9%2520%25E3%2582%25AD%25E3%2583%25BC%25E3%2583%259C%25E3%2583%25BC%25E3%2583%2589%2F">楽天</a></div></div><h2 id="s10">まとめ</h2>
+<ul><li>動くグラフは、見る人の目を「見る順番」へ案内してくれる。動きは1〜2種類までがすっきり</li><li>ChatGPTのキャンバス、Claudeのアーティファクト、GeminiのCanvasで、HTMLの動くグラフを作って表示できる</li><li>依頼文には「この数字だけを使い、丸めたり作ったりしないで」と「数字の一覧を表でも出して」を入れる</li><li>完成したら、表示された数字と元の数字を1つずつ見比べる</li><li>動画で保存したいときは、iArt.aiのような専用ツールも選び方のひとつ</li></ul>
+<p>まずは今日、手元にある4つの数字で、動く棒グラフを1つ作ってみませんか。最後まで読んでくださって、ありがとうございます。あなたなら、どの数字を最初に動かしてみたいですか？</p><div class="next"><div class="next-h">今日できる次の一歩</div><p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p><p>最後まで読んでくださり、ありがとうございました。</p></div></article><div class="share"><a class="sx" rel="noopener" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fai-animated-chart.html&text=AI%E3%81%A7%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%99%E3%82%8B%E3%82%B0%E3%83%A9%E3%83%95%E3%82%92%E4%BD%9C%E3%82%8B%EF%BD%9C%E6%95%B0%E5%AD%97%E3%81%8C%E5%8B%95%E3%81%8F%E3%81%A8%E4%BC%9D%E3%82%8F%E3%82%8B">Xでシェア</a><a class="sl" rel="noopener" target="_blank" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fai-animated-chart.html">LINEで送る</a><a class="sh" rel="noopener" target="_blank" href="https://b.hatena.ne.jp/entry/panel/?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fai-animated-chart.html">はてブ</a></div><div class="author"><div class="avatar">運</div><div><strong>この記事を書いた人：運営者</strong><p>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。</p><p><a href="../about.html">運営者について詳しく</a></p></div></div><div class="related"><h2 class="sec-h">あわせて読みたい</h2><div class="cards"><a class="card" href="../articles/chatgpt-custom-instructions-not-working.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-not-working.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示が反映されない・効かないときの見直し方</h3><p>ChatGPTのカスタム指示が反映されない、効かないと感じたときに、上から順に確かめられる7つの見直しどころをまとめました。オンオフの場所、文字数の上限、プロジェクトやGPTsとの関係、メモリや性格との食い違い、指示の書き方まで、公式ヘルプで確かめた内容で紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-template.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</h3><p>ChatGPTのカスタム指示に、そのままコピペして使えるテンプレートを場面別にまとめました。仕事用（メール・報告書・Excel）と遊び用（雑談・料理・旅行）の例、1,500文字の上限に収める書き方のコツ、プロジェクトで指示を分ける方法まで紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-vs-memory.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-vs-memory.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示とメモリの違い｜使い分けのコツ</h3><p>ChatGPTのカスタム指示とメモリは、どちらも「自分のことを分かってもらう」しくみですが、書く人・効く範囲・消し方がちがいます。公式ヘルプで確かめた違いを表で比べ、仕事と遊びでの使い分け、メモリの確認・オフ・削除の手順、一時チャットの使いどころまで紹介します。</p></a><a class="card" href="../articles/chatgpt-customize-howto.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</h3><p>ChatGPTを自分好みにする3つのつまみ「基本のスタイルとトーン（性格）」「カスタム指示」「メモリ」の場所と使い方を、公式ヘルプで確かめた手順でまとめました。1,500文字まで書ける指示の入れ方、仕事用と遊び用の設定例、うまくいかないときの見直し先まで紹介します。</p></a></div></div></main><aside><div class="box"><div class="box-h">運営者</div>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<p style="margin:8px 0 0"><a href="../about.html">プロフィールを見る</a></p></div><div class="box"><div class="box-h">はじめての方におすすめ</div><a class="mini" href="../articles/chatgpt-customize-howto.html"><img loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</span></a><a class="mini" href="../articles/chatgpt-custom-instructions-template.html"><img loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</span></a><a class="mini" href="../articles/gemini-gem-howto.html"><img loading="lazy" src="../img/articles/gemini-gem-howto.jpg" alt=""><span>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</span></a><a class="mini" href="../articles/claude-projects-howto.html"><img loading="lazy" src="../img/articles/claude-projects-howto.jpg" alt=""><span>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</span></a><a class="mini" href="../articles/ai-animated-chart.html"><img loading="lazy" src="../img/articles/ai-animated-chart.jpg" alt=""><span>AIでアニメーションするグラフを作る｜数字が動くと伝わる</span></a></div><div class="box catlist"><div class="box-h">カテゴリ</div><a href="../category/chatgpt.html">ChatGPT<small>5記事</small></a><a href="../category/gemini.html">Gemini<small>1記事</small></a><a href="../category/claude.html">Claude<small>2記事</small></a><a href="../category/copilot.html">Copilot<small>1記事</small></a><a href="../category/play.html">楽しみ方<small>1記事</small></a></div><div class="sticky"><div class="picks"><div class="picks-h">AIをもっと楽しむ次の一歩に</div><div class="pick"><div><strong>生成AIの入門書</strong><span>カスタマイズの前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>自分仕様のAIを仕事に活かす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div></div></aside></div></div>
+<footer><div class="wrap"><div class="fcats"><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></div><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div class="prnote">※本サイトはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div><div>© 2026 AIを楽しくカスタマイズしよう</div></div></footer></body></html>

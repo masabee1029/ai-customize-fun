@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://masabee1029.github.io/ai-customize-fun/sitemap.xml

@@ -1,0 +1,132 @@
+{
+ "logo_html": "AIを<span>楽しく</span>カスタマイズしよう",
+ "colors": {
+  "ACCENT_L": "#c2410c",
+  "ACCENT2_L": "#7c3aed",
+  "ACCENT_D": "#fb923c",
+  "ACCENT2_D": "#c4b5fd"
+ },
+ "hero_title": "あなたのAIを、自分好みに。",
+ "hero_text": "ChatGPT・Gemini・Claude・Copilotの4つのAIを、口調・性格・答え方まで自分仕様にする方法を、手順とコピペできる例でお伝えします。",
+ "home_description": "ChatGPTのカスタム指示・GPTs、GeminiのGem、Claudeのプロジェクトとスタイル、Copilotのエージェント。4つのAIを自分好みにカスタマイズするやり方を、コピペできる例つきで紹介。",
+ "home_picks_title": "AIをもっと楽しむ次の一歩に",
+ "picks_title_short": "この記事で役立つ本・道具",
+ "picks_title_long": "次の一歩に役立つ本・道具",
+ "about_html": "<p>「AIを楽しくカスタマイズしよう」は、ChatGPT・Gemini・Claude・Copilotの4つのAIを、あなたの口調・仕事・好みに合わせて“自分専用”にするやり方を紹介するサイトです。カスタム指示、GPTs、Gem、プロジェクト、スタイル、エージェントといった機能を、手順とコピペできる例でお伝えします。</p><p>運営者は、大手印刷会社で約20年、製造・品質管理・営業支援に携わったのち独立し、いまは広告・ブランドの仕事で毎日AIを使っています。毎回同じ説明を書く手間を、1回の設定で減らせた体験をもとに、仕事にも遊びにも使える形でお伝えします。</p><p>数ある情報の中から、このサイトを見つけてくださり、ありがとうございます。</p><h2>記事の作り方</h2><p>記事の下書きにはAIを活用し、内容は各サービスの公式ヘルプをもとに確認しています。画面の名前や機能、使えるプランは変わることがあるため、各記事に確認日を書いています。設定する前に、公式の情報もあわせて確かめていただくと安心です。</p>",
+ "picks": {
+  "ChatGPT": [
+   [
+    "ChatGPT 本 入門",
+    "ChatGPTの入門書",
+    "設定の前に全体像を"
+   ],
+   [
+    "プロンプト 本",
+    "プロンプトの本",
+    "カスタム指示の書き方に効く"
+   ]
+  ],
+  "Gemini": [
+   [
+    "Gemini 本",
+    "Geminiの解説書",
+    "Gemの作り方も分かる"
+   ],
+   [
+    "Google Workspace 本",
+    "Google Workspaceの本",
+    "ドキュメントや表計算と一緒に"
+   ]
+  ],
+  "Claude": [
+   [
+    "Claude 本",
+    "Claudeの解説書",
+    "プロジェクトとスタイルの活かし方"
+   ],
+   [
+    "文章術 本",
+    "文章術の本",
+    "スタイル設定の手本になる"
+   ]
+  ],
+  "Copilot": [
+   [
+    "Copilot 本",
+    "Copilotの解説書",
+    "Word・Excel・Teamsでの使い方"
+   ],
+   [
+    "Microsoft 365 本",
+    "Microsoft 365の本",
+    "会社のPCの機能を見直せる"
+   ]
+  ],
+  "楽しみ方": [
+   [
+    "生成AI 本 入門",
+    "生成AIの入門書",
+    "遊び方の幅が広がる"
+   ],
+   [
+    "ワイヤレス キーボード",
+    "ワイヤレスキーボード",
+    "ソファでAIと遊ぶ時間に"
+   ]
+  ]
+ },
+ "default_picks": [
+  [
+   "生成AI 本 入門",
+   "生成AIの入門書",
+   "カスタマイズの前に全体像を"
+  ],
+  [
+   "生成AI 仕事術 本",
+   "生成AIの仕事術の本",
+   "自分仕様のAIを仕事に活かす"
+  ]
+ ],
+ "category_slugs": {
+  "ChatGPT": "chatgpt",
+  "Gemini": "gemini",
+  "Claude": "claude",
+  "Copilot": "copilot",
+  "楽しみ方": "play"
+ },
+ "og": {
+  "line1": "AIを楽しく",
+  "line2": "カスタマイズしよう",
+  "sub": "4つのAIを自分好みに",
+  "rings": [
+   "#c2410c",
+   "#fb923c",
+   "#7c3aed",
+   "#c4b5fd"
+  ]
+ },
+ "images": {
+  "motif": "shapes",
+  "bg": "#1c1208",
+  "colors": [
+   "#c2410c",
+   "#fb923c",
+   "#7c3aed",
+   "#c4b5fd"
+  ]
+ },
+ "profile_html": "大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。",
+ "next_step_html": "<p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p><p>最後まで読んでくださり、ありがとうございました。</p>",
+ "refs": {
+  "_label": "2026年10月の人気"
+ },
+ "featured": [
+  "chatgpt-customize-howto",
+  "chatgpt-custom-instructions-template",
+  "gemini-gem-howto",
+  "claude-projects-howto",
+  "ai-animated-chart"
+ ],
+ "hero_html": "<section class=\"kx-hero\">\n<p class=\"kx-eyebrow\">4つのAIのカスタマイズ入門</p>\n<h1 class=\"kx-h1\">あなたのAIを、<br><em>自分好み</em>にしよう。</h1>\n<p class=\"kx-lead\">口調、性格、答え方。1回設定すれば、次の会話からずっと効きます。ChatGPT・Gemini・Claude・Copilotのやり方を、コピペできる例つきでお伝えします。</p>\n<div class=\"kx-box\" aria-label=\"カスタム指示の例\"><div class=\"kx-type\" data-text=\"私は印刷会社の会社員です。結論から先に、やさしい言葉で答えてください。最後に次の一歩を1つ添えてください。\"></div><div class=\"kx-bar\"><span>カスタム指示の例</span><a class=\"kx-go\" href=\"articles/chatgpt-custom-instructions-template.html\">例を見る →</a></div></div>\n<div class=\"kx-chips\"><a href=\"category/chatgpt.html\">ChatGPT</a><a href=\"category/gemini.html\">Gemini</a><a href=\"category/claude.html\">Claude</a><a href=\"category/copilot.html\">Copilot</a><a href=\"category/play.html\">楽しみ方</a></div>\n<div class=\"kx-vs\"><div class=\"kx-side\"><div class=\"kx-k\">設定しないと</div><div class=\"kx-v\">毎回、前置き</div><p>「私は〜です」「やさしく」と、会話のたびに書き直し</p></div><div class=\"kx-mid\">vs</div><div class=\"kx-side on\"><div class=\"kx-k\">設定すると</div><div class=\"kx-v\">1回書けば、毎回</div><p>呼び名も口調も、新しい会話で最初から反映</p></div></div>\n<div class=\"kx-stats\"><div><b class=\"kx-n\" data-n=\"4\">4</b><span>つのAIのやり方</span></div><div><b class=\"kx-n\" data-n=\"{N_ARTICLES}\">{N_ARTICLES}</b><span>本の記事</span></div><div><b class=\"kx-n\" data-n=\"3\">3</b><span>ステップで設定</span></div></div>\n<ol class=\"kx-steps\"><li><b>01</b><strong>自分のことを書く</strong><span>仕事・呼び名・好きなこと</span></li><li><b>02</b><strong>答え方を決める</strong><span>口調・長さ・形式</span></li><li><b>03</b><strong>試して直す</strong><span>1つ聞いて、ずれを直す</span></li></ol>\n</section>\n<script>(function(){var r=window.matchMedia&&matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\nvar t=document.querySelector(\".kx-type\");if(t){var s=t.getAttribute(\"data-text\");if(r){t.textContent=s}else{var i=0;(function f(){t.textContent=s.slice(0,i)+(i<s.length?\"▍\":\"\");if(i++<s.length)setTimeout(f,55)})()}}\nif(r||!(\"IntersectionObserver\" in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var el=e.target,n=+el.getAttribute(\"data-n\"),t0=null;function st(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1200,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st)}requestAnimationFrame(st)})});document.querySelectorAll(\".kx-n\").forEach(function(el){io.observe(el)})})();</script>",
+ "extra_css": "\n.kx-hero{text-align:center;padding:28px 0 8px}\n.kx-eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 10px}\n.kx-h1{font-family:\"Hiragino Mincho ProN\",\"Yu Mincho\",\"Noto Serif JP\",serif;font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.3;margin:0 0 16px;letter-spacing:.02em}\n.kx-h1 em{font-style:normal;color:var(--accent)}\n.kx-lead{color:var(--muted);max-width:620px;margin:0 auto 22px;font-size:15px}\n.kx-box{max-width:640px;margin:0 auto 14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px;box-shadow:0 8px 28px rgba(0,0,0,.06)}\n.kx-type{min-height:84px;font-size:15px;line-height:1.8}\n.kx-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}\n.kx-go{background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:13px;padding:7px 14px;border-radius:99px}\n.kx-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 28px}\n.kx-chips a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--card)}\n.kx-chips a:hover{border-color:var(--accent);color:var(--accent)}\n.kx-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--soft);border-radius:18px;padding:22px 16px;margin:0 0 22px}\n.kx-side{padding:6px}.kx-k{font-size:12px;color:var(--muted)}.kx-v{font-size:clamp(20px,3.4vw,28px);font-weight:800;margin:4px 0}\n.kx-side p{margin:0;font-size:13px;color:var(--muted)}.kx-side.on .kx-v{color:var(--accent)}\n.kx-mid{font-family:serif;font-style:italic;color:var(--muted);font-size:18px}\n@media (max-width:560px){.kx-vs{grid-template-columns:1fr}.kx-mid{margin:-4px 0}}\n.kx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}\n.kx-stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px}\n.kx-stats b{display:block;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--accent2);font-variant-numeric:tabular-nums}\n.kx-stats span{font-size:12px;color:var(--muted)}\n.kx-steps{list-style:none;padding:0;margin:0 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}\n.kx-steps li{border-top:2px solid var(--accent);padding:10px 4px 0}.kx-steps b{color:var(--accent);font-size:12px;display:block}\n.kx-steps strong{display:block;font-size:15px}.kx-steps span{font-size:12px;color:var(--muted)}\n@media (max-width:560px){.kx-steps{grid-template-columns:1fr}}\n"
+}

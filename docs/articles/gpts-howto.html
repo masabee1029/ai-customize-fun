@@ -1,0 +1,156 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法｜AIを楽しくカスタマイズしよう</title><meta name="description" content="GPTsの作り方を、2026年10月の公式ヘルプで確かめました。いまは個人アカウント（Free・Go・Plus・Pro）では新しいGPTを作れず、Business・Enterprise・Eduのワークスペースで作れます。作る手順、無料でできること（GPTsを使う・プロジェクトで自分専用にする）、移行先のプラグインまで紹介します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-customize-fun/articles/gpts-howto.html"><meta property="og:title" content="GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法｜AIを楽しくカスタマイズしよう"><meta property="og:description" content="GPTsの作り方を、2026年10月の公式ヘルプで確かめました。いまは個人アカウント（Free・Go・Plus・Pro）では新しいGPTを作れず、Business・Enterprise・Eduのワークスペースで作れます。作る手順、無料でできること（GPTsを使う・プロジェクトで自分専用にする）、移行先のプラグインまで紹介します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-customize-fun/articles/gpts-howto.html"><meta property="og:image" content="https://masabee1029.github.io/ai-customize-fun/img/articles/gpts-howto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--soft:#f3f1ec;--accent:#c2410c;--accent2:#7c3aed}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--soft:#23252c;--accent:#fb923c;--accent2:#c4b5fd}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+img{max-width:100%}a{color:var(--accent)}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 8px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+.tagline{font-size:12px;color:var(--muted)}
+.gnav{display:flex;gap:4px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}.gnav::-webkit-scrollbar{display:none}
+.gnav a{flex:0 0 auto;font-size:14px;font-weight:700;color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--soft)}
+.gnav a:hover,.gnav a.on{background:var(--accent);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:24px 0 48px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:8px}}
+.hero{padding:20px 0 8px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 10px}.hero p{color:var(--muted);margin:0;font-size:15px}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px}
+.sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
+.sec-h a{font-size:13px;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
+.prtag{display:inline-block;font-size:11px;padding:0 8px;border:1px solid var(--muted);border-radius:4px;color:var(--muted);margin-left:8px;vertical-align:1px}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:10px}.crumb a{color:var(--muted)}
+article h1{font-size:26px;line-height:1.45;margin:10px 0}
+article h2{font-size:21px;background:var(--soft);border-left:6px solid var(--accent);padding:10px 14px;border-radius:4px;margin-top:44px}
+article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);padding-bottom:4px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 16px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+.lead strong{display:block;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{--bc:#888;display:inline-block;padding:7px 18px;border-radius:999px;background:#000;color:var(--bc);border:1px solid var(--bc);text-decoration:none;font-size:14px;font-weight:700;transition:background .15s}
+.btn:hover{background:#1a1a1a}.btn.amz{--bc:#ff9900}.btn.rkt{--bc:#ff4d4d}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 200px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.pick .ref,.shop .ref{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;font-weight:400}.ref a{color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}.share a{flex:1 1 90px;text-align:center;padding:8px;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.sx{background:#111}.sl{background:#06c755}.sh{background:#00a4de}
+.author{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0;font-size:14px}
+.avatar{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.author p{margin:4px 0 0;color:var(--muted)}
+.related{margin-top:24px}
+.next{background:var(--soft);border:2px dashed var(--accent2);border-radius:12px;padding:14px 18px;margin:32px 0 8px}
+.next-h{font-weight:800;color:var(--accent)}.next p{margin:6px 0 0}
+aside .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px;font-size:14px}
+aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+aside .sticky{position:sticky;top:16px}
+aside .picks{margin:0 0 20px}
+.mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
+.catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
+.catlist small{color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--card);padding:24px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin-right:14px}.fcats{margin-bottom:10px}
+.prnote{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+
+.kx-hero{text-align:center;padding:28px 0 8px}
+.kx-eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.kx-h1{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.3;margin:0 0 16px;letter-spacing:.02em}
+.kx-h1 em{font-style:normal;color:var(--accent)}
+.kx-lead{color:var(--muted);max-width:620px;margin:0 auto 22px;font-size:15px}
+.kx-box{max-width:640px;margin:0 auto 14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.kx-type{min-height:84px;font-size:15px;line-height:1.8}
+.kx-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kx-go{background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:13px;padding:7px 14px;border-radius:99px}
+.kx-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 28px}
+.kx-chips a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--card)}
+.kx-chips a:hover{border-color:var(--accent);color:var(--accent)}
+.kx-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--soft);border-radius:18px;padding:22px 16px;margin:0 0 22px}
+.kx-side{padding:6px}.kx-k{font-size:12px;color:var(--muted)}.kx-v{font-size:clamp(20px,3.4vw,28px);font-weight:800;margin:4px 0}
+.kx-side p{margin:0;font-size:13px;color:var(--muted)}.kx-side.on .kx-v{color:var(--accent)}
+.kx-mid{font-family:serif;font-style:italic;color:var(--muted);font-size:18px}
+@media (max-width:560px){.kx-vs{grid-template-columns:1fr}.kx-mid{margin:-4px 0}}
+.kx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+.kx-stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px}
+.kx-stats b{display:block;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--accent2);font-variant-numeric:tabular-nums}
+.kx-stats span{font-size:12px;color:var(--muted)}
+.kx-steps{list-style:none;padding:0;margin:0 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}
+.kx-steps li{border-top:2px solid var(--accent);padding:10px 4px 0}.kx-steps b{color:var(--accent);font-size:12px;display:block}
+.kx-steps strong{display:block;font-size:15px}.kx-steps span{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.kx-steps{grid-template-columns:1fr}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法", "description": "GPTsの作り方を、2026年10月の公式ヘルプで確かめました。いまは個人アカウント（Free・Go・Plus・Pro）では新しいGPTを作れず、Business・Enterprise・Eduのワークスペースで作れます。作る手順、無料でできること（GPTsを使う・プロジェクトで自分専用にする）、移行先のプラグインまで紹介します。", "datePublished": "2026-10-23", "image": "https://masabee1029.github.io/ai-customize-fun/img/articles/gpts-howto.jpg", "author": {"@type": "Person", "name": "運営者", "url": "https://masabee1029.github.io/ai-customize-fun/about.html"}, "publisher": {"@type": "Organization", "name": "AIを楽しくカスタマイズしよう"}, "mainEntityOfPage": "https://masabee1029.github.io/ai-customize-fun/articles/gpts-howto.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://masabee1029.github.io/ai-customize-fun/index.html"}, {"@type": "ListItem", "position": 2, "name": "ChatGPT", "item": "https://masabee1029.github.io/ai-customize-fun/category/chatgpt.html"}, {"@type": "ListItem", "position": 3, "name": "GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法", "item": "https://masabee1029.github.io/ai-customize-fun/articles/gpts-howto.html"}]}</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">AIを<span>楽しく</span>カスタマイズしよう</a><span class="tagline">4つのAIを自分好みに</span></div>
+<nav class="gnav"><a href="../index.html">ホーム</a><a href="../category/chatgpt.html" class="on">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></nav></div></header>
+<div class="wrap"><div class="layout"><main><div class="crumb"><a href="../index.html">ホーム</a> ＞ <a href="../category/chatgpt.html">ChatGPT</a> ＞ GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法</div><article><a class="tag" href="../category/chatgpt.html">ChatGPT</a><span class="prtag">PR</span><span class="date">2026-10-23</span><h1>GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法</h1><img class="eyecatch" src="../img/articles/gpts-howto.jpg" alt=""><div class="lead"><strong>この記事でわかること</strong>GPTsの作り方を、2026年10月の公式ヘルプで確かめました。いまは個人アカウント（Free・Go・Plus・Pro）では新しいGPTを作れず、Business・Enterprise・Eduのワークスペースで作れます。作る手順、無料でできること（GPTsを使う・プロジェクトで自分専用にする）、移行先のプラグインまで紹介します。</div><p>「自分専用のChatGPTを作ってみたい」と思って、GPTsの作り方を探していませんか。<br>先に、あなたの時間を節約できる大事なお知らせからです。2026年10月23日に公式ヘルプを確かめたところ、<strong>Free・Go・Plus・Proの個人アカウントでは、新しいGPTの作成と公開はできなくなっています</strong>。GPTsを作れるのは、Business・Enterprise・Eduのワークスペースで、設定と権限で許可されている人です。<br>それでも、無料のままでも「自分専用」に近いChatGPTは作れます。この記事では、GPTsを作る手順と、個人アカウントで今日からできる代わりの方法を、公式ヘルプで確かめた内容でまとめました。</p>
+<p><strong>確認日：2026年10月23日</strong>（公式のヘルプで確認。画面や名前は変わることがあります）</p>
+<div class="toc"><strong>目次</strong><ol><li><a href="#s1">まず、いまのGPTsの状況を整理</a></li><li><a href="#s2">無料でできること1：GPTsを探して使う</a></li><li><a href="#s3">無料でできること2：プロジェクトで「自分専用」を作る</a></li><li><a href="#s4">無料でできること3：カスタム指示と性格で全体を自分好みに</a></li><li><a href="#s5">会社のワークスペースで作る手順</a></li><li><a href="#s6">これからの移行先「プラグイン」も見ておく</a></li><li><a href="#s7">以前にGPTを作った人へ</a></li><li><a href="#s8">確かめた公式の情報</a></li><li><a href="#s9">まとめ</a></li></ol></div><div class="picks"><div class="picks-h">この記事で役立つ本・道具</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>設定の前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの本</strong><span>カスタム指示の書き方に効く</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">まず、いまのGPTsの状況を整理</h2>
+<p>公式ヘルプ（GPTの作成と編集、GPTs in ChatGPT、無料版のよくある質問）で確かめた内容を表にしました。</p>
+<div class="tbl"><table><tr><th>項目</th><th>個人アカウント（Free・Go・Plus・Pro）</th><th>Business・Enterprise・Edu</th></tr><tr><td>GPTsを使う</td><td>使える（ログインが必要）</td><td>使える</td></tr><tr><td>新しいGPTを作る</td><td>できない</td><td>ワークスペースの設定と権限で許可されていればできる</td></tr><tr><td>GPTを公開する</td><td>できない</td><td>設定と権限による</td></tr><tr><td>以前に作ったGPTを編集</td><td>プランと権限の条件を満たせばできる</td><td>設定と権限による</td></tr></table></div>
+<p>さらに、公式ヘルプの冒頭には、カスタムGPTの提供終了を予定していること、代わりにワークフローを「プラグイン」へ移すことをすすめる、というお知らせがあります。</p>
+<ul><li>対象のEnterpriseワークスペースでは、2026年12月11日に提供終了の予定</li><li>移行の仕組みは2026年9月17日の提供開始予定（すべてのアカウントで同時に使えるとは限らない）</li><li>その他のプランも同じスケジュールに従う予定で、アカウントごとのお知らせを確認するよう案内されている</li></ul>
+<p>「これから時間をかけて作る」より、「いまあるGPTsを上手に使い、自分専用の部分はほかの方法で作る」ほうが、あなたの手間は少なくてすみそうです。</p>
+<h2 id="s2">無料でできること1：GPTsを探して使う</h2>
+<p>無料版のよくある質問には、無料版でできることとして「GPTを見つけて使う」が挙がっています。</p>
+<p><strong>使い方</strong></p>
+<ol><li>ChatGPTのサイドバーで「GPT を探す」を開く（または chatgpt.com/gpts を開く）</li><li>気になるGPTを選び、説明や会話のきっかけを見る</li><li>メッセージを送って話しはじめる</li></ol>
+<p>ウェブ版では、ふだんの会話の中で「@」と入力してGPTを呼び出せます。公式ヘルプによると、次のメッセージがそのGPTに届き、会話の流れはそのまま続きます。この「@」での呼び出しは、iOS・Androidのアプリにはないと書かれています。</p>
+<p><strong>無料版での回数</strong></p>
+<p>公式ヘルプでは、無料版のGPTの利用は、無料版のモデルの上限にしたがうと説明されています。上限に達すると、リセットされるまでGPTは一時停止し、リセットの時刻はChatGPTの画面に表示されます。</p>
+<p><strong>知っておくと便利なこと</strong></p>
+<ul><li>GPTとの会話では、あなたの保存したメモリ、カスタム指示、以前の会話は使われない（毎回まっさらから始まる）</li><li>GPTを作った人は、あなたとGPTの個々の会話を見ることはできない</li><li>GPTが外部のアプリやAPIを使う場合、入力の一部が外部のサービスに送られることがある</li></ul>
+<p>最後の点は、会社の資料を扱うときに大事です。外部とつながるGPTに社外秘の情報を入れないようにしておくと安心です。</p>
+<h2 id="s3">無料でできること2：プロジェクトで「自分専用」を作る</h2>
+<p>「自分の書き方を覚えた、仕事用のChatGPTがほしい」という願いは、プロジェクトでかなり近い形にできます。公式ヘルプによると、プロジェクトは関連するチャット・ファイル・指示をまとめて管理できる場所で、ログインしたChatGPTユーザーがプランに応じて使えます。プロジェクトの共有は、無料版でも使えると書かれています。</p>
+<p><strong>作り方</strong></p>
+<ol><li>サイドバーで「新しいプロジェクト」を選ぶ</li><li>名前を入れ、アイコンと色を選ぶ</li><li>その他のオプションメニュー（•••）→「プロジェクト設定」で、指示を書く</li><li>参考にしてほしい資料（PDF、スプレッドシート、文書など）を追加する</li></ol>
+<p>プロジェクトの指示は、そのプロジェクトの中だけで使われ、ふだんのカスタム指示より優先されます。アップロードできるファイル数はプランで変わり、公式ヘルプの共有の上限では、無料版はファイル5個・共同作業者5人までと書かれています。</p>
+<p>GPTsと見比べると、こんな関係です。</p>
+<div class="tbl"><table><tr><th>GPTsの欄</th><th>プロジェクトでの置きかえ</th></tr><tr><td>指示</td><td>プロジェクト設定の指示</td></tr><tr><td>ナレッジ（ファイル）</td><td>プロジェクトに追加するファイル</td></tr><tr><td>会話のきっかけ</td><td>よく使う頼み方をメモしておく</td></tr><tr><td>共有</td><td>プロジェクトの共有</td></tr></table></div>
+<p><strong>仕事用の例：「報告書つくり係」</strong></p>
+<div class="tbl"><table><tr><th>指示に書くこと</th><th>例</th></tr><tr><td>役割</td><td>印刷工場の品質報告書を下書きする係</td></tr><tr><td>書式</td><td>概要・経緯・原因・対策・今後の予定の順</td></tr><tr><td>表</td><td>対策は「内容・担当・期限」の表に</td></tr><tr><td>言葉</td><td>です・ます調、事実と推測を分ける</td></tr><tr><td>迷ったら</td><td>足りない情報は【　】で空けて質問する</td></tr></table></div>
+<p>ファイルには、過去の報告書のひな形を1つ入れておくと、形がそろいやすくなります。</p>
+<p><strong>遊び用の例：「週末ごはん係」</strong></p>
+<ul><li>家族4人分のレシピを、材料・手順5ステップ以内で</li><li>冷蔵庫の中身を伝えたら、買い足しが少ない案から</li><li>最後に「今日のひとことおすすめ」を添える</li></ul>
+<p>指示の書き方の例は、<a href="chatgpt-custom-instructions-template.html">ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</a>にもまとめています。</p>
+<h2 id="s4">無料でできること3：カスタム指示と性格で全体を自分好みに</h2>
+<p>プロジェクトの外でも、カスタム指示と性格（基本のスタイルとトーン）で、ふだんのChatGPTを自分用にできます。カスタム指示はすべてのプランで使え、FreeとGoは1,500文字まで書けます。くわしい手順は<a href="chatgpt-customize-howto.html">ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</a>で紹介しています。</p>
+<h2 id="s5">会社のワークスペースで作る手順</h2>
+<p>あなたの会社がChatGPT Business・Enterprise・Eduを使っていて、GPTを作る権限があるなら、次の手順で作れます。作成と編集はウェブ版で行い、モバイルアプリでは使うことはできても作ることはできません。</p>
+<ol><li>サイドバーで「GPT を探す」を開く（または chatgpt.com/gpts）</li><li>「作成」を選んで、GPTビルダーを開く</li><li>作り方を選ぶ。「対話型ビルダー」は、作りたいものを話すと下書きを手伝ってくれる。「設定画面」は、各欄を自分で編集する</li><li>名前・説明・会話のきっかけ・指示を書く</li><li>必要ならナレッジ（ファイル）を追加し、機能を選ぶ</li><li>プレビューで試して、準備ができたら「作成」を選ぶ</li></ol>
+<p><strong>設定できる主な欄（公式ヘルプより）</strong></p>
+<div class="tbl"><table><tr><th>欄</th><th>内容</th></tr><tr><td>名前・説明</td><td>検索結果や共有リンクに表示される</td></tr><tr><td>会話のきっかけ</td><td>開いたときに出るプロンプトの例</td></tr><tr><td>指示</td><td>動作・トーン・避けることを決める。すべての会話に適用</td></tr><tr><td>ナレッジ</td><td>参考資料のファイル。1つのGPTに最大20個、各ファイル最大512MB</td></tr><tr><td>推奨モデル</td><td>新しい会話のときに提案するモデル</td></tr><tr><td>機能</td><td>ウェブ検索、画像生成、canvas、Code Interpreterとデータ分析、アプリ</td></tr><tr><td>アクション</td><td>定義した外部APIにつなぐ（アプリとアクションは同時に使えない）</td></tr></table></div>
+<p>公式ヘルプでは、ルールや口調は「指示」に、参考資料は「ナレッジ」に入れること、禁止事項の長いリストより肯定的で具体的な指示を優先すること、機能を足す前に指示を明確にして例を加えることがすすめられています。編集中の内容は下書きに自動保存され、•••メニューからバージョン履歴を見て、前の版に戻すこともできます。</p>
+<p>会社のワークスペースでは、管理者がGPTの作成や共有の範囲を決めていることがあります。画面に「作成」が見当たらないときは、社内の管理者に聞いてみると早いでしょう。</p>
+<h2 id="s6">これからの移行先「プラグイン」も見ておく</h2>
+<p>公式ヘルプがGPTsの移行先としてすすめているのが、プラグインです。プラグインは、再利用できる指示（スキル）と、連携アプリなどをまとめて、作業を進めやすくするしくみと説明されています。</p>
+<ul><li>プラグインのディレクトリは、ChatGPTの各プランで使える</li><li>サイドバーの「プラグイン」から探せる（ウェブ・デスクトップ・モバイル）</li><li>個々のプラグインを入れたり使ったりできるかは、プラン・ワークスペース・役割・地域・含まれる機能による</li><li>「Plugin Creator」を入れて、会話しながら自分のプラグインを作る方法も紹介されている</li></ul>
+<p>個人アカウントで、どこまで自分のプラグインを作れるかは、公式ヘルプでもプランや環境によると書かれています。あなたの画面のサイドバーに「プラグイン」があるか、一度のぞいてみると、使えるものが分かります。</p>
+<div class="shop"><div class="shop-name">ChatGPTの入門書</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天で見る</a></div>
+<h2 id="s7">以前にGPTを作った人へ</h2>
+<p>公式ヘルプによると、以前に作ったGPTは引き続き使えて、プランと権限の条件を満たせば編集もできます。サブスクリプションを変更・解約した場合も、作ったGPTは使い続けられますが、編集できるかはプランと権限によります。提供終了のお知らせが届いたときに慌てないよう、いまのうちにGPTの指示を書き写しておくと、プロジェクトやプラグインへ移すときに役立ちます。</p>
+<h2 id="s8">確かめた公式の情報</h2>
+<ul><li><a href="https://help.openai.com/ja-jp/articles/8554397-creating-and-editing-gpts" target="_blank" rel="noopener">GPT の作成と編集（OpenAI ヘルプセンター）</a></li><li><a href="https://help.openai.com/en/articles/8554407-gpts-in-chatgpt" target="_blank" rel="noopener">GPTs in ChatGPT（OpenAI Help Center・英語）</a></li><li><a href="https://help.openai.com/en/articles/8798878-sharing-and-publishing-gpts" target="_blank" rel="noopener">Sharing and publishing GPTs（OpenAI Help Center・英語）</a></li><li><a href="https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq" target="_blank" rel="noopener">ChatGPT Free Tier FAQ（OpenAI Help Center・英語）</a></li><li><a href="https://help.openai.com/ja-jp/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">ChatGPT のプロジェクト（OpenAI ヘルプセンター）</a></li><li><a href="https://help.openai.com/en/articles/20001256-plugins-in-chatgpt" target="_blank" rel="noopener">Plugins in ChatGPT（OpenAI Help Center・英語）</a></li></ul>
+<div class="picks"><div class="picks-h">次の一歩に役立つ本・道具</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>設定の前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの本</strong><span>カスタム指示の書き方に効く</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s9">まとめ</h2>
+<ul><li>2026年10月23日時点で、Free・Go・Plus・Proの個人アカウントでは新しいGPTを作れない</li><li>GPTを作れるのは、Business・Enterprise・Eduのワークスペースで許可されている人。作成はウェブ版で</li><li>無料版でも、GPTsを探して使える。ウェブ版では「@」で会話の中に呼び出せる</li><li>自分専用に近いものは、プロジェクトの指示とファイルで作れる。プロジェクトの指示はふだんの指示より優先される</li><li>カスタムGPTは提供終了の予定があり、移行先としてプラグインがすすめられている</li></ul>
+<p>まずは今日、「GPT を探す」を開いて、あなたの仕事に役立ちそうなGPTを1つ試してみませんか。気に入った使い方は、プロジェクトに指示として写しておくと、あなた専用の形で残せます。最後まで読んでくださって、ありがとうございます。あなたなら、どんな「自分専用のChatGPT」を作ってみたいですか？</p><div class="next"><div class="next-h">今日できる次の一歩</div><p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p><p>最後まで読んでくださり、ありがとうございました。</p></div></article><div class="share"><a class="sx" rel="noopener" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fgpts-howto.html&text=GPTs%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9%EF%BD%9C%E5%80%8B%E4%BA%BA%E3%81%A7%E4%BD%9C%E3%82%8C%E3%81%AA%E3%81%84%E4%BB%8A%E3%80%81%E8%87%AA%E5%88%86%E5%B0%82%E7%94%A8%E3%81%AEChatGPT%E3%81%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95">Xでシェア</a><a class="sl" rel="noopener" target="_blank" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fgpts-howto.html">LINEで送る</a><a class="sh" rel="noopener" target="_blank" href="https://b.hatena.ne.jp/entry/panel/?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fgpts-howto.html">はてブ</a></div><div class="author"><div class="avatar">運</div><div><strong>この記事を書いた人：運営者</strong><p>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。</p><p><a href="../about.html">運営者について詳しく</a></p></div></div><div class="related"><h2 class="sec-h">あわせて読みたい</h2><div class="cards"><a class="card" href="../articles/chatgpt-custom-instructions-not-working.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-not-working.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示が反映されない・効かないときの見直し方</h3><p>ChatGPTのカスタム指示が反映されない、効かないと感じたときに、上から順に確かめられる7つの見直しどころをまとめました。オンオフの場所、文字数の上限、プロジェクトやGPTsとの関係、メモリや性格との食い違い、指示の書き方まで、公式ヘルプで確かめた内容で紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-template.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</h3><p>ChatGPTのカスタム指示に、そのままコピペして使えるテンプレートを場面別にまとめました。仕事用（メール・報告書・Excel）と遊び用（雑談・料理・旅行）の例、1,500文字の上限に収める書き方のコツ、プロジェクトで指示を分ける方法まで紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-vs-memory.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-vs-memory.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示とメモリの違い｜使い分けのコツ</h3><p>ChatGPTのカスタム指示とメモリは、どちらも「自分のことを分かってもらう」しくみですが、書く人・効く範囲・消し方がちがいます。公式ヘルプで確かめた違いを表で比べ、仕事と遊びでの使い分け、メモリの確認・オフ・削除の手順、一時チャットの使いどころまで紹介します。</p></a><a class="card" href="../articles/chatgpt-customize-howto.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</h3><p>ChatGPTを自分好みにする3つのつまみ「基本のスタイルとトーン（性格）」「カスタム指示」「メモリ」の場所と使い方を、公式ヘルプで確かめた手順でまとめました。1,500文字まで書ける指示の入れ方、仕事用と遊び用の設定例、うまくいかないときの見直し先まで紹介します。</p></a></div></div></main><aside><div class="box"><div class="box-h">運営者</div>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<p style="margin:8px 0 0"><a href="../about.html">プロフィールを見る</a></p></div><div class="box"><div class="box-h">はじめての方におすすめ</div><a class="mini" href="../articles/chatgpt-customize-howto.html"><img loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</span></a><a class="mini" href="../articles/chatgpt-custom-instructions-template.html"><img loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</span></a><a class="mini" href="../articles/gemini-gem-howto.html"><img loading="lazy" src="../img/articles/gemini-gem-howto.jpg" alt=""><span>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</span></a><a class="mini" href="../articles/claude-projects-howto.html"><img loading="lazy" src="../img/articles/claude-projects-howto.jpg" alt=""><span>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</span></a><a class="mini" href="../articles/ai-animated-chart.html"><img loading="lazy" src="../img/articles/ai-animated-chart.jpg" alt=""><span>AIでアニメーションするグラフを作る｜数字が動くと伝わる</span></a></div><div class="box catlist"><div class="box-h">カテゴリ</div><a href="../category/chatgpt.html">ChatGPT<small>5記事</small></a><a href="../category/gemini.html">Gemini<small>1記事</small></a><a href="../category/claude.html">Claude<small>2記事</small></a><a href="../category/copilot.html">Copilot<small>1記事</small></a><a href="../category/play.html">楽しみ方<small>1記事</small></a></div><div class="sticky"><div class="picks"><div class="picks-h">AIをもっと楽しむ次の一歩に</div><div class="pick"><div><strong>生成AIの入門書</strong><span>カスタマイズの前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>自分仕様のAIを仕事に活かす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div></div></aside></div></div>
+<footer><div class="wrap"><div class="fcats"><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></div><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div class="prnote">※本サイトはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div><div>© 2026 AIを楽しくカスタマイズしよう</div></div></footer></body></html>

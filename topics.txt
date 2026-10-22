@@ -1,0 +1,32 @@
+# 自動投稿の記事ネタ（上から順に1本ずつ書く。書いたら行頭に「済 」を付ける）カテゴリ: ChatGPT / Gemini / Claude / Copilot / 楽しみ方
+# 公開時の10本（2026-10-23）。題名には検索の語（Googleの検索候補）を入れる。slug は右端
+済 ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に | ChatGPT | chatgpt-customize-howto
+済 ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方 | ChatGPT | chatgpt-custom-instructions-template
+済 ChatGPTのカスタム指示が反映されない・効かないときの見直し方 | ChatGPT | chatgpt-custom-instructions-not-working
+済 ChatGPTのカスタム指示とメモリの違い｜使い分けのコツ | ChatGPT | chatgpt-custom-instructions-vs-memory
+済 GPTsの作り方｜個人で作れない今、自分専用のChatGPTにする方法 | ChatGPT | gpts-howto
+済 GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順 | Gemini | gemini-gem-howto
+済 Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に | Claude | claude-projects-howto
+済 Claudeのスタイル設定はどこ？指示とスキルで文章を自分好みに | Claude | claude-styles
+済 Copilotのエージェントの作り方｜Microsoft 365で自分用のAIを | Copilot | copilot-agent-howto
+済 AIでアニメーションするグラフを作る｜数字が動くと伝わる | 楽しみ方 | ai-animated-chart
+ChatGPTのカスタマイズでキャラクターを作る｜口調と性格の決め方 | ChatGPT | chatgpt-character
+ChatGPTにニックネームで呼んでもらう設定 | ChatGPT | chatgpt-nickname
+ChatGPTの音声と声のカスタマイズ｜話し相手を自分好みに | ChatGPT | chatgpt-voice-customize
+ChatGPTのカスタマイズをスマホ（iPhone・Android）で設定する | ChatGPT | chatgpt-customize-smartphone
+ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方 | ChatGPT | chatgpt-custom-instructions-length
+ChatGPTのカスタム指示で英会話の練習相手を作る | ChatGPT | chatgpt-english-partner
+ChatGPTのハルシネーション対策をカスタム指示で | ChatGPT | chatgpt-hallucination-instructions
+ChatGPTのプロジェクトの使い方｜カスタム指示を仕事ごとに分ける | ChatGPT | chatgpt-projects
+ChatGPTのカスタム指示を仕事・ビジネス向けにする例 | ChatGPT | chatgpt-instructions-business
+ChatGPTのカスタム指示で勉強の先生を作る | ChatGPT | chatgpt-study-tutor
+GPTsの使い方｜無料で探して会話で呼び出す | ChatGPT | gpts-use-free
+Geminiのカスタマイズ｜保存された情報とパーソナル設定 | Gemini | gemini-customize
+Gemのおすすめの使い方と共有のやり方 | Gemini | gemini-gem-share
+Claudeのメモリと個人設定｜自分のことを覚えてもらう | Claude | claude-memory-profile
+Claudeのアーティファクトで小さなアプリを作って遊ぶ | 楽しみ方 | claude-artifacts-play
+Copilotのカスタマイズ｜Microsoft 365の自分用設定 | Copilot | copilot-customize
+AIの画像でキャラクターの見た目をそろえるコツ | 楽しみ方 | ai-image-character-consistent
+自分専用のAIを無料で作る方法を4つのAIで比べる | 楽しみ方 | ai-my-own-free
+AIで自分だけのクイズや脳トレを作って遊ぶ | 楽しみ方 | ai-quiz-play
+AIで家族の思い出を絵本にする | 楽しみ方 | ai-picture-book

@@ -1,0 +1,161 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順｜AIを楽しくカスタマイズしよう</title><meta name="description" content="GeminiのGemは、名前と指示を一度保存すると、毎回同じ説明をしなくても動いてくれる自分専用のアシスタントです。無料プランでも使えるGemの作り方を、公式ヘルプで確かめた手順で紹介します。資料の入れ方、共有のしかた、仕事と遊びの指示の例もまとめました。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-customize-fun/articles/gemini-gem-howto.html"><meta property="og:title" content="GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順｜AIを楽しくカスタマイズしよう"><meta property="og:description" content="GeminiのGemは、名前と指示を一度保存すると、毎回同じ説明をしなくても動いてくれる自分専用のアシスタントです。無料プランでも使えるGemの作り方を、公式ヘルプで確かめた手順で紹介します。資料の入れ方、共有のしかた、仕事と遊びの指示の例もまとめました。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-customize-fun/articles/gemini-gem-howto.html"><meta property="og:image" content="https://masabee1029.github.io/ai-customize-fun/img/articles/gemini-gem-howto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--soft:#f3f1ec;--accent:#c2410c;--accent2:#7c3aed}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--soft:#23252c;--accent:#fb923c;--accent2:#c4b5fd}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+img{max-width:100%}a{color:var(--accent)}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 8px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+.tagline{font-size:12px;color:var(--muted)}
+.gnav{display:flex;gap:4px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}.gnav::-webkit-scrollbar{display:none}
+.gnav a{flex:0 0 auto;font-size:14px;font-weight:700;color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--soft)}
+.gnav a:hover,.gnav a.on{background:var(--accent);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:24px 0 48px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:8px}}
+.hero{padding:20px 0 8px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 10px}.hero p{color:var(--muted);margin:0;font-size:15px}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px}
+.sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
+.sec-h a{font-size:13px;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
+.thumb{display:block;width:calc(100% + 32px);margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
+.prtag{display:inline-block;font-size:11px;padding:0 8px;border:1px solid var(--muted);border-radius:4px;color:var(--muted);margin-left:8px;vertical-align:1px}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:10px}.crumb a{color:var(--muted)}
+article h1{font-size:26px;line-height:1.45;margin:10px 0}
+article h2{font-size:21px;background:var(--soft);border-left:6px solid var(--accent);padding:10px 14px;border-radius:4px;margin-top:44px}
+article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);padding-bottom:4px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 16px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+.lead strong{display:block;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{--bc:#888;display:inline-block;padding:7px 18px;border-radius:999px;background:#000;color:var(--bc);border:1px solid var(--bc);text-decoration:none;font-size:14px;font-weight:700;transition:background .15s}
+.btn:hover{background:#1a1a1a}.btn.amz{--bc:#ff9900}.btn.rkt{--bc:#ff4d4d}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 200px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.pick .ref,.shop .ref{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;font-weight:400}.ref a{color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}.share a{flex:1 1 90px;text-align:center;padding:8px;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.sx{background:#111}.sl{background:#06c755}.sh{background:#00a4de}
+.author{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0;font-size:14px}
+.avatar{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.author p{margin:4px 0 0;color:var(--muted)}
+.related{margin-top:24px}
+.next{background:var(--soft);border:2px dashed var(--accent2);border-radius:12px;padding:14px 18px;margin:32px 0 8px}
+.next-h{font-weight:800;color:var(--accent)}.next p{margin:6px 0 0}
+aside .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px;font-size:14px}
+aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+aside .sticky{position:sticky;top:16px}
+aside .picks{margin:0 0 20px}
+.mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
+.catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
+.catlist small{color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--card);padding:24px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin-right:14px}.fcats{margin-bottom:10px}
+.prnote{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+
+.kx-hero{text-align:center;padding:28px 0 8px}
+.kx-eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.kx-h1{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.3;margin:0 0 16px;letter-spacing:.02em}
+.kx-h1 em{font-style:normal;color:var(--accent)}
+.kx-lead{color:var(--muted);max-width:620px;margin:0 auto 22px;font-size:15px}
+.kx-box{max-width:640px;margin:0 auto 14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.kx-type{min-height:84px;font-size:15px;line-height:1.8}
+.kx-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kx-go{background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:13px;padding:7px 14px;border-radius:99px}
+.kx-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 28px}
+.kx-chips a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--card)}
+.kx-chips a:hover{border-color:var(--accent);color:var(--accent)}
+.kx-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--soft);border-radius:18px;padding:22px 16px;margin:0 0 22px}
+.kx-side{padding:6px}.kx-k{font-size:12px;color:var(--muted)}.kx-v{font-size:clamp(20px,3.4vw,28px);font-weight:800;margin:4px 0}
+.kx-side p{margin:0;font-size:13px;color:var(--muted)}.kx-side.on .kx-v{color:var(--accent)}
+.kx-mid{font-family:serif;font-style:italic;color:var(--muted);font-size:18px}
+@media (max-width:560px){.kx-vs{grid-template-columns:1fr}.kx-mid{margin:-4px 0}}
+.kx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+.kx-stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px}
+.kx-stats b{display:block;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--accent2);font-variant-numeric:tabular-nums}
+.kx-stats span{font-size:12px;color:var(--muted)}
+.kx-steps{list-style:none;padding:0;margin:0 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}
+.kx-steps li{border-top:2px solid var(--accent);padding:10px 4px 0}.kx-steps b{color:var(--accent);font-size:12px;display:block}
+.kx-steps strong{display:block;font-size:15px}.kx-steps span{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.kx-steps{grid-template-columns:1fr}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順", "description": "GeminiのGemは、名前と指示を一度保存すると、毎回同じ説明をしなくても動いてくれる自分専用のアシスタントです。無料プランでも使えるGemの作り方を、公式ヘルプで確かめた手順で紹介します。資料の入れ方、共有のしかた、仕事と遊びの指示の例もまとめました。", "datePublished": "2026-10-23", "image": "https://masabee1029.github.io/ai-customize-fun/img/articles/gemini-gem-howto.jpg", "author": {"@type": "Person", "name": "運営者", "url": "https://masabee1029.github.io/ai-customize-fun/about.html"}, "publisher": {"@type": "Organization", "name": "AIを楽しくカスタマイズしよう"}, "mainEntityOfPage": "https://masabee1029.github.io/ai-customize-fun/articles/gemini-gem-howto.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://masabee1029.github.io/ai-customize-fun/index.html"}, {"@type": "ListItem", "position": 2, "name": "Gemini", "item": "https://masabee1029.github.io/ai-customize-fun/category/gemini.html"}, {"@type": "ListItem", "position": 3, "name": "GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順", "item": "https://masabee1029.github.io/ai-customize-fun/articles/gemini-gem-howto.html"}]}</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">AIを<span>楽しく</span>カスタマイズしよう</a><span class="tagline">4つのAIを自分好みに</span></div>
+<nav class="gnav"><a href="../index.html">ホーム</a><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html" class="on">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></nav></div></header>
+<div class="wrap"><div class="layout"><main><div class="crumb"><a href="../index.html">ホーム</a> ＞ <a href="../category/gemini.html">Gemini</a> ＞ GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</div><article><a class="tag" href="../category/gemini.html">Gemini</a><span class="prtag">PR</span><span class="date">2026-10-23</span><h1>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</h1><img class="eyecatch" src="../img/articles/gemini-gem-howto.jpg" alt=""><div class="lead"><strong>この記事でわかること</strong>GeminiのGemは、名前と指示を一度保存すると、毎回同じ説明をしなくても動いてくれる自分専用のアシスタントです。無料プランでも使えるGemの作り方を、公式ヘルプで確かめた手順で紹介します。資料の入れ方、共有のしかた、仕事と遊びの指示の例もまとめました。</div><p>Geminiに「日報の形に整えて」「箇条書きで、です・ます調で」と、同じお願いを何度も打ちこんでいませんか。<br>あなたのそのお願いは、Gem（ジェム）に一度書いておくだけで、次からはGemを開いて話しかけるだけで済むようになります。Gemは、名前・指示・参考資料をセットにして保存できる、あなた専用のGeminiです。Googleの料金ページでは、Gemは無料プランの機能として載っています。<br>この記事では、Gemの作り方を公式ヘルプで確かめた手順で紹介し、仕事用と遊び用の指示の例もお見せします。</p>
+<p><strong>確認日：2026年10月23日</strong>（公式のヘルプで確認。画面や名前は変わることがあります）</p>
+<div class="toc"><strong>目次</strong><ol><li><a href="#s1">Gemでできること</a></li><li><a href="#s2">Gemの作り方（パソコンのウェブ版）</a></li><li><a href="#s3">カスタム指示の書き方は「役割・相手・形」の3つ</a></li><li><a href="#s4">仕事用のGemの例（コピーして使えます）</a></li><li><a href="#s5">遊び用のGemの例（休みの日に）</a></li><li><a href="#s6">知識（参考資料）を入れるコツ</a></li><li><a href="#s7">作ったGemを人と共有する</a></li><li><a href="#s8">うまく動かないときの見直し方</a></li><li><a href="#s9">確かめた公式の情報</a></li><li><a href="#s10">まとめ</a></li></ol></div><div class="picks"><div class="picks-h">この記事で役立つ本・道具</div><div class="pick"><div><strong>Geminiの解説書</strong><span>Gemの作り方も分かる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Gemini+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FGemini%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>Google Workspaceの本</strong><span>ドキュメントや表計算と一緒に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Google+Workspace+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FGoogle%2520Workspace%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">Gemでできること</h2>
+<p>Gemは「いつもの頼み方を覚えた、小さな助手」と考えると分かりやすいです。公式ヘルプで確かめられた中身を、表にまとめました。</p>
+<div class="tbl"><table><tr><th>できること</th><th>中身</th></tr><tr><td>名前をつける</td><td>「日報まとめ係」など、あとで見つけやすい名前にできる</td></tr><tr><td>カスタム指示を書く</td><td>役割・口調・出力の形など、毎回守ってほしいことを書いておく</td></tr><tr><td>知識（参考資料）を入れる</td><td>パソコンのファイル、Googleドライブのファイル、NotebookLMのノートブックを追加できる</td></tr><tr><td>ほかの場所でも使う</td><td>ウェブ版で作ったGemは、スマホのGeminiアプリや、Google WorkspaceのGeminiサイドパネルにも表示される</td></tr><tr><td>人と共有する</td><td>特定の人に送ったり、リンクで渡したりできる</td></tr></table></div>
+<p>料金の面では、GoogleのGeminiの料金ページで、無料プランの機能の一覧に「Gem」と「Canvas」が並んでいます。有料プランは「無料プランの機能に加え」と書かれているので、Gemはどのプランでも使える機能です。</p>
+<p>使うための条件として、公式ヘルプには次のことが書かれています。</p>
+<ul><li>Geminiアプリにログインしていること</li><li>個人のGoogleアカウントの場合は13歳以上（国によって年齢は異なる）</li><li>会社や学校のアカウントでは、別の条件や管理者の設定が加わることがある</li></ul>
+<p>あなたが会社のGoogleアカウントでGeminiを使っているなら、先に会社のルールを確かめておくと安心です。</p>
+<h2 id="s2">Gemの作り方（パソコンのウェブ版）</h2>
+<p>公式ヘルプの手順は、パソコンのブラウザで開くウェブ版を前提に書かれています。</p>
+<ol><li>ブラウザで gemini.google.com を開く</li><li>画面左のサイドバーのアイコンを選び、「Gem」を選ぶ</li><li>「Gem を作成」を選ぶ</li><li>名前を入れる</li><li>カスタム指示を書く</li><li>必要なら、知識としてファイルを追加する</li><li>「保存」を選ぶ</li></ol>
+<p>保存したGemは、サイドバーのGemの一覧から開けます。開いたら、ふつうのGeminiと同じように話しかけるだけです。指示を毎回打ちこまなくてよいぶん、1回あたり数十秒でも、1日に何度も使えば積み重なっていきます。</p>
+<p>公式ヘルプには、最初のヒントになる「作成済みのGem」も用意されていると書かれています。いきなり白紙から書くのがむずかしいときは、作成済みのGemをいくつか試して、「この話し方が好き」と感じたものを手本にするのも楽しい方法です。</p>
+<h2 id="s3">カスタム指示の書き方は「役割・相手・形」の3つ</h2>
+<p>指示の欄は、長く書くほどよいわけではありません。あなたが毎回伝えている内容を、次の3つに分けて書くと、短くても伝わりやすくなります。</p>
+<div class="tbl"><table><tr><th>書くこと</th><th>例</th></tr><tr><td>役割（だれとして答えるか）</td><td>あなたは印刷工場の現場リーダーの補佐役です</td></tr><tr><td>相手（だれのために答えるか）</td><td>読む人は工場長と、ほかの班のリーダーです</td></tr><tr><td>形（どんな形で返すか）</td><td>結論を1行目に。箇条書き3つまで。です・ます調で</td></tr></table></div>
+<p>この3つに、「わからないことは、わからないと書いてください」の一行を足しておくと、あいまいな答えを減らすのに役立ちます。</p>
+<h2 id="s4">仕事用のGemの例（コピーして使えます）</h2>
+<p>印刷や製造の現場で働くあなたを思いうかべて、残業を30分減らすのに役立ちそうな例を3つ作りました。指示の欄に、そのまま貼りつけて使えます。</p>
+<p><strong>例1：日報まとめ係</strong></p>
+<ul><li>あなたは製造現場の日報を整える係です</li><li>わたしが書いたメモを、「今日やったこと」「困ったこと」「明日やること」の3つの見出しに分けてください</li><li>各見出しは箇条書き3つまで。数字はわたしが書いたものをそのまま使い、計算や推測で足さないでください</li><li>です・ます調で、上司がスマホで30秒で読める長さにしてください</li></ul>
+<p><strong>例2：メール下書き係</strong></p>
+<ul><li>あなたは取引先へのメールを下書きする係です</li><li>件名、あいさつ、要件、お願い、締めの順に書いてください</li><li>納期や金額は、わたしが書いた値だけを使ってください。書かれていない場合は「（要確認）」と入れてください</li><li>角が立たない、ていねいな言い方にしてください</li></ul>
+<p><strong>例3：作業手順の見直し係</strong></p>
+<ul><li>あなたは作業手順書を読みやすくする係です</li><li>わたしが貼りつけた手順を、番号つきの手順に直してください</li><li>1つの手順には1つの動作だけを書いてください</li><li>危ない作業には、手順の先頭に「注意」と書いてください</li></ul>
+<p>どの例にも「数字はわたしが書いたものをそのまま」と入れています。AIは文章を整えるのが得意な一方で、数字をそれらしく作ってしまうことがあるので、この一行があると安心して使えます。</p>
+<p>社外秘の情報や、お客さまの名前を指示や知識に入れるかどうかは、会社のルールにしたがって決めてください。</p>
+<h2 id="s5">遊び用のGemの例（休みの日に）</h2>
+<p>Gemは仕事だけのものではありません。好きなことに合わせて作ると、話しかけるのがぐっと楽しくなります。</p>
+<div class="tbl"><table><tr><th>Gemの名前</th><th>指示の例</th></tr><tr><td>晩ごはん相談係</td><td>冷蔵庫にある食材を伝えたら、30分以内で作れる献立を2つ出してください。子どもも食べやすい味にしてください</td></tr><tr><td>推し活ノート係</td><td>好きなアニメや音楽の感想を話したら、聞き上手な友だちのように、質問を1つ返してください</td></tr><tr><td>週末おでかけ係</td><td>行き先と予算を伝えたら、雨の日と晴れの日の2つの案を出してください。営業時間は公式サイトで確かめるよう一言添えてください</td></tr><tr><td>クイズ出題係</td><td>テーマを伝えたら、3択クイズを5問出してください。答えは最後にまとめて出してください</td></tr></table></div>
+<p>家族で使うなら、「小学生にもわかる言葉で」と一行足すだけで、同じGemが子ども向けの先生に変わります。名前を工夫するのも楽しみのひとつです。</p>
+<h2 id="s6">知識（参考資料）を入れるコツ</h2>
+<p>Gemには、知識として資料を追加できます。公式ヘルプで確かめられた入れ方は次の3つです。</p>
+<ul><li>パソコンからファイルをアップロードする</li><li>Googleドライブのファイルを追加する（Geminiアプリのアクティビティの保存がオンで、Google Workspaceとつながっている必要があります）</li><li>NotebookLMのノートブックを追加する</li></ul>
+<p>追加できるファイルの種類や上限の数は、公式ヘルプでは別のページで案内されています。くわしい数は画面とヘルプで確かめてください。また、知識のファイルをどこから引いたかを示す表示（引用）は、オフにすることもできると書かれています。</p>
+<p>資料を入れるときは、次のような工夫が役立ちます。</p>
+<ul><li>社内の用語集や、よく使う定型文を1つのファイルにまとめて入れる</li><li>古い版と新しい版を両方入れず、いま使っている版だけにする</li><li>「資料に書いていないことは、推測せずにそう伝えてください」と指示に書いておく</li></ul>
+<h2 id="s7">作ったGemを人と共有する</h2>
+<p>便利なGemができたら、同じ班の人に使ってもらうのもすてきです。公式ヘルプでは、共有のしかたを次のように説明しています。</p>
+<ol><li>gemini.google.com でサイドバーを開き、「Gem」に進む</li><li>共有したいGemの横にある共有アイコンを選ぶ</li><li>相手のメールアドレスを入れ、役割を選んで送る（リンクをコピーして渡すこともできます）</li></ol>
+<p>役割は2つあります。</p>
+<div class="tbl"><table><tr><th>役割</th><th>できること</th></tr><tr><td>編集者</td><td>ほかの人への共有、指示やファイルの変更、Gemの削除</td></tr><tr><td>閲覧者</td><td>Gemを使うこと、指示とファイルを見ること</td></tr></table></div>
+<p>閲覧者でも指示やファイルの中身が見える点は、覚えておくと安心です。共有する前に、指示や資料に人に見せたくない内容が入っていないかを一度見直してみてください。</p>
+<p>共有にはいくつか条件もあります。</p>
+<ul><li>アップロードしたファイルがある場合、共有できるのはパソコンかGoogleドライブから入れたファイルを使うGemに限られる</li><li>NotebookLMのノートブックは、共有するGemの知識には使えない</li><li>会社や学校のアカウントでは、管理者が共有を制限している場合がある</li></ul>
+<p>リンクで渡すときは、相手がGemを見られる設定になっているかもあわせて確かめておくと、「開けない」というやりとりを減らせます。</p>
+<h2 id="s8">うまく動かないときの見直し方</h2>
+<p>思ったとおりに答えてくれないときは、次の順に見直すと原因が見つかりやすくなります。</p>
+<ol><li>指示が長すぎないか：大事な決まりを上のほうに3つだけ書き、ほかは後ろに回す</li><li>指示どうしがぶつかっていないか：「短く」と「くわしく」が同時に書かれていないか</li><li>例を1つ入れてみる：「こんな形で返してほしい」という見本を1つ書くと、形がそろいやすい</li><li>公式の注意点を確かめる：公式ヘルプには、いまはGemをGemini Live（声で話す機能）では使えないと書かれています</li></ol>
+<p>一度で完璧にしなくて大丈夫です。使いながら1行ずつ直していくうちに、あなたの話し方にぴったり合うGemに育っていきます。</p>
+<h2 id="s9">確かめた公式の情報</h2>
+<ul><li><a href="https://support.google.com/gemini/answer/15146780?hl=ja" target="_blank" rel="noopener">Gemini アプリで Gem を使用する（Gemini アプリ ヘルプ）</a></li><li><a href="https://support.google.com/gemini/answer/16504957?hl=ja" target="_blank" rel="noopener">Gemini アプリで Gem を共有する（Gemini アプリ ヘルプ）</a></li><li><a href="https://gemini.google/jp/subscriptions/" target="_blank" rel="noopener">Gemini のプランと料金（Google 公式）</a></li></ul>
+<div class="picks"><div class="picks-h">次の一歩に役立つ本・道具</div><div class="pick"><div><strong>Geminiの解説書</strong><span>Gemの作り方も分かる</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Gemini+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FGemini%2520%25E6%259C%25AC%2F">楽天</a></div><div class="pick"><div><strong>Google Workspaceの本</strong><span>ドキュメントや表計算と一緒に</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Google+Workspace+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FGoogle%2520Workspace%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s10">まとめ</h2>
+<ul><li>Gemは、名前・カスタム指示・知識をセットで保存できる、あなた専用のGemini</li><li>Googleの料金ページでは、Gemは無料プランの機能として載っている</li><li>作り方は gemini.google.com のサイドバーから「Gem」→「Gem を作成」→名前と指示を書いて「保存」</li><li>知識には、パソコンのファイル、Googleドライブ、NotebookLMのノートブックを追加できる</li><li>共有は「編集者」と「閲覧者」の2つの役割から選べる。閲覧者も指示とファイルを見られる</li></ul>
+<div class="shop"><div class="shop-name">Geminiの解説書</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=Gemini+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FGemini%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<p>まずは今日、いちばんよく打ちこんでいるお願いを1つだけ、Gemの指示に書いてみませんか。最後まで読んでくださって、ありがとうございます。あなたなら、最初のGemにどんな名前をつけますか？</p><div class="next"><div class="next-h">今日できる次の一歩</div><p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p><p>最後まで読んでくださり、ありがとうございました。</p></div></article><div class="share"><a class="sx" rel="noopener" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fgemini-gem-howto.html&text=Gemini%E3%81%AEGem%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9%EF%BD%9C%E8%87%AA%E5%88%86%E5%B0%82%E7%94%A8%E3%81%AEAI%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8B%E6%89%8B%E9%A0%86">Xでシェア</a><a class="sl" rel="noopener" target="_blank" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fgemini-gem-howto.html">LINEで送る</a><a class="sh" rel="noopener" target="_blank" href="https://b.hatena.ne.jp/entry/panel/?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fgemini-gem-howto.html">はてブ</a></div><div class="author"><div class="avatar">運</div><div><strong>この記事を書いた人：運営者</strong><p>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。</p><p><a href="../about.html">運営者について詳しく</a></p></div></div><div class="related"><h2 class="sec-h">あわせて読みたい</h2><div class="cards"><a class="card" href="../articles/ai-animated-chart.html"><img class="thumb" loading="lazy" src="../img/articles/ai-animated-chart.jpg" alt=""><span class="tag">楽しみ方</span><span class="date">2026-10-23</span><h3>AIでアニメーションするグラフを作る｜数字が動くと伝わる</h3><p>棒がのびる、数字がカウントアップする。そんな動くグラフを、ChatGPT・Claude・Geminiに頼んで作る方法をまとめました。自分の数字を渡して値を正確に保つ頼み方、コピーして使える依頼文、月次報告と家計・ゲームの記録での使い方、専用ツールという選び方も紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-not-working.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-not-working.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示が反映されない・効かないときの見直し方</h3><p>ChatGPTのカスタム指示が反映されない、効かないと感じたときに、上から順に確かめられる7つの見直しどころをまとめました。オンオフの場所、文字数の上限、プロジェクトやGPTsとの関係、メモリや性格との食い違い、指示の書き方まで、公式ヘルプで確かめた内容で紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-template.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</h3><p>ChatGPTのカスタム指示に、そのままコピペして使えるテンプレートを場面別にまとめました。仕事用（メール・報告書・Excel）と遊び用（雑談・料理・旅行）の例、1,500文字の上限に収める書き方のコツ、プロジェクトで指示を分ける方法まで紹介します。</p></a><a class="card" href="../articles/chatgpt-custom-instructions-vs-memory.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-custom-instructions-vs-memory.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタム指示とメモリの違い｜使い分けのコツ</h3><p>ChatGPTのカスタム指示とメモリは、どちらも「自分のことを分かってもらう」しくみですが、書く人・効く範囲・消し方がちがいます。公式ヘルプで確かめた違いを表で比べ、仕事と遊びでの使い分け、メモリの確認・オフ・削除の手順、一時チャットの使いどころまで紹介します。</p></a></div></div></main><aside><div class="box"><div class="box-h">運営者</div>大手印刷会社で約20年働いたのち独立し、毎日の仕事でAIを使っている運営者です。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<p style="margin:8px 0 0"><a href="../about.html">プロフィールを見る</a></p></div><div class="box"><div class="box-h">はじめての方におすすめ</div><a class="mini" href="../articles/chatgpt-customize-howto.html"><img loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</span></a><a class="mini" href="../articles/chatgpt-custom-instructions-template.html"><img loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</span></a><a class="mini" href="../articles/gemini-gem-howto.html"><img loading="lazy" src="../img/articles/gemini-gem-howto.jpg" alt=""><span>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</span></a><a class="mini" href="../articles/claude-projects-howto.html"><img loading="lazy" src="../img/articles/claude-projects-howto.jpg" alt=""><span>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</span></a><a class="mini" href="../articles/ai-animated-chart.html"><img loading="lazy" src="../img/articles/ai-animated-chart.jpg" alt=""><span>AIでアニメーションするグラフを作る｜数字が動くと伝わる</span></a></div><div class="box catlist"><div class="box-h">カテゴリ</div><a href="../category/chatgpt.html">ChatGPT<small>5記事</small></a><a href="../category/gemini.html">Gemini<small>1記事</small></a><a href="../category/claude.html">Claude<small>2記事</small></a><a href="../category/copilot.html">Copilot<small>1記事</small></a><a href="../category/play.html">楽しみ方<small>1記事</small></a></div><div class="sticky"><div class="picks"><div class="picks-h">AIをもっと楽しむ次の一歩に</div><div class="pick"><div><strong>生成AIの入門書</strong><span>カスタマイズの前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>自分仕様のAIを仕事に活かす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div></div></aside></div></div>
+<footer><div class="wrap"><div class="fcats"><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/play.html">楽しみ方</a></div><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div class="prnote">※本サイトはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div><div>© 2026 AIを楽しくカスタマイズしよう</div></div></footer></body></html>
