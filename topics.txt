@@ -10,7 +10,7 @@
 済 Claudeのスタイル設定はどこ？指示とスキルで文章を自分好みに | Claude | claude-styles
 済 Copilotのエージェントの作り方｜Microsoft 365で自分用のAIを | Copilot | copilot-agent-howto
 済 AIでアニメーションするグラフを作る｜数字が動くと伝わる | 楽しみ方 | ai-animated-chart
-ChatGPTのカスタマイズでキャラクターを作る｜口調と性格の決め方 | ChatGPT | chatgpt-character
+済 ChatGPTのカスタマイズでキャラクターを作る｜口調と性格の決め方 | ChatGPT | chatgpt-character
 ChatGPTにニックネームで呼んでもらう設定 | ChatGPT | chatgpt-nickname
 ChatGPTの音声と声のカスタマイズ｜話し相手を自分好みに | ChatGPT | chatgpt-voice-customize
 ChatGPTのカスタマイズをスマホ（iPhone・Android）で設定する | ChatGPT | chatgpt-customize-smartphone
