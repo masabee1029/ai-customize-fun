@@ -1,5 +1,6 @@
-# 自動投稿の記事ネタ（上から順に1本ずつ書く。書いたら行頭に「済 」を付ける）カテゴリ: ChatGPT / Gemini / Claude / Copilot / 楽しみ方
+# 自動投稿の記事ネタ（上から順に1本ずつ書く。書いたら行頭に「済 」を付ける）カテゴリ: ChatGPT / Gemini / Claude / Copilot / 楽しみ方 / 動くグラフ
 # 公開時の10本（2026-10-23）。題名には検索の語（Googleの検索候補）を入れる。slug は右端
+# 動くグラフ（2026-10-23 本人指示「iArt.ai のようなアニメーションも時々紹介したい」）: 通常のネタ2本のあとに1本の割合で入れてある。本文に [[chart:...]] で実際に動くグラフを1〜3個（数値は公式で確かめた本当の数字か、「サンプル」と明記した例）
 済 ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に | ChatGPT | chatgpt-customize-howto
 済 ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方 | ChatGPT | chatgpt-custom-instructions-template
 済 ChatGPTのカスタム指示が反映されない・効かないときの見直し方 | ChatGPT | chatgpt-custom-instructions-not-working
@@ -9,24 +10,34 @@
 済 Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に | Claude | claude-projects-howto
 済 Claudeのスタイル設定はどこ？指示とスキルで文章を自分好みに | Claude | claude-styles
 済 Copilotのエージェントの作り方｜Microsoft 365で自分用のAIを | Copilot | copilot-agent-howto
-済 AIでアニメーションするグラフを作る｜数字が動くと伝わる | 楽しみ方 | ai-animated-chart
+済 AIでアニメーションするグラフを作る｜数字が動くと伝わる | 動くグラフ | ai-animated-chart
 済 ChatGPTのカスタマイズでキャラクターを作る｜口調と性格の決め方 | ChatGPT | chatgpt-character
+済 動くグラフの見本帳｜棒・数字・円・線の4つのアニメーションをAIで作る | 動くグラフ | animated-chart-gallery
 ChatGPTにニックネームで呼んでもらう設定 | ChatGPT | chatgpt-nickname
 ChatGPTの音声と声のカスタマイズ｜話し相手を自分好みに | ChatGPT | chatgpt-voice-customize
+順位が入れかわるバーチャートレースをAIで作る｜動くランキングの作り方 | 動くグラフ | ai-bar-chart-race
 ChatGPTのカスタマイズをスマホ（iPhone・Android）で設定する | ChatGPT | chatgpt-customize-smartphone
 ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方 | ChatGPT | chatgpt-custom-instructions-length
+数字が数え上がるKPIカウンターをAIで作る｜大事な数字の見せ方 | 動くグラフ | ai-kpi-counter
 ChatGPTのカスタム指示で英会話の練習相手を作る | ChatGPT | chatgpt-english-partner
 ChatGPTのハルシネーション対策をカスタム指示で | ChatGPT | chatgpt-hallucination-instructions
+動く円グラフ（ドーナツ）をAIで作る｜割合が回り込むアニメーション | 動くグラフ | ai-animated-donut
 ChatGPTのプロジェクトの使い方｜カスタム指示を仕事ごとに分ける | ChatGPT | chatgpt-projects
 ChatGPTのカスタム指示を仕事・ビジネス向けにする例 | ChatGPT | chatgpt-instructions-business
+折れ線グラフが描かれていくアニメーションをAIで作る | 動くグラフ | ai-line-draw-animation
 ChatGPTのカスタム指示で勉強の先生を作る | ChatGPT | chatgpt-study-tutor
 GPTsの使い方｜無料で探して会話で呼び出す | ChatGPT | gpts-use-free
+月次報告の動くグラフをパワーポイントに入れる方法 | 動くグラフ | animated-chart-powerpoint
 Geminiのカスタマイズ｜保存された情報とパーソナル設定 | Gemini | gemini-customize
 Gemのおすすめの使い方と共有のやり方 | Gemini | gemini-gem-share
+家計簿を動くグラフにして家族で見る｜AIで作る家計のアニメーション | 動くグラフ | household-animated-chart
 Claudeのメモリと個人設定｜自分のことを覚えてもらう | Claude | claude-memory-profile
 Claudeのアーティファクトで小さなアプリを作って遊ぶ | 楽しみ方 | claude-artifacts-play
+文字が動くキネティックタイポグラフィをAIで作る | 動くグラフ | ai-kinetic-typography
 Copilotのカスタマイズ｜Microsoft 365の自分用設定 | Copilot | copilot-customize
 AIの画像でキャラクターの見た目をそろえるコツ | 楽しみ方 | ai-image-character-consistent
+動くグラフを動画（MP4）にしてSNSに載せる方法 | 動くグラフ | animated-chart-to-video
 自分専用のAIを無料で作る方法を4つのAIで比べる | 楽しみ方 | ai-my-own-free
 AIで自分だけのクイズや脳トレを作って遊ぶ | 楽しみ方 | ai-quiz-play
+動くインフォグラフィックの作り方｜AIで説明図を動かす | 動くグラフ | animated-infographic
 AIで家族の思い出を絵本にする | 楽しみ方 | ai-picture-book
