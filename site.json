@@ -116,7 +116,9 @@
    "#fb923c",
    "#7c3aed",
    "#c4b5fd"
-  ]
+  ],
+  "style": "frame",
+  "card_sub": "ChatGPT・Gemini・Claude・Copilot"
  },
  "images": {
   "motif": "shapes",
