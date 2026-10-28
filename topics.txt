@@ -14,7 +14,7 @@
 済 ChatGPTのカスタマイズでキャラクターを作る｜口調と性格の決め方 | ChatGPT | chatgpt-character
 済 動くグラフの見本帳｜棒・数字・円・線の4つのアニメーションをAIで作る | 動くグラフ | animated-chart-gallery
 済 ChatGPTにニックネームで呼んでもらう設定 | ChatGPT | chatgpt-nickname
-ChatGPTの音声と声のカスタマイズ｜話し相手を自分好みに | ChatGPT | chatgpt-voice-customize
+済 ChatGPTの音声と声のカスタマイズ｜話し相手を自分好みに | ChatGPT | chatgpt-voice-customize
 順位が入れかわるバーチャートレースをAIで作る｜動くランキングの作り方 | 動くグラフ | ai-bar-chart-race
 ChatGPTのカスタマイズをスマホ（iPhone・Android）で設定する | ChatGPT | chatgpt-customize-smartphone
 ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方 | ChatGPT | chatgpt-custom-instructions-length
