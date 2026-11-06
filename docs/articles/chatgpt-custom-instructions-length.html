@@ -1,0 +1,307 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方｜AIを楽しくカスタマイズしよう</title><meta name="description" content="ChatGPTのカスタム指示の文字数の上限は、FreeとGoが1,500文字、Plus・Pro・Business・Enterprise・Educationが5,000文字です（2026年11月6日に公式ヘルプで確認）。短く効かせる書き方は「数字で書く・1行1つ・場面で分ける」の3つ。長い指示と短い指示の前後比較、コピペできる短い例、入りきらないときの逃がし先まで紹介します。">
+<link rel="canonical" href="https://masabee1029.github.io/ai-customize-fun/articles/chatgpt-custom-instructions-length.html"><meta property="og:title" content="ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方｜AIを楽しくカスタマイズしよう"><meta property="og:description" content="ChatGPTのカスタム指示の文字数の上限は、FreeとGoが1,500文字、Plus・Pro・Business・Enterprise・Educationが5,000文字です（2026年11月6日に公式ヘルプで確認）。短く効かせる書き方は「数字で書く・1行1つ・場面で分ける」の3つ。長い指示と短い指示の前後比較、コピペできる短い例、入りきらないときの逃がし先まで紹介します。">
+<meta property="og:type" content="website"><meta property="og:url" content="https://masabee1029.github.io/ai-customize-fun/articles/chatgpt-custom-instructions-length.html"><meta property="og:image" content="https://masabee1029.github.io/ai-customize-fun/img/articles/chatgpt-custom-instructions-length.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap");
+
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#5b636e;--line:#e6e2da;--card:#fff;--soft:#f3f1ec;--accent:#c2410c;--accent2:#7c3aed}
+@media (prefers-color-scheme:dark){:root{--bg:#15161a;--fg:#e9e9ee;--muted:#a3a8b3;--line:#2c2f37;--card:#1d1f25;--soft:#23252c;--accent:#fb923c;--accent2:#c4b5fd}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.9 "Hiragino Sans","Noto Sans JP",sans-serif}
+img{max-width:100%}a{color:var(--accent)}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 8px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--fg)}.logo span{color:var(--accent)}
+.tagline{font-size:12px;color:var(--muted)}
+.gnav{display:flex;gap:4px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}.gnav::-webkit-scrollbar{display:none}
+.gnav a{flex:0 0 auto;font-size:14px;font-weight:700;color:var(--fg);text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--soft)}
+.gnav a:hover,.gnav a.on{background:var(--accent);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:24px 0 48px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:8px}}
+.hero{padding:20px 0 8px}.hero h1{font-size:28px;line-height:1.4;margin:0 0 10px}.hero p{color:var(--muted);margin:0;font-size:15px}
+.hero-img{display:block;width:100%;height:auto;border-radius:14px}
+.sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
+.sec-h a{font-size:13px;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
+.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
+.prtag{display:inline-block;font-size:11px;padding:0 8px;border:1px solid var(--muted);border-radius:4px;color:var(--muted);margin-left:8px;vertical-align:1px}
+.date{font-size:12px;color:var(--muted);margin-left:8px}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:10px}.crumb a{color:var(--muted)}
+article h1{font-size:26px;line-height:1.45;margin:10px 0}
+article h2{font-size:21px;background:var(--soft);border-left:6px solid var(--accent);padding:10px 14px;border-radius:4px;margin-top:44px}
+article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);padding-bottom:4px}
+.eyecatch{display:block;width:100%;height:auto;border-radius:12px;margin:8px 0 16px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
+.lead strong{display:block;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
+code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
+.shop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.shop-name{flex:1 1 100%;font-weight:700}
+.btn{--bc:#888;display:inline-block;padding:7px 18px;border-radius:999px;background:#fff;color:color-mix(in srgb,var(--bc) 65%,#000);border:2px solid var(--bc);text-decoration:none;font-size:14px;font-weight:700;transition:background .15s}
+.btn:hover{background:#fff8e6}.btn.amz{--bc:#ff9900;color:#b35c00}.btn.rkt{--bc:#bf0000;color:#bf0000}.btn.vc{--bc:#3fc1a5;color:#1a7f6a}
+.picks{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:14px 16px;margin:24px 0}
+.picks-h{font-weight:800;margin-bottom:6px}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.pick div{flex:1 1 200px}.pick span{display:block;font-size:13px;color:var(--muted)}
+.pick .ref,.shop .ref{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;font-weight:400}.ref a{color:var(--accent)}
+.share{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 8px}.share a{flex:1 1 90px;text-align:center;padding:8px;border-radius:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.sx{background:#111}.sl{background:#06c755}.sh{background:#00a4de}
+.author{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:24px 0;font-size:14px}
+.avatar{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.author p{margin:4px 0 0;color:var(--muted)}
+.related{margin-top:24px}
+.book .book-row{display:flex;gap:14px;align-items:flex-start;padding-top:8px}.book-cover{width:96px;flex:0 0 96px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.book-txt{flex:1 1 200px}.book-txt span{display:block;font-size:13px;color:var(--muted);margin:2px 0}.book-txt .book-note{font-size:12.5px}.book-txt .btn{margin-top:8px}
+.next{background:var(--soft);border:2px dashed var(--accent2);border-radius:12px;padding:14px 18px;margin:32px 0 8px}
+.next-h{font-weight:800;color:var(--accent)}.next p{margin:6px 0 0}
+aside .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px;font-size:14px}
+aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+aside .sticky{position:sticky;top:16px}
+aside .picks{margin:0 0 20px}
+.mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
+.catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
+.catlist small{color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--card);padding:24px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin-right:14px}.fcats{margin-bottom:10px}
+.prnote{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+.prline{margin:0 0 10px;color:var(--muted)}
+.ainote{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+
+.kxc{--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--bar:var(--accent);border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px 18px 12px;margin:24px 0}
+@media (prefers-color-scheme:dark){.kxc{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500}}
+.kxc-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:12px}.kxc-h strong{font-size:16px}
+.kxc-re{font-size:12px;border:1px solid var(--line);background:var(--soft);color:var(--fg);border-radius:99px;padding:3px 10px;cursor:pointer;white-space:nowrap}
+.kxc-note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.kxc details{font-size:13px;margin-top:6px}.kxc details summary{cursor:pointer;color:var(--muted)}
+.kxc-row{display:grid;grid-template-columns:minmax(80px,30%) 1fr auto;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.kxc-track{height:14px;border-radius:0 4px 4px 0;background:transparent;border-left:1px solid var(--muted);position:relative}
+.kxc-fill{display:block;height:100%;width:var(--w);background:var(--bar);border-radius:0 4px 4px 0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.kxc.ready .kxc-fill{width:0}.kxc.ready.in .kxc-fill{width:var(--w)}
+.kxc-row:hover .kxc-fill{filter:brightness(1.12)}
+.kxc-val{font-variant-numeric:tabular-nums;font-weight:700;min-width:3em;text-align:right}
+.kxc-cnt{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.kxc-cnt div{text-align:center;background:var(--soft);border-radius:12px;padding:14px 6px}
+.kxc-cnt b{display:block;font-size:clamp(28px,5vw,40px);line-height:1.15;font-variant-numeric:tabular-nums}.kxc-cnt>div>span{font-size:12px;color:var(--muted)}
+.kxc-donut{display:flex;flex-wrap:wrap;gap:16px;align-items:center}.kxc-donut svg{width:170px;height:170px;flex:0 0 auto}
+.kxc-seg{fill:none;stroke-width:22;transition:stroke-dasharray 1.2s ease-out}
+.kxc.ready:not(.in) .kxc-seg{stroke-dasharray:0 1000!important;transition:none}.kxc.ready.in .kxc-seg{transition-delay:var(--d)}
+.kxc-leg{list-style:none;padding:0;margin:0;font-size:14px}.kxc-leg li{display:flex;gap:8px;align-items:center;margin:4px 0}.kxc-leg i{width:12px;height:12px;border-radius:3px;background:var(--c);flex:0 0 auto}
+.kxc-line svg{width:100%;height:auto;overflow:visible}.kxc-path{fill:none;stroke:var(--bar);stroke-width:2;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.6s ease-in-out}
+.kxc.ready .kxc-path{stroke-dashoffset:1}.kxc.ready.in .kxc-path{stroke-dashoffset:0}
+.kxc-dot{fill:var(--bar);stroke:var(--card);stroke-width:2}.kxc-dot:hover{r:6}
+.kxc-ax{stroke:var(--line);stroke-width:1}.kxc-t{font-size:11px;fill:var(--muted)}.kxc-tv{font-size:12px;fill:var(--fg);font-weight:700}
+@media (prefers-reduced-motion:reduce){.kxc *{transition:none!important}}
+
+.kx-hero{text-align:center;padding:28px 0 8px}
+.kx-eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.kx-h1{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-weight:600;font-size:clamp(30px,5.4vw,52px);line-height:1.3;margin:0 0 16px;letter-spacing:.02em}
+.kx-h1 em{font-style:normal;color:var(--accent)}
+.kx-lead{color:var(--muted);max-width:620px;margin:0 auto 22px;font-size:15px}
+.kx-box{max-width:640px;margin:0 auto 14px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.kx-type{min-height:84px;font-size:15px;line-height:1.8}
+.kx-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kx-go{background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:13px;padding:7px 14px;border-radius:99px}
+.kx-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 28px}
+.kx-chips a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 12px;background:var(--card)}
+.kx-chips a:hover{border-color:var(--accent);color:var(--accent)}
+.kx-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--soft);border-radius:18px;padding:22px 16px;margin:0 0 22px}
+.kx-side{padding:6px}.kx-k{font-size:12px;color:var(--muted)}.kx-v{font-size:clamp(20px,3.4vw,28px);font-weight:800;margin:4px 0}
+.kx-side p{margin:0;font-size:13px;color:var(--muted)}.kx-side.on .kx-v{color:var(--accent)}
+.kx-mid{font-family:serif;font-style:italic;color:var(--muted);font-size:18px}
+@media (max-width:560px){.kx-vs{grid-template-columns:1fr}.kx-mid{margin:-4px 0}}
+.kx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+.kx-stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 6px}
+.kx-stats b{display:block;font-size:clamp(30px,5vw,42px);line-height:1.1;color:var(--accent2);font-variant-numeric:tabular-nums}
+.kx-stats span{font-size:12px;color:var(--muted)}
+.kx-steps{list-style:none;padding:0;margin:0 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}
+.kx-steps li{border-top:2px solid var(--accent);padding:10px 4px 0}.kx-steps b{color:var(--accent);font-size:12px;display:block}
+.kx-steps strong{display:block;font-size:15px}.kx-steps span{font-size:12px;color:var(--muted)}
+@media (max-width:560px){.kx-steps{grid-template-columns:1fr}}
+
+/* theme: flat-shapes (2026-10-27) */
+:root,:root:not(x){--bg:#1c1208;--fg:#fbf1e4;--muted:#cdb9a2;--line:#3e2c1b;--card:#271a0e;--soft:#332314;--accent:#ff8a3d;--accent2:#a678ff}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1208;--fg:#fbf1e4;--muted:#cdb9a2;--line:#3e2c1b;--card:#271a0e;--soft:#332314;--accent:#ff8a3d;--accent2:#a678ff}}
+body{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:500}
+header{background:#1c1208;border-bottom:3px solid #ff8a3d}
+.logo,.hero h1,article h1,.sec-h,article h2,.picks-h,.next-h,aside .box-h{font-weight:900}
+.logo{color:#fbf1e4}.logo span{color:#ff8a3d}
+.gnav a{background:#332314;color:#fbf1e4;border-radius:99px}
+.gnav a:hover,.gnav a.on{background:#a678ff;color:#1c1208}
+.kx-go{background:#ff8a3d;color:#1c1208}
+.sec-h{border-bottom:0;padding-left:30px;position:relative}
+.sec-h::before{content:"";position:absolute;left:0;top:50%;width:18px;height:18px;margin-top:-13px;border-radius:50%;background:#ff8a3d;box-shadow:8px 8px 0 -2px #a678ff}
+.card{border:0;border-radius:18px;background:#271a0e;position:relative}
+.thumb{border-radius:18px 18px 0 0}
+.card::after{content:"";position:absolute;right:14px;bottom:14px;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:15px solid #a678ff;opacity:.8}
+.card:hover{box-shadow:0 0 0 2px #ff8a3d}
+.tag{background:#ff8a3d;color:#1c1208;font-weight:700}
+article h2{background:#332314;border-left:0;border-radius:18px;padding:12px 16px 12px 46px;position:relative}
+article h2::before{content:"";position:absolute;left:14px;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;background:#ff8a3d}
+article h2::after{content:"";position:absolute;left:24px;top:50%;margin-top:-2px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid #a678ff}
+article h3{border-bottom:3px dotted #a678ff}
+.eyecatch{border-radius:18px}
+.lead,.toc,.shop,aside .box,.author{border:0;border-radius:18px;background:#271a0e}
+.toc{box-shadow:inset 0 4px 0 #ff8a3d}
+.note{border-left:6px solid #a678ff;border-radius:12px}
+.picks{border:2px solid #ff8a3d;border-radius:18px}
+.next{border:2px dashed #a678ff;border-radius:18px;background:#271a0e}
+.avatar{background:#a678ff;color:#1c1208}
+aside .box-h{border-bottom:3px solid #ff8a3d}
+.mini img{border-radius:10px}.mini b{background:#a678ff;color:#1c1208}
+th{background:#332314}
+footer{background:#140c05;border-top:3px solid #a678ff}
+
+/* article-base: 2026-10-27 記事ページの共通部分 */
+.ax-time{display:inline-block;font-size:12px;margin-left:8px}
+.ax-prog{position:fixed;left:0;right:0;top:0;height:4px;z-index:50;pointer-events:none}.ax-prog i{display:block;height:100%;width:0}
+.toc li.now>a{font-weight:700}
+.ax-tick{cursor:pointer}li.ax-tick{position:relative;padding-left:30px}ul>li.ax-tick{list-style:none}ul>li.ax-tick::marker{content:""!important}
+li.ax-tick::before,tr.ax-tick td:first-child::before{content:"";position:absolute;left:4px;top:.45em;width:16px;height:16px;border:2px solid currentColor;border-radius:4px;opacity:.55}
+.ax-tick.done{opacity:.55;text-decoration:line-through}li.ax-tick.done::after,tr.ax-tick.done td:first-child::after{content:"✓";position:absolute;left:7px;top:.05em;font-weight:800}
+tr.ax-tick td:first-child{position:relative;padding-left:32px}tr.ax-tick td:first-child::before{left:8px;top:.6em}tr.ax-tick.done td:first-child::after{left:11px;top:.2em}
+.ax-copy{display:block;margin:10px 0 0 auto;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+@media print{.ax-prog,.ax-size,.ax-copy{display:none}}
+
+/* article: shapes (2026-10-27) */
+.ax-prog{height:6px;background:#271a0e}.ax-prog i{background:linear-gradient(90deg,#ff8a3d,#a678ff);border-radius:0 99px 99px 0}
+.ax-time{background:#a678ff;color:#1c1208;border-radius:99px;padding:0 10px;font-weight:700}
+.lead{border:2px solid #ff8a3d!important}.lead strong::before{content:"● ";color:#ff8a3d}
+.toc{counter-reset:cz}.toc ol{list-style:none;padding-left:0}.toc li{counter-increment:cz;padding:3px 0}
+.toc li::before{content:counter(cz);display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;margin-right:8px;font-size:12px;font-weight:900;color:#1c1208;background:#ff8a3d;border-radius:50%}
+.toc li:nth-child(3n+2)::before{background:#a678ff;border-radius:4px}.toc li:nth-child(3n)::before{background:#fbf1e4;clip-path:polygon(50% 0,100% 100%,0 100%);line-height:26px;font-size:10px}
+.toc li.now a{color:#ff8a3d}
+article ul li::marker{content:"▲ ";color:#a678ff;font-size:.8em}
+
+/* category-base: 2026-10-27 カテゴリページの共通部分 */
+.cx-page .cards{counter-reset:none}
+.cx-page .card{position:relative;animation:cxin .5s both;animation-delay:calc(var(--i,0)*60ms)}
+@keyframes cxin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cx-page .card{animation:none}}
+.cx-head{position:relative;margin:4px 0 6px}.cx-head h1{margin:0}
+.cx-intro{margin:8px 0 0}
+.cx-meter{display:flex;align-items:center;gap:10px;margin:12px 0 0;font-size:13px}.cx-meter span{white-space:nowrap}.cx-meter b{font-size:1.25em}
+.cx-meter i{position:relative;flex:1;height:8px;border-radius:99px;overflow:hidden;max-width:240px}
+.cx-meter i::after{content:"";position:absolute;left:0;top:0;bottom:0;background:var(--cxm,#888);width:var(--w,0);transition:width .9s ease}
+.cx-sort{display:inline-flex;gap:4px;margin:12px 0 0}.cx-sort button{font:inherit;font-size:13px;padding:4px 12px;cursor:pointer}
+.cx-badge{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;padding:2px 10px;z-index:2}
+.cx-others{margin:18px 0 8px}.cx-others strong{display:block;font-size:13px;margin-bottom:8px}.cx-others div{display:flex;flex-wrap:wrap;gap:8px}
+.cx-others a{text-decoration:none;font-size:14px;padding:5px 12px}.cx-others small{margin-left:6px;opacity:.7}
+
+/* category: shapes (2026-10-27) */
+.cx-shapes{background:#2a1c10;border-radius:22px;padding:20px 170px 20px 22px;overflow:hidden;border:2px solid #4a3220}
+.cx-sh{position:absolute;right:16px;top:50%;width:140px;height:120px;margin-top:-60px}
+.cx-sh i{position:absolute;display:block;animation:cxbob 3.2s ease-in-out infinite}
+.cx-sh i:nth-child(1){left:0;top:10px;width:70px;height:70px;border-radius:50%;background:#ff8a3d}
+.cx-sh i:nth-child(2){left:60px;top:44px;width:62px;height:62px;border-radius:10px;background:#a678ff;transform:rotate(12deg);animation-delay:-1s}
+.cx-sh i:nth-child(3){left:76px;top:0;width:60px;height:52px;background:#fbf1e4;clip-path:polygon(50% 0,100% 100%,0 100%);animation-delay:-2s}
+@keyframes cxbob{50%{translate:0 -8px}}@media (prefers-reduced-motion:reduce){.cx-sh i{animation:none}}
+.cx-eye{display:inline-block;background:#a678ff;color:#1c1208;border-radius:99px;padding:1px 12px;font-size:12px;font-weight:800}
+.cx-shapes h1{font-size:clamp(28px,4vw,38px);color:#fbf1e4;margin-top:6px}.cx-shapes h1 small{font-size:.48em;color:#ff8a3d;margin-left:4px}
+.cx-page{--cxm:#ff8a3d}.cx-meter i{background:#1c1208}.cx-meter b{color:#ff8a3d}
+.cx-sort button{background:#1c1208;color:#fbf1e4;border:2px solid #4a3220;border-radius:99px}.cx-sort button.on{background:#ff8a3d;color:#1c1208;border-color:#ff8a3d}
+.cx-page .card::before{content:attr(data-no);position:absolute;top:10px;left:10px;z-index:2;width:30px;height:30px;line-height:30px;text-align:center;font-size:13px;font-weight:900;color:#1c1208;background:#ff8a3d;border-radius:50%}
+.cx-page .card:nth-child(3n+2)::before{background:#a678ff;border-radius:6px}.cx-page .card:nth-child(3n)::before{background:#fbf1e4;clip-path:polygon(50% 0,100% 100%,0 100%);line-height:36px;font-size:11px}
+.cx-badge{background:#fbf1e4;color:#1c1208;border-radius:99px}
+.cx-others a{background:#2a1c10;border:2px solid #ff8a3d;border-radius:99px;color:#fbf1e4}.cx-others a:nth-child(2n){border-color:#a678ff}.cx-others strong{color:#ff8a3d}
+@media (max-width:560px){.cx-shapes{padding:96px 18px 18px}.cx-sh{right:auto;left:18px;top:14px;margin:0;transform:scale(.62);transform-origin:left top}}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWF25C1RB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHWF25C1RB');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方", "description": "ChatGPTのカスタム指示の文字数の上限は、FreeとGoが1,500文字、Plus・Pro・Business・Enterprise・Educationが5,000文字です（2026年11月6日に公式ヘルプで確認）。短く効かせる書き方は「数字で書く・1行1つ・場面で分ける」の3つ。長い指示と短い指示の前後比較、コピペできる短い例、入りきらないときの逃がし先まで紹介します。", "datePublished": "2026-11-06", "image": "https://masabee1029.github.io/ai-customize-fun/img/articles/chatgpt-custom-instructions-length.jpg", "author": {"@type": "Person", "name": "運営者", "url": "https://masabee1029.github.io/ai-customize-fun/about.html"}, "publisher": {"@type": "Organization", "name": "AIを楽しくカスタマイズしよう"}, "mainEntityOfPage": "https://masabee1029.github.io/ai-customize-fun/articles/chatgpt-custom-instructions-length.html"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://masabee1029.github.io/ai-customize-fun/index.html"}, {"@type": "ListItem", "position": 2, "name": "ChatGPT", "item": "https://masabee1029.github.io/ai-customize-fun/category/chatgpt.html"}, {"@type": "ListItem", "position": 3, "name": "ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方", "item": "https://masabee1029.github.io/ai-customize-fun/articles/chatgpt-custom-instructions-length.html"}]}</script></head><body>
+<header><div class="wrap"><div class="top"><a class="logo" href="../index.html">AIを<span>楽しく</span>カスタマイズしよう</a><span class="tagline">4つのAIを自分好みに</span></div>
+<nav class="gnav"><a href="../index.html">ホーム</a><a href="../category/chatgpt.html" class="on">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/anim.html">動くグラフ</a></nav></div></header>
+<div class="wrap"><div class="layout"><main><div class="crumb"><a href="../index.html">ホーム</a> ＞ <a href="../category/chatgpt.html">ChatGPT</a> ＞ ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方</div><article><a class="tag" href="../category/chatgpt.html">ChatGPT</a><span class="date">2026-11-06</span><h1>ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方</h1><p class="prline">※この記事はプロモーション（広告）を含みます</p><img class="eyecatch" src="../img/articles/chatgpt-custom-instructions-length.jpg" alt="ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方（図形と文字で作ったイメージ画像）"><div class="lead"><strong>この記事でわかること</strong>ChatGPTのカスタム指示の文字数の上限は、FreeとGoが1,500文字、Plus・Pro・Business・Enterprise・Educationが5,000文字です（2026年11月6日に公式ヘルプで確認）。短く効かせる書き方は「数字で書く・1行1つ・場面で分ける」の3つ。長い指示と短い指示の前後比較、コピペできる短い例、入りきらないときの逃がし先まで紹介します。</div><p>ChatGPTのカスタム指示、書きたいことが多くて、上限に引っかかったことはありませんか？<br><strong>ChatGPTのカスタム指示の文字数の上限は、FreeとGoが最大1,500文字、Plus・Pro・Enterprise・Business・Educationが最大5,000文字です。</strong> 短く効かせる書き方は「数字で書く」「1行に1つ」「場面で分ける」の3つで、無料版の1,500文字でも、仕事と遊びの両方を十分に書き分けられます。<br>この記事では、上限の数字と書く場所、長い指示を短くした前後比較、コピペできる短い例、入りきらないときの逃がし先を、公式ヘルプで確かめた内容でお伝えします。</p>
+<p><strong>確認日：2026年11月6日</strong>（公式のヘルプで確認。画面や名前は変わることがあります）</p>
+<p><strong>この記事でわかること：</strong> 上限はFreeとGoが1,500文字、有料の多くは5,000文字。短く書くほど、1行ずつがはっきり効きやすくなります。</p>
+<div class="toc"><strong>目次</strong><ol><li><a href="#s1">カスタム指示の文字数の上限はプランで2種類</a></li><li><a href="#s2">長く書くより、短く書くほうが効きやすい理由</a></li><li><a href="#s3">長い指示と短い指示の前後比較</a></li><li><a href="#s4">コピペで使える「短く効かせる」例</a></li><li><a href="#s5">上限に入りきらないときの逃がし先</a></li><li><a href="#s6">向かない人・注意点と、書かないほうがいいこと</a></li><li><a href="#s7">確かめた公式の情報</a></li><li><a href="#s8">まとめ</a></li></ol></div><div class="picks"><div class="picks-h">この記事で役立つ本・道具</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>設定の前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの本</strong><span>カスタム指示の書き方に効く</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><h2 id="s1">カスタム指示の文字数の上限はプランで2種類</h2>
+<p>公式ヘルプのよくある質問に、カスタム指示に保存できる文字数がはっきり書かれています。表にまとめました。</p>
+<div class="tbl"><table><tr><th>プラン</th><th>カスタム指示に保存できる文字数</th></tr><tr><td>Free（無料版）・Go</td><td>最大1,500文字</td></tr><tr><td>Plus・Pro・Enterprise・Business・Education</td><td>最大5,000文字</td></tr></table></div>
+<p>「結論から書く」「です・ます調」のような短い1行は、長くても20文字前後です。1,500文字あれば、短い行を50行以上入れられる計算になります。数字で見ると、意外とたっぷりありますよね。</p>
+<p>日本語の文字の数え方の細かい決まりは、公式ヘルプには書かれていません。上限ぎりぎりまで書いたときは、保存できたかどうかを画面で確かめておくと安心です。</p>
+<p>公式ヘルプによると、カスタム指示はウェブ版・デスクトップ版・iOS版・Android版のすべてのプランで使えます。書く場所は次のとおりです。</p>
+<ul><li>ウェブ版・デスクトップ版：設定 →「パーソナライズ」→「カスタマイズを有効にする」がオンになっているか確かめる →「カスタム指示」欄に入力</li><li>iOS版・Android版：設定 →「ChatGPT をカスタマイズ」→「カスタマイズを有効にする」がオンになっているか確かめる →「カスタム指示」欄に入力</li></ul>
+<p>カスタム指示はいつでも編集・削除できます。気軽に書いて、気軽に直せるので、まずは短く入れてみるところから始めて大丈夫です。設定画面の全体は <a href="chatgpt-customize-howto.html">ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</a> で紹介しています。</p>
+<h2 id="s2">長く書くより、短く書くほうが効きやすい理由</h2>
+<p>上限が5,000文字あると、つい全部書きたくなります。ここで少しだけ、立ち止まって考えてみてください。</p>
+<p>39歳の会社員の方なら、こんな声が出てくるかもしれません。</p>
+<p>「思いつくことを全部書いたのに、ChatGPTが半分くらいしか守ってくれない気がする……」</p>
+<p>これは、指示の量よりも、指示どうしの関係が原因になっていることが多いつまずきです。私も最初は、思いつくまま長い文章で書いてしまい、どの行が効いているのか分からなくなりました。長い指示には、次のようなことが起こりがちです。</p>
+<ul><li>「丁寧に」と「短く」のように、ぶつかり合う指示が混ざる</li><li>「できれば」「なるべく」が多く、どこまで守ればいいかがあいまいになる</li><li>同じことを言いかえて何回も書き、大事な行が埋もれる</li><li>自分で読み返しても、どの行が効いているのか分からなくなる</li></ul>
+<p>短く書くと、1行ずつの役目がはっきりします。うまくいかないときも、どの行を直せばいいかがすぐ分かります。会議の資料と同じで、「要点は3つ」のほうが相手に伝わりやすいのです。</p>
+<h2 id="s3">長い指示と短い指示の前後比較</h2>
+<p>同じことを伝える指示を、長い書き方（Before）と短い書き方（After）で並べました。仕事でよく使う5つの項目です。</p>
+<div class="tbl"><table><tr><th>伝えたいこと</th><th>長い書き方（Before）</th><th>短い書き方（After）</th></tr><tr><td>答えの順番</td><td>できれば最初に結論を書いてもらって、そのあとに理由や背景などを説明してもらえると助かります</td><td>結論から書く</td></tr><tr><td>長さ</td><td>あまり長すぎると読むのが大変なので、なるべく短めに、簡潔にまとめてほしいです</td><td>300字以内</td></tr><tr><td>見た目</td><td>文章がずっと続くと読みにくいので、適宜箇条書きなども使いながら、見やすく整理してください</td><td>理由は箇条書きで3つまで</td></tr><tr><td>言葉づかい</td><td>社内の上司にも見せることがあるので、くだけすぎず、かといって堅すぎない、ちょうどいい丁寧さでお願いします</td><td>です・ます調</td></tr><tr><td>分からないとき</td><td>もし私の説明が足りなかったり、よく分からなかったりする場合は、勝手に想像で補わないでもらえるとありがたいです</td><td>情報が足りなければ質問する</td></tr></table></div>
+<p>Beforeの5行は合わせて233文字、Afterの5行は合わせて43文字です。伝えている中身は同じで、文字数はおよそ5分の1になりました。</p>
+<p>短くするときのコツは、次の3つです。</p>
+<ol><li><strong>数字で書く</strong>：「短めに」→「300字以内」、「いくつか」→「3つまで」</li><li><strong>お願いの言葉をはずす</strong>：「〜してもらえると助かります」→「〜する」。ChatGPTに遠慮はいりません</li><li><strong>理由は書かない</strong>：「読むのが大変なので」のような理由は、なくても伝わります。どうしても必要な理由だけ残します</li></ol>
+<p>3つ目の「理由は書かない」には、例外もあります。「社外の人に送るメールなので敬語で」のように、理由が答えの中身を変えるときは、短く残しておくと役立ちます。</p>
+<h2 id="s4">コピペで使える「短く効かせる」例</h2>
+<p>1行に1つ、数字で書いた短い例です。あなたの仕事や好みに合わせて、言葉を少しだけ書きかえて使ってください。</p>
+<h3>仕事用の短い例（まずはこれ1つ）</h3>
+<ul><li>私は印刷会社で生産管理を担当。会社はMicrosoft 365</li><li>結論から書く</li><li>理由は箇条書きで3つまで</li><li>300字以内。長くなるときは先に要点を3行で</li><li>です・ます調。専門用語には短い説明を添える</li><li>情報が足りなければ質問する</li><li>日付や数量など、私が書いていない数字は【　】で空ける</li></ul>
+<p>7行で、130文字ほどです。無料版の1,500文字の1割ほどで済みます。</p>
+<h3>場面で分ける短い例</h3>
+<p>仕事と遊びを1つの欄に入れたいときは、行の頭に場面を書くと混ざりにくくなります。</p>
+<div class="tbl"><table><tr><th>行の頭</th><th>続けて書くこと</th></tr><tr><td>共通：</td><td>呼び名は「タカさん」。です・ます調</td></tr><tr><td>メールのとき：</td><td>件名→本文の順。本文は300字以内</td></tr><tr><td>報告書のとき：</td><td>概要・原因・対策・予定の順。概要は3行以内</td></tr><tr><td>Excelのとき：</td><td>手順は番号つき。関数は式と1行の説明</td></tr><tr><td>雑談のとき：</td><td>ユーモアを少し。最後に質問を1つ</td></tr><tr><td>料理のとき：</td><td>4人分。手順は5ステップ以内</td></tr></table></div>
+<p>6つの場面を書いても、140文字ほどです。週末に「冷蔵庫にあるもので夕飯を」と相談したときも、月曜の朝に「不良の報告書を」と頼んだときも、それぞれの型で答えてくれます。</p>
+<h3>遊び心のある短い例</h3>
+<p>カスタマイズは、楽しいと続きます。1行足すだけで、ChatGPTとの会話が少しにぎやかになります。</p>
+<ul><li>答えの最後に、今日の一言を10字で添える</li><li>雑談では、ときどき昔のアニメのたとえを1つ入れる</li><li>私が「おつかれ」と書いたら、ねぎらいの言葉を1行だけ返す</li></ul>
+<p>その他のテンプレートは <a href="chatgpt-custom-instructions-template.html">ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</a> にまとめています。</p>
+<h2 id="s5">上限に入りきらないときの逃がし先</h2>
+<p>短くしても入りきらないときは、指示をほかの場所に分ける方法があります。公式ヘルプで確かめた2つの逃がし先です。</p>
+<div class="tbl"><table><tr><th>逃がし先</th><th>効く範囲</th><th>向いていること</th></tr><tr><td>プロジェクトの指示</td><td>そのプロジェクトの中のチャットだけ</td><td>「報告書」「家族旅行」など、場面ごとの細かい決まり</td></tr><tr><td>メモリ</td><td>会話をまたいで、関係するときに使われる</td><td>家族構成や好きな食べ物など、自分についての情報</td></tr></table></div>
+<p>公式ヘルプによると、プロジェクトの指示は、プロジェクトを開いてその他のオプションメニュー（•••）の「プロジェクト設定」から書けます。その指示はそのプロジェクトの中だけで使われ、ふだんのカスタム指示より優先されます。</p>
+<p>たとえば、ふだんのカスタム指示には「仕事用の短い例」だけを入れ、「報告書」のプロジェクトには報告書の細かい型を、「週末」のプロジェクトにはおでかけの条件を入れる、という分け方です。欄が分かれるので、1つずつを短く保てます。</p>
+<p>メモリの設定は、設定 →「パーソナライズ」→「メモリ」から確かめられます。公式ヘルプでは、メモリの機能や設定項目はプラン・地域・ワークスペースの設定によって違う場合がある、と案内されています。カスタム指示とメモリの使い分けは <a href="chatgpt-custom-instructions-vs-memory.html">ChatGPTのカスタム指示とメモリの違い｜使い分けのコツ</a> で詳しく紹介しています。</p>
+<div class="shop"><div class="shop-name">プロンプトの本</div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazonで見る</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天で見る</a></div>
+<h2 id="s6">向かない人・注意点と、書かないほうがいいこと</h2>
+<p><strong>向かない人・注意点</strong>：短く書くやり方は、「毎回だいたい同じ形で答えてほしい」人に向いています。毎回まったく違う相談をする人や、1回きりの長い調べものが多い人は、カスタム指示を短くそろえるより、その場のチャットで細かく頼むほうが早く済むこともあります。また、短くしすぎて「です・ます調」と「くだけた口調で」のように反対の行が残ると、どちらに合わせるか迷わせてしまいます。ときどき読み返して、ぶつかる行がないか確かめると安心です。</p>
+<p>カスタム指示には、次のような情報は入れないでおきましょう。</p>
+<ul><li>会社の決まり（情報の持ち出し・AIの利用規程）で入れてはいけないとされている情報。会社で使う前に、まず規程を確かめておくと安心です</li><li>取引先の名前、社外秘の数字、製品の型番など</li><li>パスワードや社員番号、ほかの人の名前や連絡先などの個人情報</li></ul>
+<p>公式ヘルプには、カスタム指示の利用に伴う情報がモデルの性能向上に使われることがある、とも書かれています。モデルの改善に使わないようにする設定も公式ヘルプで案内されているので、気になる方はあわせて確かめておくと安心です。</p>
+<p>指示を書いたのにうまく効かないときは、<a href="chatgpt-custom-instructions-not-working.html">ChatGPTのカスタム指示が反映されない・効かないときの見直し方</a> も役立ちます。</p>
+<h2 id="s7">確かめた公式の情報</h2>
+<ul><li><a href="https://help.openai.com/ja-jp/articles/8096356-chatgpt-custom-instructions" target="_blank" rel="noopener">ChatGPT カスタム指示（OpenAI ヘルプセンター）</a></li><li><a href="https://help.openai.com/ja-jp/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">ChatGPT のプロジェクト（OpenAI ヘルプセンター）</a></li><li><a href="https://help.openai.com/ja-jp/articles/8590148-memory-in-chatgpt" target="_blank" rel="noopener">ChatGPT のメモリ（OpenAI ヘルプセンター）</a></li></ul>
+<div class="picks"><div class="picks-h">次の一歩に役立つ本・道具</div><div class="pick"><div><strong>ChatGPTの入門書</strong><span>設定の前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=ChatGPT+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FChatGPT%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>プロンプトの本</strong><span>カスタム指示の書き方に効く</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25B3%25E3%2583%2597%25E3%2583%2588%2520%25E6%259C%25AC%2F">楽天</a></div></div><div class="picks"><div class="picks-h">あわせて使えるサービス（PR）</div><div class="pick"><div><strong>PLAUD（AIボイスレコーダー）</strong><span>会議を録るだけで、AIが文字起こしと要約をしてくれる</span></div><a class="btn vc" rel="nofollow sponsored noopener" target="_blank" href="https://px.a8.net/svt/ejp?a8mat=4BELTL+7QRI2+5J4W+5YRHE">公式ストアを見る</a><img src="https://www12.a8.net/0.gif?a8mat=4BELTL+7QRI2+5J4W+5YRHE" height="1" width="1" alt="" style="border:0"></div><div class="pick"><div><strong>ConoHa AI Canvas</strong><span>インストールなしで、ブラウザだけでAI画像を作れる</span></div><a class="btn vc" rel="nofollow sponsored noopener" target="_blank" href="https://px.a8.net/svt/ejp?a8mat=4BELTL+BWSQI+50+7RTY1E">公式サイトを見る</a><img src="https://www11.a8.net/0.gif?a8mat=4BELTL+BWSQI+50+7RTY1E" height="1" width="1" alt="" style="border:0"></div><div class="pick"><div><strong>Notta（AI文字起こし）</strong><span>会議や講義の音声を、AIが文字起こしして議事録にする</span></div><a class="btn vc" rel="nofollow sponsored noopener" target="_blank" href="https://px.a8.net/svt/ejp?a8mat=4BENDR+2ZANU+5988+5YJRM">無料で試す</a><img src="https://www19.a8.net/0.gif?a8mat=4BENDR+2ZANU+5988+5YJRM" height="1" width="1" alt="" style="border:0"></div></div><div class="picks book"><div class="picks-h">著者の本（この連載の考え方を 1 冊に）</div><div class="book-row"><img class="book-cover" loading="lazy" src="../img/book1.jpg" alt="39歳からのAI仕事術 会社のPCで今日から使える39のプロンプト の表紙"><div class="book-txt"><strong>39歳からのAI仕事術 会社のPCで今日から使える39のプロンプト</strong><span>Copilot・ChatGPT・Gemini対応／著者 まさび／500円・Kindle Unlimited 対象</span><span class="book-note">会社のPCで、明日の朝からそのまま使える39の頼み方を1冊にまとめました。サイトとは別に書き下ろした内容です。</span><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/dp/B0HNZWNVM5?tag=masabee00001-22">Amazonで見る（Kindle）</a></div></div></div><h2 id="s8">まとめ</h2>
+<ul><li>カスタム指示の文字数の上限は、FreeとGoが1,500文字、Plus・Pro・Enterprise・Business・Educationが5,000文字</li><li>書く場所は、ウェブ版なら設定 →「パーソナライズ」の「カスタム指示」欄</li><li>長い指示より、1行に1つの短い指示のほうが、どの行が効いているか分かりやすい</li><li>短くするコツは「数字で書く」「お願いの言葉をはずす」「理由は必要なときだけ」</li><li>仕事と遊びを1つの欄に入れるなら、「メールのとき：」のように行の頭に場面を書く</li><li>入りきらないときは、プロジェクトの指示やメモリに分ける</li><li>会社の決まりを先に確かめ、社外秘・個人情報は入れない</li></ul>
+<p>ここまで読んでくださって、ありがとうございます。<br>まずは、いまのカスタム指示から「できれば」「なるべく」を1つだけ数字に書きかえてみませんか。この1つだけで十分です。浮いた時間は、ご家族との時間や、好きなことに使ってください。<br>あなたなら、最初にどの1行を短くしてみますか？</p><div class="next"><div class="next-h">今日できる次の一歩</div><p>最後まで読んでくださり、ありがとうございました。</p><p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p></div><p class="ainote">この記事は下書きにAIを使い、内容は運営者が公式情報で確認しています。</p><script>(function(C){var R=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var art=document.querySelector("article");if(!art)return;
+/* 読んだ記事を覚えておく（カテゴリページの「読んだ」印に使う。この端末の中だけ。同じ github.io の別サイトと混ざらないよう、パス全体で覚える） */
+try{var RK="ax-read",RL=JSON.parse(localStorage.getItem(RK)||"[]"),me=location.pathname;if(RL.indexOf(me)<0){RL.push(me);localStorage.setItem(RK,JSON.stringify(RL.slice(-300)))}}catch(e){}
+/* 読むのにかかる時間（1 分 500 字で計算） */
+var n=(art.innerText||"").replace(/\s/g,"").length,m=Math.max(1,Math.round(n/500)),d=art.querySelector(".date");
+if(d){var t=document.createElement("span");t.className="ax-time";t.textContent=C.time.replace("{m}",m);d.after(t)}
+/* 読み進み具合のバー */
+var bar=document.createElement("div");bar.className="ax-prog";bar.innerHTML="<i></i>";document.body.appendChild(bar);
+function prog(){var r=art.getBoundingClientRect(),h=r.height-innerHeight*.6,p=h>0?Math.min(1,Math.max(0,-r.top/h)):1;bar.firstChild.style.width=(p*100).toFixed(1)+"%"}
+addEventListener("scroll",prog,{passive:true});prog();
+/* まとめの見出しに印 */
+art.querySelectorAll("h2").forEach(function(h){if(/まとめ/.test(h.textContent))h.classList.add("ax-sum")});
+/* 今読んでいる目次の項目に印 */
+var links=[].slice.call(document.querySelectorAll(".toc a"));
+if(links.length&&"IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.parentNode.classList.toggle("now",a.getAttribute("href")=="#"+e.target.id)})}})},{rootMargin:"0px 0px -70% 0px"});
+links.forEach(function(a){var s=document.getElementById(a.getAttribute("href").slice(1));if(s)io.observe(s)})}
+/* 押して印をつける（チェックリスト・材料・手順） */
+function tick(el){el.classList.add("ax-tick");el.addEventListener("click",function(ev){if(ev.target.closest("a"))return;el.classList.toggle("done")})}
+if(C.tick){art.querySelectorAll("h2").forEach(function(h){if(!new RegExp(C.tick.h2).test(h.textContent))return;var x=h.nextElementSibling;while(x&&x.tagName!="H2"){
+ if(C.tick.lists)x.querySelectorAll?(x.matches("ul,ol")?[x]:[]).concat([].slice.call(x.querySelectorAll("ul,ol"))).forEach(function(l){[].forEach.call(l.children,tick)}):0;
+ if(C.tick.rows&&x.querySelectorAll)x.querySelectorAll("tr").forEach(function(tr){if(!tr.querySelector("th"))tick(tr)});x=x.nextElementSibling}})}
+/* プロンプトをコピー */
+if(C.copy){art.querySelectorAll(".note").forEach(function(nt){var s=nt.innerText.trim();if(s.length<40&&s.indexOf("【")<0)return;var b=document.createElement("button");b.type="button";b.className="ax-copy";b.textContent="コピーする";
+ b.addEventListener("click",function(){navigator.clipboard&&navigator.clipboard.writeText(s).then(function(){b.textContent="コピーしました";setTimeout(function(){b.textContent="コピーする"},1600)})});nt.appendChild(b)})}
+/* 文字の大きさ（覚えておく） */
+if(C.size){var k="ax-size",cur="";try{cur=localStorage.getItem(k)||""}catch(e){}
+ var w=document.createElement("div");w.className="ax-size";w.innerHTML='<span>文字の大きさ</span><button data-s="">ふつう</button><button data-s="l">大</button><button data-s="xl">特大</button>';
+ function set(s){document.documentElement.setAttribute("data-size",s);[].forEach.call(w.querySelectorAll("button"),function(b){b.classList.toggle("on",b.getAttribute("data-s")==s)});try{localStorage.setItem(k,s)}catch(e){}}
+ w.addEventListener("click",function(e){var b=e.target.closest("button");if(b)set(b.getAttribute("data-s"))});var h1=art.querySelector("h1");h1&&h1.after(w);set(cur)}
+})({"time": "読むのに約{m}分"});</script></article><div class="share"><a class="sx" rel="noopener" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fchatgpt-custom-instructions-length.html&text=ChatGPT%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E6%8C%87%E7%A4%BA%E3%81%AE%E6%96%87%E5%AD%97%E6%95%B0%E3%81%A8%E4%B8%8A%E9%99%90%EF%BD%9C%E7%9F%AD%E3%81%8F%E5%8A%B9%E3%81%8B%E3%81%9B%E3%82%8B%E6%9B%B8%E3%81%8D%E6%96%B9">Xでシェア</a><a class="sl" rel="noopener" target="_blank" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fchatgpt-custom-instructions-length.html">LINEで送る</a><a class="sh" rel="noopener" target="_blank" href="https://b.hatena.ne.jp/entry/panel/?url=https%3A%2F%2Fmasabee1029.github.io%2Fai-customize-fun%2Farticles%2Fchatgpt-custom-instructions-length.html">はてブ</a></div><div class="author"><div class="avatar">運</div><div><strong>この記事を書いた人：運営者</strong><p>大手印刷会社で約20年、製造・品質管理・営業支援を担当したのち、グラフィックデザイナーとして独立。いまは広告・ブランド相談の会社を運営しながら、毎日の仕事でAIを使っています。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<br>AIを何も知らない人向けの連載は、毎朝7時に<a href="https://note.com/masabee00001">note</a>で書いています。</p><p><a href="../about.html">運営者について詳しく</a></p></div></div><div class="related"><h2 class="sec-h">あわせて読みたい</h2><div class="cards"><a class="card" href="../articles/chatgpt-customize-smartphone.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-customize-smartphone.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-11-02</span><h3>ChatGPTのカスタマイズをスマホ（iPhone・Android）で設定する｜性格・カスタム指示・メモリ・音声の場所</h3><p>ChatGPTのカスタマイズをスマホ（iPhone・Android）で設定するなら、アプリのプロフィールアイコンから「設定」を開き、「パーソナライズ」（カスタム指示は「ChatGPT をカスタマイズ」と表示されることも）に進むだけです。2026年11月2日に公式ヘルプで確かめた、性格・カスタム指示・メモリ・音声の4つの場所と、通勤中の5分で終わる設定の順番、コピーして使える仕事用・遊び用の例を紹介します。</p></a><a class="card" href="../articles/chatgpt-voice-customize.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-voice-customize.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-28</span><h3>ChatGPTの音声と声のカスタマイズ｜話し相手を自分好みにする、声の選び方・言語・話し方の3つの設定</h3><p>ChatGPTの音声と声のカスタマイズは、「設定 → 音声」で声を選び、言語を決め、会話の中で話し方を頼む、の3つで整います。2026年10月28日に公式ヘルプで確かめた、Live・Advanced・Standardの3つのモード、Arborなど9種類の声と日本語向けの「ひまり」「りんどう」、プラン別の音声の上限（無料・Go・Plus）、通勤中の使い方と家で遊ぶ使い方を、コピーして使える頼み方つきで紹介します。</p></a><a class="card" href="../articles/chatgpt-nickname.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-nickname.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-26</span><h3>ChatGPTにニックネームで呼んでもらう設定｜カスタム指示とメモリ、2つのやり方とコピペ例</h3><p>ChatGPTにニックネームで呼んでもらう設定は、「カスタム指示」の欄に「私を『〇〇』と呼んでください」と1行書くだけです。2026年10月26日に公式ヘルプで確かめた設定の場所（ウェブ・スマホ）、会話で頼んでメモリに覚えてもらうもう1つのやり方、仕事用・遊び用の呼び名の例、違う名前で呼ばれるときの直し方まで紹介します。</p></a><a class="card" href="../articles/chatgpt-character.html"><img class="thumb" loading="lazy" src="../img/articles/chatgpt-character.jpg" alt=""><span class="tag">ChatGPT</span><span class="date">2026-10-23</span><h3>ChatGPTのカスタマイズでキャラクターを作る｜口調と性格の決め方と、そのまま使える設定例</h3><p>ChatGPTのカスタマイズでキャラクターを作る方法を、2026年10月23日に公式ヘルプで確かめた手順でまとめました。「基本のスタイルとトーン」の7つの性格から土台を選び、カスタム指示で口調・呼び方・決まり文句を書く順番、仕事用の「頼れる先輩」と遊び用の「相棒」の設定例、キャラクターが崩れるときの直し方まで紹介します。</p></a></div></div></main><aside><div class="box"><div class="box-h">運営者</div>大手印刷会社で約20年、製造・品質管理・営業支援を担当したのち、グラフィックデザイナーとして独立。いまは広告・ブランド相談の会社を運営しながら、毎日の仕事でAIを使っています。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<br>AIを何も知らない人向けの連載は、毎朝7時に<a href="https://note.com/masabee00001">note</a>で書いています。<p style="margin:8px 0 0"><a href="../about.html">プロフィールを見る</a></p></div><div class="box"><div class="box-h">はじめての方におすすめ</div><a class="mini" href="../articles/chatgpt-customize-howto.html"><img loading="lazy" src="../img/articles/chatgpt-customize-howto.jpg" alt=""><span>ChatGPTのカスタマイズのやり方｜性格・口調・カスタム指示を自分用に</span></a><a class="mini" href="../articles/chatgpt-custom-instructions-template.html"><img loading="lazy" src="../img/articles/chatgpt-custom-instructions-template.jpg" alt=""><span>ChatGPTのカスタム指示テンプレート｜コピペで使える例と書き方</span></a><a class="mini" href="../articles/gemini-gem-howto.html"><img loading="lazy" src="../img/articles/gemini-gem-howto.jpg" alt=""><span>GeminiのGemの作り方｜自分専用のAIアシスタントを作る手順</span></a><a class="mini" href="../articles/claude-projects-howto.html"><img loading="lazy" src="../img/articles/claude-projects-howto.jpg" alt=""><span>Claudeのプロジェクトの使い方｜指示と資料をまとめて自分仕様に</span></a><a class="mini" href="../articles/animated-chart-gallery.html"><img loading="lazy" src="../img/articles/animated-chart-gallery.jpg" alt=""><span>動くグラフの見本帳｜棒・数字・円・線の4つのアニメーションをAIで作る</span></a></div><div class="box catlist"><div class="box-h">カテゴリ</div><a href="../category/chatgpt.html">ChatGPT<small>10記事</small></a><a href="../category/gemini.html">Gemini<small>1記事</small></a><a href="../category/claude.html">Claude<small>6記事</small></a><a href="../category/copilot.html">Copilot<small>1記事</small></a><a href="../category/anim.html">動くグラフ<small>3記事</small></a></div><div class="sticky"><div class="picks"><div class="picks-h">AIをもっと楽しむ次の一歩に</div><div class="pick"><div><strong>生成AIの入門書</strong><span>カスタマイズの前に全体像を</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E6%9C%AC+%E5%85%A5%E9%96%80&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E6%259C%25AC%2520%25E5%2585%25A5%25E9%2596%2580%2F">楽天</a></div><div class="pick"><div><strong>生成AIの仕事術の本</strong><span>自分仕様のAIを仕事に活かす</span></div><a class="btn amz" rel="nofollow sponsored noopener" target="_blank" href="https://www.amazon.co.jp/s?k=%E7%94%9F%E6%88%90AI+%E4%BB%95%E4%BA%8B%E8%A1%93+%E6%9C%AC&amp;tag=masabee00001-22">Amazon</a><a class="btn rkt" rel="nofollow sponsored noopener" target="_blank" href="https://hb.afl.rakuten.co.jp/hgc/5867408e.a723d753.5867408f.9cd38db5/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2594%259F%25E6%2588%2590AI%2520%25E4%25BB%2595%25E4%25BA%258B%25E8%25A1%2593%2520%25E6%259C%25AC%2F">楽天</a></div></div></div></aside></div></div>
+<footer><div class="wrap"><div class="fcats"><a href="../category/chatgpt.html">ChatGPT</a><a href="../category/gemini.html">Gemini</a><a href="../category/claude.html">Claude</a><a href="../category/copilot.html">Copilot</a><a href="../category/anim.html">動くグラフ</a></div><a href="../about.html">このサイトについて</a><a href="../privacy.html">プライバシーポリシー</a>
+<div class="prnote">※本サイトはプロモーション（広告）を含みます。商品リンクから購入されると運営者に紹介料が入ることがあります。</div><div>© 2026 AIを楽しくカスタマイズしよう</div></div></footer><style id="fx-css">@media (prefers-reduced-motion:no-preference){.fx{opacity:0;transform:translateY(-32px) rotate(2.5deg)}.fx.fx-in{opacity:1;transform:none;transition:opacity .4s ease,transform .75s cubic-bezier(.34,1.56,.64,1)}}</style><script id="fx-js">(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var L=[].slice.call(document.querySelectorAll("main .card, main h2, main .eyecatch, main .tbl, main .picks, main .shop, main .toc, main .lead, main .author, main .next, main .note, main blockquote, aside .box"));if(!L.length)return;L.forEach(function(el){el.classList.add("fx")});function chk(){var h=window.innerHeight||document.documentElement.clientHeight;if(!h)return;var n=0;L=L.filter(function(t){if(t.getBoundingClientRect().top<h*.94){t.style.transitionDelay=Math.min(n++,6)*70+"ms";t.classList.add("fx-in");setTimeout(function(){t.style.transitionDelay=""},1600);return false}return true});if(!L.length){removeEventListener("scroll",chk);removeEventListener("resize",chk)}}addEventListener("scroll",chk,{passive:true});addEventListener("resize",chk);addEventListener("load",chk);setTimeout(chk,60);setTimeout(chk,800)})()</script></body></html>
