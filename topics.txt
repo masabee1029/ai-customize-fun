@@ -23,7 +23,7 @@
 済 Claudeのメモリ機能の使い方｜自分のことを覚えてもらう | Claude | claude-memory-howto
 済 Claudeのスキルの使い方｜作り方と仕事での例 | Claude | claude-skills-howto
 済 ChatGPTのカスタム指示の文字数と上限｜短く効かせる書き方 | ChatGPT | chatgpt-custom-instructions-length
-Claudeのコネクタの使い方｜GoogleドライブやGmailとつなぐ | Claude | claude-connectors
+済 Claudeのコネクタの使い方｜GoogleドライブやGmailとつなぐ | Claude | claude-connectors
 数字が数え上がるKPIカウンターをAIで作る｜大事な数字の見せ方 | 動くグラフ | ai-kpi-counter
 Claudeのアーティファクトの使い方｜小さなアプリや図をその場で作る | Claude | claude-artifacts-howto
 ChatGPTのカスタム指示で英会話の練習相手を作る | ChatGPT | chatgpt-english-partner
