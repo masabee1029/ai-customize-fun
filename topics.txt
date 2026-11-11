@@ -26,7 +26,7 @@
 済 Claudeのコネクタの使い方｜GoogleドライブやGmailとつなぐ | Claude | claude-connectors
 済 数字が数え上がるKPIカウンターをAIで作る｜大事な数字の見せ方 | 動くグラフ | ai-kpi-counter
 Claudeのアーティファクトの使い方｜小さなアプリや図をその場で作る | Claude | claude-artifacts-howto
-# XServer API の Claude コネクタ対応（2026-11-05 エックスサーバーのお知らせ、2026-11-11 本人「記事ネタに足して」）: 売り込みでなく使い方の記事。できること・つなぎ方・料金や対応プランは XServer と Claude の公式ページで確かめた内容だけ書き、確認日を入れる。分からない点は「公式で確認を」
+# XServer API の Claude コネクタ対応（2026-11-05 エックスサーバーのお知らせ、2026-11-11 本人「記事ネタに足して」）: 売り込みでなく使い方の記事。できること・つなぎ方・料金や対応プランは XServer と Claude の公式ページで確かめた内容だけ書き、確認日を入れる。分からない点は「公式で確認を」。本文の最後の見出し（まとめ）の前に、広告の紹介文を 1 段落入れる（2026-11-11 本人指示）: 見出し「## Claudeとつなげるサーバーを用意するなら（PR）」、2〜3 文で読者の得（Claude から話しかけるだけでサーバーの設定や確認ができる、など公式で確かめたことだけ）、リンクは [エックスサーバーの公式サイトを見る（PR）](https://px.a8.net/svt/ejp?a8mat=4BENDQ+GHLARE+CO4+61C2Q) をそのまま使う。「国内シェアNo.1」など確かめられない言葉は書かない。記事の下の広告欄には、site.json の slugs 指定でエックスサーバーが 3 つ目に自動で出る
 Claudeでサーバーを操作｜XServerのClaudeコネクタでできることとつなぎ方 | Claude | claude-xserver-connector
 ChatGPTのカスタム指示で英会話の練習相手を作る | ChatGPT | chatgpt-english-partner
 Claudeのスマホアプリの使い方（iPhone・Android） | Claude | claude-app-smartphone

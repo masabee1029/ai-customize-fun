@@ -116,10 +116,15 @@ def picks_box(cat, title, compact=False):
 # ---------- ASP の提携広告（site.json の vc_ads＝バリューコマース、a8_ads＝A8.net。2026-10-23 追加） ----------
 VC_ADS = SITECFG.get("vc_ads", []) + SITECFG.get("a8_ads", [])
 
-def vc_box(cat):
-    """記事のカテゴリに合う ASP 広告（cats が空なら全記事）を最大3件。広告がなければ何も出さない。"""
+def vc_box(cat, slug=""):
+    """記事のカテゴリに合う ASP 広告（cats が空なら全記事）を最大3件。広告がなければ何も出さない。
+    slugs がある広告は、その記事（と cats のカテゴリ）だけに出す（2026-11-11 追加）。"""
     e = html.escape
-    ads = [a for a in VC_ADS if a.get("url") and (not a.get("cats") or cat in a["cats"])][:4]  # 2026-10-27: 3→4 件
+    def hit(a):
+        if a.get("slugs"):
+            return slug in a["slugs"] or cat in a.get("cats", [])
+        return not a.get("cats") or cat in a["cats"]
+    ads = [a for a in VC_ADS if a.get("url") and hit(a)][:4]  # 2026-10-27: 3→4 件
     if not ads:
         return ""
     items = "".join(
@@ -153,7 +158,8 @@ def inline(s):
     def link(m):
         url = m.group(2)
         ext = url.startswith("http")
-        return '<a href="%s"%s>%s</a>' % (url, ' target="_blank" rel="noopener"' if ext else "", m.group(1))
+        rel = "nofollow sponsored noopener" if re.search(r"a8\.net|valuecommerce", url) else "noopener"  # 本文の広告リンク（2026-11-11）
+        return '<a href="%s"%s>%s</a>' % (url, ' target="_blank" rel="%s"' % rel if ext else "", m.group(1))
     return re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link, s)
 
 # ---------- 動くグラフ（[[chart:...]]） ----------
@@ -551,9 +557,9 @@ def build():
             art = toc + art
         k = art.rfind('<h2 id="s%d">' % len(a["toc"])) if a["toc"] else -1
         if k > 0:
-            art = art[:k] + picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat) + book_box() + art[k:]
+            art = art[:k] + picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat, a["slug"]) + book_box() + art[k:]
         else:
-            art += picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat) + book_box()
+            art += picks_box(cat, SITECFG["picks_title_long"]) + vc_box(cat, a["slug"]) + book_box()
         cu = "category/%s.html" % cat_slug(cat)
         body = ('%s<article><a class="tag" href="../%s">%s</a><span class="date">%s</span><h1>%s</h1><p class="prline">%s</p>%s'
                 '<div class="lead"><strong>この記事でわかること</strong>%s</div>%s</article>%s%s%s'

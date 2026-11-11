@@ -220,6 +220,18 @@
  },
  "a8_ads": [
   {
+   "name": "エックスサーバー",
+   "note": "XServer APIで、Claudeとつないで使えるレンタルサーバー",
+   "btn": "公式サイトを見る",
+   "cats": [],
+   "slugs": [
+    "claude-xserver-connector"
+   ],
+   "asp": "a8",
+   "url": "https://px.a8.net/svt/ejp?a8mat=4BENDQ+GHLARE+CO4+61C2Q",
+   "beacon": "https://www12.a8.net/0.gif?a8mat=4BENDQ+GHLARE+CO4+61C2Q"
+  },
+  {
    "name": "Notta（AI文字起こし）",
    "note": "会議や講義の音声を、AIが文字起こしして議事録にする",
    "btn": "無料で試す",
