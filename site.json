@@ -134,7 +134,56 @@
  "profile_html": "大手印刷会社で約20年、製造・品質管理・営業支援を担当したのち、グラフィックデザイナーとして独立。いまは広告・ブランド相談の会社を運営しながら、毎日の仕事でAIを使っています。毎回の説明を1回の設定で済ませるコツを、仕事にも遊びにも使える形でお伝えします。<br>AIを何も知らない人向けの連載は、毎朝7時に<a href=\"https://note.com/masabee00001\">note</a>で書いています。",
  "next_step_html": "<p>最後まで読んでくださり、ありがとうございました。</p><p>まずは1つのAIで、あなたの呼び名か口調を1つだけ設定してみませんか。次の会話から、AIの返事が少し“あなた向け”に変わるのを感じられます。</p><p>あなたなら、AIにどんな話し方をしてほしいですか？</p>",
  "refs": {
-  "_label": "2026年10月の人気"
+  "_label": "2026年10月の人気",
+  "ChatGPT 本 入門": [
+   {
+    "name": "この一冊で全部わかる ChatGPT & Copilotの教科書"
+   },
+   {
+    "name": "できるChatGPT 改訂2版"
+   },
+   {
+    "name": "今すぐ使えるかんたん いちばんやさしいChatGPT超入門"
+   }
+  ],
+  "Excel グラフ 本": [
+   {
+    "name": "できるExcelグラフ"
+   },
+   {
+    "name": "データ可視化 完全入門"
+   },
+   {
+    "name": "できるポケットExcelグラフ 基本&活用マスターブック"
+   }
+  ],
+  "Claude 本": [
+   {
+    "name": "Claude AI活用 最強の教科書"
+   },
+   {
+    "name": "この1冊でしっかりわかる Claudeの教科書"
+   },
+   {
+    "name": "できるClaude＆Claude Cowork"
+   }
+  ],
+  "HTML CSS 入門 本": [
+   {
+    "name": "スラスラわかるHTML&CSSのきほん"
+   },
+   {
+    "name": "1冊ですべて身につくHTML & CSSとWebデザイン入門講座"
+   },
+   {
+    "name": "これだけで基本がしっかり身につく HTML/CSS＆Webデザイン1冊目の本"
+   }
+  ],
+  "Bluetooth イヤホン マイク付き 片耳": [
+   {
+    "name": "エレコム ワイヤレスヘッドセット Bluetooth 片耳 LBT-HS21MPBK2"
+   }
+  ]
  },
  "featured": [
   "chatgpt-customize-howto",
@@ -254,5 +303,115 @@
   "Claude": "スタイル設定とプロジェクト。Claudeの書く文章を自分好みにそろえる方法です。",
   "動くグラフ": "数字が動くグラフの見本と、AIで作る方法。棒・数字・円・線の4種類を見られます。"
  },
- "category_js": "<script>(function(C){var pg=document.querySelector(\".cx-page\");if(!pg)return;\nvar box=pg.querySelector(\".cards\"),cards=[].slice.call(box.querySelectorAll(\".card\"));\nfunction num(){[].forEach.call(box.querySelectorAll(\".card\"),function(a,i){a.setAttribute(\"data-no\",(C.pre||\"\")+(\"0\"+(i+1)).slice(-2))})}\n/* 読んだ記事に印 */\nvar RL=[];try{RL=JSON.parse(localStorage.getItem(\"ax-read\")||\"[]\")}catch(e){}\nvar m=0;cards.forEach(function(a,i){a.style.setProperty(\"--i\",i);if(RL.indexOf(new URL(a.href,location.href).pathname)>=0){a.classList.add(\"cx-read\");m++;var b=document.createElement(\"span\");b.className=\"cx-badge\";b.textContent=C.read;a.appendChild(b)}});\nnum();\nvar mt=pg.querySelector(\".cx-meter\");if(mt){mt.querySelector(\"b\").textContent=m;var i=mt.querySelector(\"i\");if(i)setTimeout(function(){i.style.setProperty(\"--w\",(cards.length?m/cards.length*100:0)+\"%\")},200)}\n/* 新しい順・古い順 */\nvar s=pg.querySelector(\".cx-sort\");if(s)s.addEventListener(\"click\",function(e){var b=e.target.closest(\"button\");if(!b||b.classList.contains(\"on\"))return;\n [].forEach.call(s.querySelectorAll(\"button\"),function(x){x.classList.toggle(\"on\",x==b)});var arr=cards.slice();if(b.getAttribute(\"data-o\")==\"old\")arr.reverse();arr.forEach(function(a){box.appendChild(a)});num()});\n/* ほかのカテゴリは一覧のあとへ */\nvar o=pg.querySelector(\".cx-others\");if(o){if(!o.querySelector(\"a\"))o.remove();else box.after(o)}\n/* 文字の大きさ（記事ページと同じ設定を使う） */\nif(C.size){var k=\"ax-size\",cur=\"\";try{cur=localStorage.getItem(k)||\"\"}catch(e){}\n var w=document.createElement(\"div\");w.className=\"ax-size\";w.innerHTML='<span>文字の大きさ</span><button data-s=\"\">ふつう</button><button data-s=\"l\">大</button><button data-s=\"xl\">特大</button>';\n function set(v){document.documentElement.setAttribute(\"data-size\",v);[].forEach.call(w.querySelectorAll(\"button\"),function(b){b.classList.toggle(\"on\",b.getAttribute(\"data-s\")==v)});try{localStorage.setItem(k,v)}catch(e){}}\n w.addEventListener(\"click\",function(e){var b=e.target.closest(\"button\");if(b)set(b.getAttribute(\"data-s\"))});var h=pg.querySelector(\".cx-head\");h&&h.appendChild(w);set(cur)}\n})({\"read\": \"● 読んだ\", \"pre\": \"\"});</script>"
+ "category_js": "<script>(function(C){var pg=document.querySelector(\".cx-page\");if(!pg)return;\nvar box=pg.querySelector(\".cards\"),cards=[].slice.call(box.querySelectorAll(\".card\"));\nfunction num(){[].forEach.call(box.querySelectorAll(\".card\"),function(a,i){a.setAttribute(\"data-no\",(C.pre||\"\")+(\"0\"+(i+1)).slice(-2))})}\n/* 読んだ記事に印 */\nvar RL=[];try{RL=JSON.parse(localStorage.getItem(\"ax-read\")||\"[]\")}catch(e){}\nvar m=0;cards.forEach(function(a,i){a.style.setProperty(\"--i\",i);if(RL.indexOf(new URL(a.href,location.href).pathname)>=0){a.classList.add(\"cx-read\");m++;var b=document.createElement(\"span\");b.className=\"cx-badge\";b.textContent=C.read;a.appendChild(b)}});\nnum();\nvar mt=pg.querySelector(\".cx-meter\");if(mt){mt.querySelector(\"b\").textContent=m;var i=mt.querySelector(\"i\");if(i)setTimeout(function(){i.style.setProperty(\"--w\",(cards.length?m/cards.length*100:0)+\"%\")},200)}\n/* 新しい順・古い順 */\nvar s=pg.querySelector(\".cx-sort\");if(s)s.addEventListener(\"click\",function(e){var b=e.target.closest(\"button\");if(!b||b.classList.contains(\"on\"))return;\n [].forEach.call(s.querySelectorAll(\"button\"),function(x){x.classList.toggle(\"on\",x==b)});var arr=cards.slice();if(b.getAttribute(\"data-o\")==\"old\")arr.reverse();arr.forEach(function(a){box.appendChild(a)});num()});\n/* ほかのカテゴリは一覧のあとへ */\nvar o=pg.querySelector(\".cx-others\");if(o){if(!o.querySelector(\"a\"))o.remove();else box.after(o)}\n/* 文字の大きさ（記事ページと同じ設定を使う） */\nif(C.size){var k=\"ax-size\",cur=\"\";try{cur=localStorage.getItem(k)||\"\"}catch(e){}\n var w=document.createElement(\"div\");w.className=\"ax-size\";w.innerHTML='<span>文字の大きさ</span><button data-s=\"\">ふつう</button><button data-s=\"l\">大</button><button data-s=\"xl\">特大</button>';\n function set(v){document.documentElement.setAttribute(\"data-size\",v);[].forEach.call(w.querySelectorAll(\"button\"),function(b){b.classList.toggle(\"on\",b.getAttribute(\"data-s\")==v)});try{localStorage.setItem(k,v)}catch(e){}}\n w.addEventListener(\"click\",function(e){var b=e.target.closest(\"button\");if(b)set(b.getAttribute(\"data-s\"))});var h=pg.querySelector(\".cx-head\");h&&h.appendChild(w);set(cur)}\n})({\"read\": \"● 読んだ\", \"pre\": \"\"});</script>",
+ "article_picks": {
+  "chatgpt-character": [
+   [
+    "キャラクター 作り方 本",
+    "キャラクター作りの本",
+    "設定の考え方が広がる"
+   ],
+   [
+    "物語 創作 本",
+    "物語づくりの本",
+    "口調や性格の幅が増える"
+   ]
+  ],
+  "chatgpt-voice-customize": [
+   [
+    "ワイヤレス イヤホン マイク付き",
+    "マイク付きワイヤレスイヤホン",
+    "音声会話の声が拾いやすい"
+   ],
+   [
+    "ChatGPT 本 入門",
+    "ChatGPTの入門書",
+    "音声の使い道が見つかる"
+   ]
+  ],
+  "ai-bar-chart-race": [
+   [
+    "Excel グラフ 本",
+    "Excelのグラフの本",
+    "順位の見せ方が学べる"
+   ],
+   [
+    "データビジュアライゼーション 本",
+    "グラフの見せ方の本",
+    "伝わる形と色の選び方"
+   ]
+  ],
+  "claude-artifacts-howto": [
+   [
+    "Claude 本",
+    "Claudeの解説書",
+    "アーティファクトの活かし方"
+   ],
+   [
+    "HTML CSS 入門 本",
+    "HTML・CSS入門書",
+    "作った画面の中身がわかる"
+   ]
+  ],
+  "claude-xserver-connector": [
+   [
+    "Claude 本",
+    "Claudeの解説書",
+    "つなぐ前に全体像を"
+   ],
+   [
+    "ホームページ 作り方 本 初心者",
+    "ホームページ作りの入門書",
+    "サイト運営の基本がわかる"
+   ]
+  ],
+  "chatgpt-english-partner": [
+   [
+    "英会話 フレーズ 本 初心者",
+    "英会話フレーズの本",
+    "AIとの練習の題材になる"
+   ],
+   [
+    "英語 学習 AI 本",
+    "AIを使った英語学習の本",
+    "練習の進め方が増える"
+   ]
+  ],
+  "claude-app-smartphone": [
+   [
+    "Bluetooth イヤホン マイク付き 片耳",
+    "片耳マイク付きイヤホン",
+    "音声で話しかけやすい"
+   ],
+   [
+    "スマホ スタンド",
+    "スマホスタンド",
+    "机で画面を見ながら使える"
+   ]
+  ],
+  "chatgpt-hallucination-instructions": [
+   [
+    "ファクトチェック 入門 本",
+    "ファクトチェック入門書",
+    "AIの答えの確かめ方がわかる"
+   ],
+   [
+    "プロンプト 本",
+    "プロンプトの本",
+    "カスタム指示の書き方に効く"
+   ]
+  ],
+  "chatgpt-customize-smartphone": [
+   [
+    "スマホ スタンド",
+    "スマホスタンド",
+    "机で画面を見ながら設定できる"
+   ],
+   [
+    "ChatGPT 本 入門",
+    "ChatGPTの入門書",
+    "設定の前に全体像を"
+   ]
+  ]
+ }
 }
