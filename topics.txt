@@ -31,7 +31,7 @@
 済 ChatGPTのカスタム指示で英会話の練習相手を作る | ChatGPT | chatgpt-english-partner
 済 Claudeのスマホアプリの使い方（iPhone・Android） | Claude | claude-app-smartphone
 済 ChatGPTのハルシネーション対策をカスタム指示で | ChatGPT | chatgpt-hallucination-instructions
-ClaudeでExcelの作業を楽にする使い方 | Claude | claude-excel
+済 ClaudeでExcelの作業を楽にする使い方 | Claude | claude-excel
 動く円グラフ（ドーナツ）をAIで作る｜割合が回り込むアニメーション | 動くグラフ | ai-animated-donut
 Claudeのプロジェクトのカスタム指示の書き方｜コピペで使える例 | Claude | claude-project-instructions-template
 ChatGPTのプロジェクトの使い方｜カスタム指示を仕事ごとに分ける | ChatGPT | chatgpt-projects
