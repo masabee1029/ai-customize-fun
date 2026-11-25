@@ -25,7 +25,7 @@ header{border-bottom:1px solid var(--line);background:var(--card)}
 .sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
 .sec-h a{font-size:13px;font-weight:400}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
-.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1024/572;object-fit:cover;border-radius:12px 12px 0 0}
 .card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
 .card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
 .tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
@@ -39,6 +39,7 @@ article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);pa
 .lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
 .lead strong{display:block;color:var(--accent)}
 .toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.fig{margin:22px 0;text-align:center}.fig img{max-width:100%;height:auto;border-radius:8px;border:1px solid rgba(127,127,127,.25)}.fig figcaption{font-size:.9em;color:var(--muted,#666);margin-top:8px;line-height:1.6}.fig-tag{display:inline-block;font-size:.78em;border:1px solid currentColor;border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px}
 .note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
 code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
@@ -66,7 +67,7 @@ aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6p
 aside .sticky{position:sticky;top:16px}
 aside .picks{margin:0 0 20px}
 .mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
-.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1024/572;object-fit:cover;border-radius:6px}
 .mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
 .catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
 .catlist small{color:var(--muted)}
@@ -238,6 +239,7 @@ article p strong,article li strong,article td strong{font-weight:800;color:var(-
 <p>どのテンプレートも、次の4つの箱でできています。この型を覚えておくと、あなたが自分で書くときにも迷いません。</p>
 <div class="tbl"><table><tr><th>箱</th><th>書くこと</th><th>例</th></tr><tr><td>1. 私について</td><td>仕事・立場・よく頼むこと</td><td>印刷会社で品質管理を担当</td></tr><tr><td>2. 答えの形</td><td>順番・長さ・見た目</td><td>結論から、理由は3つまで</td></tr><tr><td>3. 言葉づかい</td><td>敬語・口調・呼び名</td><td>です・ます調</td></tr><tr><td>4. 迷ったとき</td><td>分からないときのふるまい</td><td>推測せずに質問する</td></tr></table></div>
 <p>ポイントは、<strong>「〜しないで」より「〜して」で書く</strong>ことです。GPTの作り方を説明した公式ヘルプでも、禁止事項の長いリストより、肯定的で具体的な指示を優先すると書かれています。カスタム指示でも同じ考え方が役立ちます。「長くしないで」より「200字以内で」のほうが、ChatGPTにとっても分かりやすいのです。</p>
+<figure class="fig"><img src="../img/fig/chatgpt-custom-instructions-template-1.png" alt="説明用の図：4つの箱に分けて、「〜して」の形で書くのがコツです" loading="lazy"><figcaption><span class="fig-tag">説明用の図</span>4つの箱に分けて、「〜して」の形で書くのがコツです</figcaption></figure>
 <h2 id="s3">仕事用テンプレート</h2>
 <h3>1. 基本の仕事用（まずはこれ1つ）</h3>
 <ul><li>私は印刷会社で製造と品質管理を担当しています。会社ではMicrosoft 365を使っています</li><li>回答は結論から書き、理由は3つまでの箇条書きにしてください</li><li>文章は「です・ます」調で、専門用語には短い説明を添えてください</li><li>分からない点や情報が足りない点は、推測で埋めずに質問してください</li><li>最後に、次にできることを1つ提案してください</li></ul>

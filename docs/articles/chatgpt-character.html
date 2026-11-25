@@ -25,7 +25,7 @@ header{border-bottom:1px solid var(--line);background:var(--card)}
 .sec-h{font-size:20px;margin:40px 0 4px;padding-bottom:8px;border-bottom:3px solid var(--accent);display:flex;justify-content:space-between;align-items:baseline}
 .sec-h a{font-size:13px;font-weight:400}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:16px 0}
-.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1200/630;object-fit:cover;border-radius:12px 12px 0 0}
+.thumb{display:block;width:calc(100% + 32px);max-width:none;margin:-16px -16px 12px;aspect-ratio:1024/572;object-fit:cover;border-radius:12px 12px 0 0}
 .card{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--fg);display:block;transition:transform .15s}
 .card:hover{border-color:var(--accent);transform:translateY(-2px)}.card h2,.card h3{font-size:16px;line-height:1.5;margin:6px 0}.card p{font-size:13px;color:var(--muted);margin:0}
 .tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none}
@@ -39,6 +39,7 @@ article h3{font-size:18px;margin-top:28px;border-bottom:2px solid var(--line);pa
 .lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:14px;margin:16px 0}
 .lead strong{display:block;color:var(--accent)}
 .toc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:12px 20px;font-size:14px;margin:20px 0}
+.fig{margin:22px 0;text-align:center}.fig img{max-width:100%;height:auto;border-radius:8px;border:1px solid rgba(127,127,127,.25)}.fig figcaption{font-size:.9em;color:var(--muted,#666);margin-top:8px;line-height:1.6}.fig-tag{display:inline-block;font-size:.78em;border:1px solid currentColor;border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px}
 .note{background:var(--card);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;margin:16px 0}
 .tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--soft)}
 code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:14px}
@@ -66,7 +67,7 @@ aside .box-h{font-weight:800;font-size:15px;margin:-4px 0 10px;padding-bottom:6p
 aside .sticky{position:sticky;top:16px}
 aside .picks{margin:0 0 20px}
 .mini{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 0;border-top:1px solid var(--line);line-height:1.5}
-.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1200/630;object-fit:cover;border-radius:6px}
+.mini:first-of-type{border-top:0}.mini img{flex:0 0 96px;width:96px;aspect-ratio:1024/572;object-fit:cover;border-radius:6px}
 .mini b{display:inline-block;flex:0 0 22px;height:22px;border-radius:50%;background:var(--accent2);color:#fff;font-size:12px;text-align:center;line-height:22px}
 .catlist a{display:flex;justify-content:space-between;text-decoration:none;color:var(--fg);padding:6px 0;border-top:1px solid var(--line)}.catlist a:first-of-type{border-top:0}
 .catlist small{color:var(--muted)}
@@ -233,6 +234,7 @@ article p strong,article li strong,article td strong{font-weight:800;color:var(-
 <p>ChatGPTの人格を自分好みにする道具は2つあります。公式ヘルプの説明をもとに、役割を分けて考えると迷いません。</p>
 <div class="tbl"><table><tr><th>道具</th><th>何が決まるか</th><th>たとえるなら</th></tr><tr><td>基本のスタイルとトーン（パーソナリティ）</td><td>話し方の雰囲気。メニューから1つ選ぶ</td><td>役者の持ち味</td></tr><tr><td>カスタム指示</td><td>あなたの呼び方、口調の細かい決まり、よく使う言い回し</td><td>台本のト書き</td></tr></table></div>
 <p>公式ヘルプには、パーソナリティは「ChatGPTがあなたに応答するときに使うスタイルとトーン」で、変えても「できること・できないことや、従う安全ルールは変わらない」と書かれています。そして、選んだパーソナリティは「保存されたメモリや設定済みのカスタム指示とあわせて機能する」とあります。つまり、土台をメニューで選び、細かい口調をカスタム指示で足す、という足し算です。</p>
+<figure class="fig"><img src="../img/fig/chatgpt-character-1.png" alt="説明用の図：性格を土台に選び、その上にカスタム指示で口調を足します" loading="lazy"><figcaption><span class="fig-tag">説明用の図</span>性格を土台に選び、その上にカスタム指示で口調を足します</figcaption></figure>
 <p>全体の設定の場所は<a href="chatgpt-customize-howto.html">ChatGPTのカスタマイズのやり方</a>にまとめています。この記事は、その中の「キャラクターを作る」部分を深掘りします。</p>
 <h2 id="s2">手順1：7つの性格から土台を選ぶ</h2>
 <p>公式ヘルプ（2026年10月23日時点）で案内されている手順と、選べる性格は次のとおりです。</p>
